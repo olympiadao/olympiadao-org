@@ -1,13 +1,96 @@
-# OlympiaDAO.org — Copilot Instructions
+# GitHub Copilot Instructions: OlympiaDAO.org
 
-## Stack
-Next.js 16, React 19, TypeScript 5 (strict), Tailwind CSS 4, Lucide React
+> **Important:** GitHub Copilot only reads this file and your project code. It does NOT have access to global settings. All LTS rules must be included here.
 
-## Brand
-- Green: `#00ffae`, Background: `#0a0f10`, Font: Inter + JetBrains Mono
-- Dark-first, translucent cards, CSS transitions only
+## Project
 
-## Rules
-- Use `cn()` from `@/lib/utils` for class merging
-- Contract addresses must match olympia-framework README
-- No GSAP, R3F, or Lenis
+Landing page for the Olympia upgrade — a staged governance and funding system for Ethereum Classic. Dark-first design (#0a0f10) with neon green (#00ffae) accents.
+
+## LTS Enforcement (CRITICAL)
+
+**ALWAYS use current stable LTS versions.**
+
+| Technology | Version |
+|------------|---------|
+| Node.js | 24.x |
+| Next.js | 16.x |
+| React | 19.x |
+| TypeScript | 5.x |
+| Tailwind CSS | 4.x |
+| pnpm | 10.x |
+
+**Never suggest:** Node 22, Next.js 14/15, React 18.
+
+## Tech Stack
+
+- Next.js 16.x (App Router, Turbopack)
+- React 19.x, TypeScript 5.x (strict)
+- Tailwind CSS 4.x (CSS-first `@theme inline`)
+- Lucide React (icons)
+- Inter (UI) + JetBrains Mono (code/addresses)
+
+## Commands
+
+```bash
+pnpm dev          # Dev server (Turbopack)
+pnpm build        # Production build
+pnpm lint         # ESLint
+pnpm typecheck    # tsc --noEmit
+```
+
+## Key Rules
+
+1. Use TypeScript strict mode
+2. Use CSS custom properties from `app/globals.css` for brand colors
+3. Use `cn()` from `@/lib/utils` for class merging
+4. Use Lucide React for icons — no Font Awesome
+5. CSS transitions only — no GSAP, R3F, or Lenis
+6. Contract addresses must match olympia-framework README
+
+## Protected Files
+
+Do not modify without explicit request:
+- `app/globals.css` — design tokens
+- `app/layout.tsx` — root layout
+- `public/logo.svg` — brand logomark
+- `tsconfig.json`, `next.config.ts`
+
+## Code Style
+
+- 2-space indentation
+- Double quotes for strings
+- Semicolons
+- Trailing commas in multiline
+
+## Structure
+
+```
+app/              # Pages, layout, globals, SEO files
+components/
+  sections/       # Page sections
+  ui/             # Reusable components
+lib/              # Utilities (cn helper)
+public/           # Static assets (logo, OG image)
+```
+
+## Validation
+
+Before committing:
+
+```bash
+pnpm lint && pnpm typecheck && pnpm build
+```
+
+## Don't
+
+- Commit .env files or secrets
+- Use `any` type
+- Skip type errors with `@ts-ignore`
+- Use deprecated versions
+- Add animation libraries
+
+## Response Style
+
+- Code first, explanations only if asked
+- Concise bullet points over paragraphs
+- Get straight to the answer
