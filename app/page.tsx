@@ -1,5 +1,3 @@
-import { ExternalLink } from "lucide-react";
-
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center px-6">
@@ -15,20 +13,9 @@ export default function Home() {
           Deploying Soon
         </h1>
 
-        <p className="mb-8 text-lg leading-relaxed text-[var(--text-muted)]">
+        <p className="text-lg leading-relaxed text-[var(--text-muted)]">
           Sustainable governance and funding for Ethereum Classic.
-          The Olympia upgrade is under active development.
         </p>
-
-        <a
-          href="https://github.com/olympiadao"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-lg border border-[var(--border-default)] px-5 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--brand-green)] hover:text-[var(--brand-green)]"
-        >
-          Follow development on GitHub
-          <ExternalLink className="h-4 w-4" />
-        </a>
       </div>
     </main>
   );
