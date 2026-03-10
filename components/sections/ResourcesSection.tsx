@@ -17,7 +17,7 @@ const resources = [
     icon: Landmark,
     title: "Treasury Contract",
     description: "Olympia Treasury on Mordor testnet",
-    href: "https://etc-mordor.blockscout.com/address/0xCfE1e0ECbff745e6c800fF980178a8dDEf94bEe2",
+    href: "https://etc-mordor.blockscout.com/address/0xd6165F3aF4281037bce810621F62B43077Fb0e37",
   },
   {
     icon: Github,
