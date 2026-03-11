@@ -15,9 +15,9 @@ const resources = [
   },
   {
     icon: Landmark,
-    title: "Treasury Contract",
-    description: "Olympia Treasury on Mordor testnet",
-    href: "https://etc-mordor.blockscout.com/address/0xd6165F3aF4281037bce810621F62B43077Fb0e37",
+    title: "Treasury",
+    description: "Protocol-controlled vault monitoring and transparency",
+    href: "https://olympiatreasury.org",
   },
   {
     icon: Github,
