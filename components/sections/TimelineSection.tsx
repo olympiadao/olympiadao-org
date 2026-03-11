@@ -23,7 +23,7 @@ const stages = [
     ecips: "1117, 1118",
     type: "Contract",
     description:
-      "Prediction market governance with LMSR AMM. Streaming disbursements with milestone-gated releases and clawback.",
+      "Prediction market governance with conditional outcome markets. Streaming disbursements with milestone-gated releases.",
     status: "planned" as const,
   },
   {
@@ -41,7 +41,7 @@ const stages = [
     ecips: "1116, 1122",
     type: "Consensus",
     description:
-      "Embed validated basefee split (5%/95%) and miner distribution at consensus. Second hard fork.",
+      "Embed validated basefee split and miner distribution at consensus. Second hard fork.",
     status: "deferred" as const,
   },
 ];

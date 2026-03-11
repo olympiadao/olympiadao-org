@@ -8,7 +8,7 @@ const clients = [
     branch: "olympia",
     commit: "b1c759dcc",
     tests: "ALL PASS",
-    repo: "https://github.com/chris-mercer/core-geth",
+    repo: "https://github.com/ethereumclassic/core-geth",
   },
   {
     name: "besu-etc",
@@ -17,7 +17,7 @@ const clients = [
     branch: "olympia",
     commit: "52dc37b5bf",
     tests: "ALL PASS",
-    repo: "https://github.com/chris-mercer/besu-etc",
+    repo: "https://github.com/ethereumclassic/besu",
   },
   {
     name: "fukuii",
@@ -25,9 +25,8 @@ const clients = [
     version: "v0.1.240",
     branch: "olympia",
     commit: "126c1fd5c",
-    tests: "2,308 PASS",
-    repo: "#",
-    private: true,
+    tests: "ALL PASS",
+    repo: "https://github.com/ethereumclassic/fukuii",
   },
 ];
 
@@ -87,11 +86,6 @@ export function ClientStatusSection() {
                   </span>
                 </div>
               </div>
-              {client.private && (
-                <p className="mt-3 text-xs text-[var(--text-subtle)]">
-                  Private repository
-                </p>
-              )}
             </a>
           ))}
         </div>

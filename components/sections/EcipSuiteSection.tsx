@@ -36,7 +36,7 @@ const ecips = [
     title: "ECFP Funding Proposals",
     stage: 2,
     type: "Contract",
-    status: "Pending",
+    status: "In Progress",
     description: "Permissionless hash-bound proposal registry for transparent allocation.",
   },
   {
@@ -44,7 +44,7 @@ const ecips = [
     title: "Sanctions Constraint",
     stage: 2,
     type: "Contract",
-    status: "Pending",
+    status: "In Progress",
     description: "Three-layer defense: propose check, mid-lifecycle cancel, execution gate.",
   },
   {
@@ -53,7 +53,7 @@ const ecips = [
     stage: 3,
     type: "Contract",
     status: "Prototype",
-    description: "Prediction market governance with LMSR AMM and conditional markets.",
+    description: "Prediction market governance with conditional outcome markets.",
   },
   {
     number: "1118",
@@ -77,7 +77,7 @@ const ecips = [
     stage: 5,
     type: "Consensus",
     status: "Deferred",
-    description: "Embed 5%/95% Treasury/miner split at consensus layer.",
+    description: "Embed validated basefee split at consensus layer.",
   },
   {
     number: "1122",
