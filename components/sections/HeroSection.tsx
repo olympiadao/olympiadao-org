@@ -26,12 +26,12 @@ export function HeroSection() {
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
-            href="https://github.com/olympiadao/olympia-framework"
+            href="https://app.olympiadao.org"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green)] px-7 py-3 text-sm font-semibold text-[var(--background)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110"
           >
-            Read the Framework
+            Launch Governance App
             <ArrowRight size={16} />
           </a>
           <a
@@ -44,6 +44,16 @@ export function HeroSection() {
             <ExternalLink size={16} />
           </a>
         </div>
+        <p className="mt-6 text-sm text-[var(--text-subtle)]">
+          <a
+            href="https://github.com/olympiadao/olympia-framework"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-[var(--brand-green)]"
+          >
+            Read the Framework &rarr;
+          </a>
+        </p>
       </div>
     </section>
   );

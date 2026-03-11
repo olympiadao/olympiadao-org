@@ -11,6 +11,11 @@ const navLinks = [
   { label: "Clients", href: "#clients" },
   { label: "Treasury", href: "https://olympiatreasury.org", external: true },
   {
+    label: "Framework",
+    href: "https://github.com/olympiadao/olympia-framework",
+    external: true,
+  },
+  {
     label: "GitHub",
     href: "https://github.com/olympiadao",
     external: true,
@@ -26,6 +31,10 @@ export function NavHeader() {
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.svg" alt="Olympia" width={36} height={36} />
           <span className="text-lg font-bold tracking-tight">OLYMPIA</span>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-xs font-medium text-[var(--brand-green)]">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--brand-green)]" />
+            Demo
+          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -43,12 +52,12 @@ export function NavHeader() {
             </a>
           ))}
           <a
-            href="https://github.com/olympiadao/olympia-framework"
+            href="https://app.olympiadao.org"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-[var(--brand-green)] px-5 py-2 text-sm font-semibold text-[var(--background)] transition-all duration-200 hover:brightness-110"
           >
-            Read Framework
+            Launch App
           </a>
         </div>
 
