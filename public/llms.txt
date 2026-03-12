@@ -1,0 +1,37 @@
+# OlympiaDAO — Sustainable Governance for Ethereum Classic
+
+## About
+
+Olympia is a staged governance and funding system for Ethereum Classic (ETC). It redirects EIP-1559 basefee revenue into an on-chain Treasury, then builds governance layers to allocate funds transparently. The system is non-inflationary — no new coins are minted.
+
+## Key Components
+
+- Treasury (ECIP-1112): Protocol-controlled vault receiving basefee revenue
+- Governor (ECIP-1113): On-chain governance with soulbound NFT membership
+- ECFP Registry (ECIP-1114): Ethereum Classic Funding Proposal submission and tracking
+- Sanctions Oracle (ECIP-1119): OFAC compliance constraint
+- Futarchy Markets (ECIP-1117): Prediction market-based governance decisions
+
+## Governance Stages
+
+1. Treasury accumulation (EIP-1559 basefee)
+2. CoreDAO governance (proposals, voting, execution)
+3. Futarchy markets (prediction-based decisions)
+
+## Network
+
+- Mordor Testnet (Chain ID 63) — Demo v0.1
+- Activation: Block 15,800,850
+
+## Authors
+
+- Cody Burns (github.com/realcodywburns)
+- Chris Mercer (github.com/chris-mercer)
+
+## Links
+
+- Website: https://olympiadao.org
+- Treasury: https://olympiatreasury.org
+- Core App: https://core.olympiadao.org
+- Futarchy: https://futarchy.olympiadao.org
+- GitHub: https://github.com/olympiadao
