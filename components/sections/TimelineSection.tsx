@@ -1,3 +1,5 @@
+import { CollapsibleSection } from "@/components/ui/collapsible-section";
+
 const stages = [
   {
     number: 1,
@@ -75,82 +77,76 @@ const statusColors = {
 
 export function TimelineSection() {
   return (
-    <section id="timeline" className="py-20">
-      <div className="mx-auto max-w-4xl px-6">
-        <h2 className="mb-4 text-center text-3xl font-bold tracking-tight text-[var(--brand-green)]">
-          Five Stages
-        </h2>
-        <p className="mx-auto mb-14 max-w-2xl text-center text-[var(--text-muted)]">
-          Each stage addresses a specific concern and unlocks the next. Nothing
-          is optional — each layer builds on the operational reality of the
-          previous one.
-        </p>
+    <CollapsibleSection
+      id="timeline"
+      title="Five Stages"
+      subtitle="Each stage addresses a specific concern and unlocks the next. Later stages build on the operational reality of earlier ones — though some, like miner distribution, are explicitly optional."
+      maxWidth="max-w-4xl"
+    >
+      <div className="relative">
+        {/* Vertical line */}
+        <div className="absolute top-0 bottom-0 left-6 w-px bg-[var(--border-default)] md:left-1/2" />
 
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute top-0 bottom-0 left-6 w-px bg-[var(--border-default)] md:left-1/2" />
+        <div className="space-y-12">
+          {stages.map((stage) => {
+            const status = statusColors[stage.status];
+            return (
+              <div key={stage.number} className="relative">
+                {/* Dot */}
+                <div
+                  className={`absolute left-6 z-10 h-3 w-3 -translate-x-1/2 rounded-full border-2 ${status.border} bg-[var(--background)] md:left-1/2`}
+                  style={{ top: "1.75rem" }}
+                />
 
-          <div className="space-y-12">
-            {stages.map((stage) => {
-              const status = statusColors[stage.status];
-              return (
-                <div key={stage.number} className="relative">
-                  {/* Dot */}
+                <div className="ml-14 md:ml-0 md:grid md:grid-cols-2 md:gap-8">
+                  {/* Stage number side */}
                   <div
-                    className={`absolute left-6 z-10 h-3 w-3 -translate-x-1/2 rounded-full border-2 ${status.border} bg-[var(--background)] md:left-1/2`}
-                    style={{ top: "1.75rem" }}
-                  />
-
-                  <div className="ml-14 md:ml-0 md:grid md:grid-cols-2 md:gap-8">
-                    {/* Stage number side */}
-                    <div
-                      className={`md:text-right ${stage.number % 2 === 0 ? "md:order-2 md:text-left" : ""}`}
-                    >
-                      <div className="mb-2 flex items-center gap-3 md:justify-end">
-                        {stage.number % 2 === 0 && (
-                          <span
-                            className={`hidden md:inline-flex items-center rounded-full ${status.bg} px-2.5 py-0.5 text-xs font-medium ${status.text}`}
-                          >
-                            {status.label}
-                          </span>
-                        )}
-                        <span className="text-sm font-semibold text-[var(--text-subtle)]">
-                          Stage {stage.number}
+                    className={`md:text-right ${stage.number % 2 === 0 ? "md:order-2 md:text-left" : ""}`}
+                  >
+                    <div className="mb-2 flex items-center gap-3 md:justify-end">
+                      {stage.number % 2 === 0 && (
+                        <span
+                          className={`hidden md:inline-flex items-center rounded-full ${status.bg} px-2.5 py-0.5 text-xs font-medium ${status.text}`}
+                        >
+                          {status.label}
                         </span>
-                        {stage.number % 2 !== 0 && (
-                          <span
-                            className={`inline-flex items-center rounded-full ${status.bg} px-2.5 py-0.5 text-xs font-medium ${status.text}`}
-                          >
-                            {status.label}
-                          </span>
-                        )}
-                      </div>
-                      <h3 className="text-xl font-bold">{stage.title}</h3>
-                    </div>
-
-                    {/* Content side */}
-                    <div
-                      className={`mt-2 md:mt-0 ${stage.number % 2 === 0 ? "md:order-1 md:text-right" : ""}`}
-                    >
-                      <p className="text-sm leading-relaxed text-[var(--text-muted)]">
-                        {stage.description}
-                      </p>
-                      <p className="mt-2 font-mono text-xs text-[var(--text-subtle)]">
-                        ECIPs: {stage.ecips} &middot; {stage.type}
-                      </p>
-                      <span
-                        className={`mt-2 inline-flex items-center rounded-full ${status.bg} px-2.5 py-0.5 text-xs font-medium ${status.text} md:hidden`}
-                      >
-                        {status.label}
+                      )}
+                      <span className="text-sm font-semibold text-[var(--text-subtle)]">
+                        Stage {stage.number}
                       </span>
+                      {stage.number % 2 !== 0 && (
+                        <span
+                          className={`inline-flex items-center rounded-full ${status.bg} px-2.5 py-0.5 text-xs font-medium ${status.text}`}
+                        >
+                          {status.label}
+                        </span>
+                      )}
                     </div>
+                    <h3 className="text-xl font-bold">{stage.title}</h3>
+                  </div>
+
+                  {/* Content side */}
+                  <div
+                    className={`mt-2 md:mt-0 ${stage.number % 2 === 0 ? "md:order-1 md:text-right" : ""}`}
+                  >
+                    <p className="text-sm leading-relaxed text-[var(--text-muted)]">
+                      {stage.description}
+                    </p>
+                    <p className="mt-2 font-mono text-xs text-[var(--text-subtle)]">
+                      ECIPs: {stage.ecips} &middot; {stage.type}
+                    </p>
+                    <span
+                      className={`mt-2 inline-flex items-center rounded-full ${status.bg} px-2.5 py-0.5 text-xs font-medium ${status.text} md:hidden`}
+                    >
+                      {status.label}
+                    </span>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
-    </section>
+    </CollapsibleSection>
   );
 }

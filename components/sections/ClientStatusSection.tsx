@@ -1,4 +1,5 @@
 import { CheckCircle } from "lucide-react";
+import { CollapsibleSection } from "@/components/ui/collapsible-section";
 
 const clients = [
   {
@@ -32,64 +33,57 @@ const clients = [
 
 export function ClientStatusSection() {
   return (
-    <section id="clients" className="py-20">
-      <div className="mx-auto max-w-6xl px-6">
-        <h2 className="mb-4 text-center text-3xl font-bold tracking-tight text-[var(--brand-green)]">
-          Three Independent Clients
-        </h2>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-[var(--text-muted)]">
-          Cross-client verification completed March 2026. All consensus-critical
-          bugs found and fixed. All 3 clients produce identical Treasury
-          balances.
-        </p>
-
-        <div className="grid gap-6 md:grid-cols-3">
-          {clients.map((client) => (
-            <a
-              key={client.name}
-              href={client.repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-2xl border border-[var(--border-default)] bg-[var(--bg-card)] p-6 transition-all duration-250 hover:-translate-y-1.5 hover:border-[var(--brand-green)]"
-              style={{ boxShadow: "var(--card-shadow)" }}
-            >
-              <div className="mb-4 flex items-center justify-between">
-                <h3 className="text-lg font-bold">{client.name}</h3>
-                <CheckCircle
-                  size={20}
-                  className="text-[var(--brand-green)]"
-                />
+    <CollapsibleSection
+      id="clients"
+      title="Three Independent Clients"
+      subtitle="Cross-client verification completed March 2026. All consensus-critical bugs found and fixed. All 3 clients produce identical Treasury balances."
+    >
+      <div className="grid gap-6 md:grid-cols-3">
+        {clients.map((client) => (
+          <a
+            key={client.name}
+            href={client.repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-2xl border border-[var(--border-default)] bg-[var(--bg-card)] p-6 transition-all duration-250 hover:-translate-y-1.5 hover:border-[var(--brand-green)]"
+            style={{ boxShadow: "var(--card-shadow)" }}
+          >
+            <div className="mb-4 flex items-center justify-between">
+              <h3 className="text-lg font-bold">{client.name}</h3>
+              <CheckCircle
+                size={20}
+                className="text-[var(--brand-green)]"
+              />
+            </div>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-[var(--text-subtle)]">Language</span>
+                <span className="text-[var(--text-secondary)]">
+                  {client.language}
+                </span>
               </div>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-[var(--text-subtle)]">Language</span>
-                  <span className="text-[var(--text-secondary)]">
-                    {client.language}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-[var(--text-subtle)]">Version</span>
-                  <span className="text-[var(--text-secondary)]">
-                    {client.version}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-[var(--text-subtle)]">Branch</span>
-                  <span className="font-mono text-xs text-[var(--brand-green)]">
-                    {client.branch}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-[var(--text-subtle)]">Tests</span>
-                  <span className="font-semibold text-[var(--brand-green)]">
-                    {client.tests}
-                  </span>
-                </div>
+              <div className="flex justify-between">
+                <span className="text-[var(--text-subtle)]">Version</span>
+                <span className="text-[var(--text-secondary)]">
+                  {client.version}
+                </span>
               </div>
-            </a>
-          ))}
-        </div>
+              <div className="flex justify-between">
+                <span className="text-[var(--text-subtle)]">Branch</span>
+                <span className="font-mono text-xs text-[var(--brand-green)]">
+                  {client.branch}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-[var(--text-subtle)]">Tests</span>
+                <span className="font-semibold text-[var(--brand-green)]">
+                  {client.tests}
+                </span>
+              </div>
+            </div>
+          </a>
+        ))}
       </div>
-    </section>
+    </CollapsibleSection>
   );
 }

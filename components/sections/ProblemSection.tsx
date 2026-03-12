@@ -1,4 +1,5 @@
 import { TrendingDown, Landmark, Coins, Vote } from "lucide-react";
+import { CollapsibleSection } from "@/components/ui/collapsible-section";
 
 const problems = [
   {
@@ -37,47 +38,41 @@ const problems = [
 
 export function ProblemSection() {
   return (
-    <section className="py-20">
-      <div className="mx-auto max-w-6xl px-6">
-        <h2 className="mb-4 text-center text-3xl font-bold tracking-tight text-[var(--brand-green)]">
-          The Problem
-        </h2>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-[var(--text-muted)]">
-          Ethereum Classic faces four structural challenges that Olympia
-          addresses from the bottom up.
-        </p>
-
-        <div className="grid gap-6 sm:grid-cols-2">
-          {problems.map((problem) => (
-            <div
-              key={problem.title}
-              className="rounded-2xl border border-[var(--border-default)] bg-[var(--bg-card)] p-6 transition-all duration-250 hover:-translate-y-1.5 hover:border-[var(--brand-green)]"
-              style={{ boxShadow: "var(--card-shadow)" }}
-            >
-              <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--brand-green-subtle)]">
-                  <problem.icon
-                    size={20}
-                    className="text-[var(--brand-green)]"
-                  />
-                </div>
-                <h3 className="text-lg font-semibold">{problem.title}</h3>
+    <CollapsibleSection
+      id="problem"
+      title="The Problem"
+      subtitle="Ethereum Classic faces four structural challenges that Olympia addresses from the bottom up."
+    >
+      <div className="grid gap-6 sm:grid-cols-2">
+        {problems.map((problem) => (
+          <div
+            key={problem.title}
+            className="rounded-2xl border border-[var(--border-default)] bg-[var(--bg-card)] p-6 transition-all duration-250 hover:-translate-y-1.5 hover:border-[var(--brand-green)]"
+            style={{ boxShadow: "var(--card-shadow)" }}
+          >
+            <div className="mb-4 flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--brand-green-subtle)]">
+                <problem.icon
+                  size={20}
+                  className="text-[var(--brand-green)]"
+                />
               </div>
-              <p className="mb-4 text-sm leading-relaxed text-[var(--text-muted)]">
-                {problem.description}
-              </p>
-              <div className="border-t border-[var(--border-subtle)] pt-4">
-                <span className="text-2xl font-bold text-[var(--brand-green)]">
-                  {problem.stat}
-                </span>
-                <span className="ml-2 text-xs text-[var(--text-subtle)]">
-                  {problem.statLabel}
-                </span>
-              </div>
+              <h3 className="text-lg font-semibold">{problem.title}</h3>
             </div>
-          ))}
-        </div>
+            <p className="mb-4 text-sm leading-relaxed text-[var(--text-muted)]">
+              {problem.description}
+            </p>
+            <div className="border-t border-[var(--border-subtle)] pt-4">
+              <span className="text-2xl font-bold text-[var(--brand-green)]">
+                {problem.stat}
+              </span>
+              <span className="ml-2 text-xs text-[var(--text-subtle)]">
+                {problem.statLabel}
+              </span>
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </CollapsibleSection>
   );
 }

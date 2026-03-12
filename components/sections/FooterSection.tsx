@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Github } from "lucide-react";
 
 export function FooterSection() {
@@ -5,7 +6,8 @@ export function FooterSection() {
     <footer className="border-t border-[var(--border-default)] py-12">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
-          <span className="text-sm font-semibold tracking-tight text-[var(--text-muted)]">
+          <span className="flex items-center gap-2 text-sm font-semibold tracking-tight text-[var(--text-muted)]">
+            <Image src="/logo.svg" alt="" width={20} height={20} />
             OLYMPIA
           </span>
 

@@ -6,15 +6,11 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Upgrade", href: "#upgrade" },
-  { label: "Timeline", href: "#timeline" },
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "Stages", href: "#timeline" },
+  { label: "ECIPs", href: "#ecips" },
   { label: "Clients", href: "#clients" },
   { label: "Treasury", href: "https://olympiatreasury.org", external: true },
-  {
-    label: "Framework",
-    href: "https://github.com/olympiadao/olympia-framework",
-    external: true,
-  },
   {
     label: "GitHub",
     href: "https://github.com/olympiadao",
