@@ -37,7 +37,7 @@ Seven contracts deployed via deterministic CREATE2 — identical addresses on Mo
 
 - Mordor Testnet: Chain ID 63
 - ETC Mainnet: Chain ID 61
-- Mordor Activation: Block 15,800,850
+- Next Step: Mordor Testnet Deployment
 
 ## Links
 
