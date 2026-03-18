@@ -1,29 +1,28 @@
+"use client";
+
+import { Suspense } from "react";
 import { NavHeader } from "@/components/sections/NavHeader";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ProblemSection } from "@/components/sections/ProblemSection";
+import { TreasurySection } from "@/components/sections/TreasurySection";
+import { BalanceChart } from "@/components/sections/BalanceChart";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
-import { TimelineSection } from "@/components/sections/TimelineSection";
-import { EcipSuiteSection } from "@/components/sections/EcipSuiteSection";
-import { ClientStatusSection } from "@/components/sections/ClientStatusSection";
-import { KeyDatesSection } from "@/components/sections/KeyDatesSection";
-import { PrinciplesSection } from "@/components/sections/PrinciplesSection";
+import { GovernanceSection } from "@/components/sections/GovernanceSection";
+import { ContractsSection } from "@/components/sections/ContractsSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export default function Home() {
   return (
-    <>
+    <Suspense>
       <NavHeader />
       <main>
         <HeroSection />
-        <ProblemSection />
+        <TreasurySection />
+        <BalanceChart />
         <HowItWorksSection />
-        <TimelineSection />
-        <EcipSuiteSection />
-        <ClientStatusSection />
-        <KeyDatesSection />
-        <PrinciplesSection />
+        <GovernanceSection />
+        <ContractsSection />
       </main>
       <FooterSection />
-    </>
+    </Suspense>
   );
 }

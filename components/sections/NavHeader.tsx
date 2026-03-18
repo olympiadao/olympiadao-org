@@ -5,49 +5,42 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { ChainSelector } from "@/components/chain-selector";
+import { useChainConfig } from "@/lib/hooks/use-chain-config";
 
 const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
-  { label: "Stages", href: "#timeline" },
-  { label: "ECIPs", href: "#ecips" },
-  { label: "Clients", href: "#clients" },
-  { label: "Treasury", href: "https://olympiatreasury.org", external: true },
-  {
-    label: "GitHub",
-    href: "https://github.com/olympiadao",
-    external: true,
-  },
+  { label: "Contracts", href: "#contracts" },
 ];
 
 export function NavHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const config = useChainConfig();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border-default)] bg-[var(--bg-overlay)] backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border-default)] bg-[var(--bg-overlay)] backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.svg" alt="Olympia" width={36} height={36} />
           <span className="text-lg font-bold tracking-tight">OLYMPIA</span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-xs font-medium text-[var(--brand-green)]">
+          <span className="hidden items-center gap-1.5 rounded-full border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-xs font-medium text-[var(--brand-green)] sm:inline-flex">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--brand-green)]" />
-            Demo v0.2 · Mordor
+            Demo v0.2 &middot; {config.name}
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--brand-green)]"
-              {...(link.external
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
+              className="text-sm font-medium text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--text-primary)]"
             >
               {link.label}
             </a>
           ))}
+          <ChainSelector />
           <ThemeToggle />
           <a
             href="https://app.olympiadao.org"
@@ -76,15 +69,16 @@ export function NavHeader() {
             <a
               key={link.label}
               href={link.href}
-              className="block py-3 text-sm font-medium text-[var(--text-muted)] transition-colors hover:text-[var(--brand-green)]"
+              className="block py-3 text-sm font-medium text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
               onClick={() => setMobileOpen(false)}
-              {...(link.external
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
             >
               {link.label}
             </a>
           ))}
+          <div className="flex items-center gap-3 pt-3">
+            <ChainSelector />
+            <ThemeToggle />
+          </div>
         </div>
       )}
     </header>
