@@ -2,6 +2,8 @@
 
 > **Branch:** `demo_v0.1` (preserved snapshot)
 > **Superseded by:** `demo_v0.2`
+>
+> **Note:** Demo v0.1 was a fast-iteration development branch and is not aligned to the public Olympia ECIP specifications. See `demo_v0.2` for the spec-compliant implementation.
 
 Landing page for the Olympia upgrade — a staged governance and funding system for Ethereum Classic.
 
