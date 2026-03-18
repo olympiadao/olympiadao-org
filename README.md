@@ -64,9 +64,26 @@ Identical addresses on Mordor (63) and ETC (61) via deterministic CREATE2:
 | OlympiaExecutor | `0x64624f74F77639CbA268a6c8bEDC2778B707eF9a` |
 | ECFPRegistry | `0xFB4De5674a6b9a301d16876795a74f3bdacfa722` |
 
+## Branch Strategy
+
+| Branch | Purpose |
+|--------|---------|
+| `demo_v0.1` | Preserved snapshot — fast-iteration development, not ECIP-aligned |
+| `demo_v0.2` | Active development — spec-compliant, multi-chain, institutional redesign |
+| `main` | Production — deployed after Olympia activates on ETC mainnet |
+
 ## Deploy
 
 Vercel (automatic from `main` branch).
+
+## Related Repos
+
+- [olympia-brand](https://github.com/olympiadao/olympia-brand) — Design tokens, logos, favicons
+- [olympiatreasury-org](https://github.com/olympiadao/olympiatreasury-org) — Treasury dashboard
+- [ethereumclassicdao-org](https://github.com/EthereumClassicDAO/ethereumclassicdao-org) — Institutional website
+- [olympia-app](https://github.com/olympiadao/olympia-app) — Governance UI
+- [olympia-governance-contracts](https://github.com/olympiadao/olympia-governance-contracts) — Governor, Executor, ECFPRegistry
+- [olympia-treasury-contract](https://github.com/olympiadao/olympia-treasury-contract) — Treasury vault
 
 ## Authors
 
