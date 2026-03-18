@@ -7,7 +7,7 @@ const steps = [
     icon: Wallet,
     title: "Transaction Fees",
     description:
-      "Every transaction pays a basefee via EIP-1559. 100% is directed to the Treasury. Block rewards remain completely untouched \u2014 miners are unaffected.",
+      "Every transaction pays a basefee via EIP-1559. The basefee is directed to the Treasury. Block rewards remain completely untouched \u2014 miners are unaffected.",
     detail: "Funded by basefee revenue, not inflation",
   },
   {

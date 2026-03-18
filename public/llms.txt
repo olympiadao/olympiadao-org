@@ -17,7 +17,7 @@ Five stages from proposal to execution — every step on-chain, transparent, and
 ## Treasury Funding
 
 Three-step funding flow:
-1. Transaction Fees — Every transaction pays a basefee, 100% directed to the Treasury
+1. Transaction Fees — Every transaction pays a basefee, directed to the Treasury
 2. Treasury — Protocol-managed vault accumulates transaction fee revenue, donations, and mining rewards
 3. Governance — Community proposals allocate treasury funds through on-chain voting
 
