@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
@@ -29,7 +30,7 @@ export function NavHeader() {
           <span className="text-lg font-bold tracking-tight">OLYMPIA</span>
           <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-xs font-medium text-[var(--brand-green)]">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--brand-green)]" />
-            Demo · Mordor
+            Demo v0.2 · Mordor
           </span>
         </Link>
 
@@ -47,6 +48,7 @@ export function NavHeader() {
               {link.label}
             </a>
           ))}
+          <ThemeToggle />
           <a
             href="https://app.olympiadao.org"
             target="_blank"
