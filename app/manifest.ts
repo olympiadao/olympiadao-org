@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "OlympiaDAO",
     short_name: "Olympia",
     description:
-      "Sustainable governance and funding system for Ethereum Classic",
+      "On-chain governance and treasury infrastructure for Ethereum Classic",
     start_url: "/",
     display: "standalone",
     background_color: "#0a0f10",
