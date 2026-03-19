@@ -1,72 +1,78 @@
-import { ArrowDown, Wallet, Landmark, Vote } from "lucide-react";
-import { CollapsibleSection } from "@/components/ui/collapsible-section";
+import { Wallet, Landmark, Vote } from "lucide-react";
+import { FadeIn } from "@/components/ui/FadeIn";
+import { SectionDivider } from "@/components/ui/SectionDivider";
 
 const steps = [
   {
     icon: Wallet,
-    title: "Basefee Collected",
+    title: "Transaction Fees",
     description:
-      "Every transaction pays a basefee via EIP-1559. On Ethereum, this is burned. On ETC, 100% is redirected to the Treasury.",
-    detail: "~1 gwei/tx at current volumes",
+      "Every transaction pays a basefee via EIP-1559. The basefee is directed to the Treasury. Block rewards remain completely untouched \u2014 miners are unaffected.",
+    detail: "Funded by basefee revenue, not inflation",
   },
   {
     icon: Landmark,
-    title: "Treasury Accumulates",
+    title: "Treasury",
     description:
-      "An immutable vault contract receives basefee via consensus state credit. Also accepts voluntary donations. No withdrawals during Stage 1.",
-    detail: "OpenZeppelin AccessControlDefaultAdminRules",
+      "Protocol-managed vault accumulates transaction fee revenue, voluntary donations, and mining rewards directed to the treasury address. Real-time monitoring via public dashboard.",
+    detail: "Immutable vault with on-chain transparency",
   },
   {
     icon: Vote,
-    title: "Governance Allocates",
+    title: "Governance",
     description:
-      "Stage 2 activates the CoreDAO pipeline. Proposals go through Governor → Timelock → Executor → Treasury with sanctions checks at every layer.",
-    detail: "3-layer sanctions defense",
+      "Community proposals allocate treasury funds through on-chain voting with timelock security and sanctions compliance at every layer.",
+    detail: "Membership-based voting with 3-layer sanctions defense",
   },
 ];
 
 export function HowItWorksSection() {
   return (
-    <CollapsibleSection
-      id="how-it-works"
-      title="How It Works"
-      subtitle="Olympia builds from the bottom up: first accumulate, then govern, then experiment, then harden."
-      maxWidth="max-w-4xl"
-    >
-      <div className="flex flex-col items-center gap-2">
-        {steps.map((step, i) => (
-          <div key={step.title}>
-            <div className="w-full max-w-lg rounded-2xl border border-[var(--border-default)] bg-[var(--bg-card)] p-6 transition-all duration-250 hover:-translate-y-1 hover:border-[var(--brand-green)]">
-              <div className="mb-3 flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--brand-green-subtle)]">
-                  <step.icon
-                    size={18}
-                    className="text-[var(--brand-green)]"
-                  />
+    <>
+      <SectionDivider />
+      <section id="how-it-works" className="section-gradient py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-6">
+          <FadeIn>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--brand-green)] font-mono">
+              Treasury Funding
+            </p>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+              How It Works
+            </h2>
+            <p className="mb-12 max-w-2xl text-sm text-[var(--text-muted)]">
+              Sustainable protocol funding without impacting miners. Transaction
+              fee revenue flows through three stages.
+            </p>
+          </FadeIn>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {steps.map((step, i) => (
+              <FadeIn key={step.title} delay={i * 100}>
+                <div className="rounded-xl border border-[var(--divider)] bg-[var(--bg-elevated)] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--border-brand)]">
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--brand-green-subtle)]">
+                      <step.icon
+                        size={20}
+                        className="text-[var(--brand-green)]"
+                      />
+                    </div>
+                    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--brand-green)] text-xs font-bold text-[var(--background)]">
+                      {i + 1}
+                    </div>
+                  </div>
+                  <h3 className="mb-2 text-lg font-semibold">{step.title}</h3>
+                  <p className="mb-3 text-sm leading-relaxed text-[var(--text-muted)]">
+                    {step.description}
+                  </p>
+                  <p className="font-mono text-xs text-[var(--text-subtle)]">
+                    {step.detail}
+                  </p>
                 </div>
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--brand-green)] text-xs font-bold text-[var(--background)]">
-                  {i + 1}
-                </div>
-                <h3 className="text-lg font-semibold">{step.title}</h3>
-              </div>
-              <p className="mb-2 text-sm leading-relaxed text-[var(--text-muted)]">
-                {step.description}
-              </p>
-              <p className="font-mono text-xs text-[var(--text-subtle)]">
-                {step.detail}
-              </p>
-            </div>
-            {i < steps.length - 1 && (
-              <div className="flex justify-center py-1">
-                <ArrowDown
-                  size={20}
-                  className="text-[var(--brand-green)] opacity-40"
-                />
-              </div>
-            )}
+              </FadeIn>
+            ))}
           </div>
-        ))}
-      </div>
-    </CollapsibleSection>
+        </div>
+      </section>
+    </>
   );
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Providers } from "@/lib/providers";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,11 +16,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "OlympiaDAO — Sustainable Governance for Ethereum Classic",
+    default: "OlympiaDAO — On-Chain Governance for Ethereum Classic",
     template: "%s | OlympiaDAO",
   },
   description:
-    "Olympia is a staged governance and funding system for Ethereum Classic. It redirects EIP-1559 basefee into an on-chain Treasury, then builds governance layers to allocate funds transparently.",
+    "On-chain governance and treasury infrastructure for Ethereum Classic. Transaction fee revenue funds the protocol vault — block rewards remain completely untouched.",
   keywords: [
     "Ethereum Classic",
     "ETC",
@@ -29,22 +31,24 @@ export const metadata: Metadata = {
     "EIP-1559",
     "ECIP-1111",
     "ECIP-1112",
-    "ECIP-1113",
-    "hard fork",
     "protocol funding",
   ],
   authors: [
     { name: "Cody Burns", url: "https://github.com/realcodywburns" },
     { name: "Chris Mercer", url: "https://github.com/chris-mercer" },
   ],
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://olympiadao.org",
     siteName: "OlympiaDAO",
-    title: "OlympiaDAO — Sustainable Governance for Ethereum Classic",
+    title: "OlympiaDAO — On-Chain Governance for Ethereum Classic",
     description:
-      "A staged governance and funding system for Ethereum Classic. Basefee → Treasury → Governance.",
+      "On-chain governance and treasury infrastructure for Ethereum Classic. Transaction fee revenue funds the protocol vault.",
     images: [
       {
         url: "https://olympiadao.org/og-image.png",
@@ -56,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "OlympiaDAO — Sustainable Governance for Ethereum Classic",
+    title: "OlympiaDAO — On-Chain Governance for Ethereum Classic",
     description:
-      "A staged governance and funding system for Ethereum Classic. Basefee → Treasury → Governance.",
+      "On-chain governance and treasury infrastructure for Ethereum Classic. Transaction fee revenue funds the protocol vault.",
     images: ["https://olympiadao.org/og-image.png"],
   },
   robots: {
@@ -74,11 +78,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>
+          <Providers>{children}</Providers>
+        </ThemeProvider>
       </body>
     </html>
   );
