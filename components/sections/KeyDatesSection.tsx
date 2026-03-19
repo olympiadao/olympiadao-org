@@ -16,9 +16,9 @@ export function KeyDatesSection() {
               Mordor Testnet
             </span>
           </div>
-          <p className="mb-2 text-3xl font-bold">Block 15,800,850</p>
+          <p className="mb-2 text-3xl font-bold">Block TBD</p>
           <p className="text-[var(--text-muted)]">
-            ~March 28, 2026
+            TBD
           </p>
           <p className="mt-3 text-sm text-[var(--text-subtle)]">
             All 3 clients will activate Olympia simultaneously on the Mordor
@@ -33,9 +33,9 @@ export function KeyDatesSection() {
               ETC Mainnet
             </span>
           </div>
-          <p className="mb-2 text-3xl font-bold">Block ~24,751,337</p>
+          <p className="mb-2 text-3xl font-bold">Block TBD</p>
           <p className="text-[var(--text-muted)]">
-            ~Mid-June 2026
+            TBD
           </p>
           <p className="mt-3 text-sm text-[var(--text-subtle)]">
             Production activation after successful Mordor validation.
