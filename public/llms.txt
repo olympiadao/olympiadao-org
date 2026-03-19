@@ -21,7 +21,7 @@ Olympia is a staged governance and funding system for Ethereum Classic (ETC). It
 ## Network
 
 - Mordor Testnet (Chain ID 63) — Demo v0.1
-- Activation: Block 15,800,850
+- Activation: Block TBD
 
 ## Authors
 

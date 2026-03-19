@@ -11,7 +11,7 @@ export function HeroSection() {
       <div className="relative mx-auto max-w-4xl px-6 text-center">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] px-4 py-1.5 text-sm font-medium text-[var(--brand-green)]">
           <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-green)]" />
-          Mordor Testnet &mdash; Block 15,800,850
+          Mordor Testnet &mdash; Block TBD
         </div>
 
         <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-6xl">
