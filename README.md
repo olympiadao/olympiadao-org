@@ -50,26 +50,19 @@ Treasury data fetched from Blockscout API v2:
 
 Chain selector switches between networks. Data refreshes every 10 minutes.
 
-## Deployed Contracts (Demo v0.2)
+## Deployed Contracts (Demo v0.3)
 
-Identical addresses on Mordor (63) and ETC (61) via deterministic CREATE2:
+Identical addresses on Mordor (63) and ETC (61) via deterministic CREATE2 (salt: `OLYMPIA_DEMO_V0_3`).
 
-| Contract | Address |
-|----------|---------|
-| OlympiaTreasury | `0x035b2e3c189B772e52F4C3DA6c45c84A3bB871bf` |
-| SanctionsOracle | `0xfF2B8D7937D908D81C72D20AC99302EE6ACc2709` |
-| OlympiaMemberNFT | `0x73e78d3a3470396325b975FcAFA8105A89A9E672` |
-| TimelockController | `0xA5839b3e9445f7eE7AffdBC796DC0601f9b976C2` |
-| OlympiaGovernor | `0xB85dbc899472756470EF4033b9637ff8fa2FD23D` |
-| OlympiaExecutor | `0x64624f74F77639CbA268a6c8bEDC2778B707eF9a` |
-| ECFPRegistry | `0xFB4De5674a6b9a301d16876795a74f3bdacfa722` |
+All addresses in [`lib/contracts.json`](lib/contracts.json) — single source of truth.
 
 ## Branch Strategy
 
 | Branch | Purpose |
 |--------|---------|
 | `demo_v0.1` | Preserved snapshot — fast-iteration development, not ECIP-aligned |
-| `demo_v0.2` | Active development — spec-compliant, multi-chain, institutional redesign |
+| `demo_v0.2` | On-chain SVG art, membership verifier, one-NFT-per-address |
+| `demo_v0.3` | Active development — spec-compliant, multi-chain, institutional redesign |
 | `main` | Production — deployed after Olympia activates on ETC mainnet |
 
 ## Deploy
