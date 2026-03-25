@@ -1,5 +1,3 @@
-"use client";
-
 import { Suspense } from "react";
 import { NavHeader } from "@/components/sections/NavHeader";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -12,17 +10,23 @@ import { FooterSection } from "@/components/sections/FooterSection";
 
 export default function Home() {
   return (
-    <Suspense>
-      <NavHeader />
+    <>
+      <Suspense>
+        <NavHeader />
+      </Suspense>
       <main>
         <HeroSection />
-        <TreasurySection />
-        <BalanceChart />
+        <Suspense>
+          <TreasurySection />
+          <BalanceChart />
+        </Suspense>
         <HowItWorksSection />
         <GovernanceSection />
-        <ContractsSection />
+        <Suspense>
+          <ContractsSection />
+        </Suspense>
       </main>
       <FooterSection />
-    </Suspense>
+    </>
   );
 }
