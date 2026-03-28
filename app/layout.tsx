@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | OlympiaDAO",
   },
   description:
-    "On-chain governance and treasury infrastructure for Ethereum Classic. Transaction fee revenue funds the protocol vault — block rewards remain completely untouched.",
+    "On-chain governance and treasury infrastructure for Ethereum Classic. Basefee revenue funds the protocol vault — block rewards and tips remain completely untouched.",
   keywords: [
     "Ethereum Classic",
     "ETC",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "OlympiaDAO",
     title: "OlympiaDAO — On-Chain Governance for Ethereum Classic",
     description:
-      "On-chain governance and treasury infrastructure for Ethereum Classic. Transaction fee revenue funds the protocol vault.",
+      "On-chain governance and treasury infrastructure for Ethereum Classic. Basefee revenue funds the protocol vault.",
     images: [
       {
         url: "https://olympiadao.org/og-image.png",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "OlympiaDAO — On-Chain Governance for Ethereum Classic",
     description:
-      "On-chain governance and treasury infrastructure for Ethereum Classic. Transaction fee revenue funds the protocol vault.",
+      "On-chain governance and treasury infrastructure for Ethereum Classic. Basefee revenue funds the protocol vault.",
     images: ["https://olympiadao.org/og-image.png"],
   },
   robots: {

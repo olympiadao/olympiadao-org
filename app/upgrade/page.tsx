@@ -5,9 +5,9 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { OlympiaCountdown } from "@/components/ui/OlympiaCountdown";
 
 export const metadata: Metadata = {
-  title: "Upgrade Your Node",
+  title: "View Clients",
   description:
-    "How to upgrade your Ethereum Classic node for the Olympia hard fork. Guides for Core-Geth, Hyperledger Besu, and Fukuii.",
+    "Ethereum Classic client implementations supporting the Olympia hard fork. Guides for Core-Geth, Hyperledger Besu, and Fukuii.",
 };
 
 const clients = [
@@ -74,7 +74,7 @@ export default function UpgradePage() {
 
         <FadeIn delay={50}>
           <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-            Upgrade Your Node
+            View Clients
           </h1>
         </FadeIn>
 

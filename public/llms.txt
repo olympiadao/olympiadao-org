@@ -6,12 +6,12 @@
 
 Olympia is a coordinated suite of four proposals (ECIPs 1111–1114) that together form Ethereum Classic's first protocol-native, open, and permissionless treasury and governance system.
 
-Instead of burning the basefee as in Ethereum's EIP-1559, Olympia redirects it to an on-chain treasury contract. Miner rewards remain completely untouched — Proof-of-Work incentives are preserved.
+Instead of burning the basefee as in Ethereum's EIP-1559, Olympia redirects it to an on-chain treasury contract. Miner rewards and tips remain completely untouched — Proof-of-Work incentives are preserved.
 
 ## How It Works
 
-1. **Transaction Fees** — Every transaction pays a basefee via EIP-1559. The basefee is directed to the Treasury. Block rewards remain completely untouched — miners are unaffected.
-2. **Treasury** — Protocol-managed vault accumulates transaction fee revenue, voluntary donations, and mining rewards directed to the treasury address.
+1. **Basefee Revenue** — Every transaction pays a basefee via EIP-1559. The basefee is directed to the Treasury. Block rewards and tips remain completely untouched — miners are unaffected.
+2. **Treasury** — Protocol-managed vault accumulates basefee revenue, voluntary donations, and mining rewards directed to the treasury address.
 3. **Governance** — Community proposals allocate treasury funds through on-chain voting with timelock security and sanctions compliance at every layer.
 
 ## Governance Process
@@ -19,14 +19,14 @@ Instead of burning the basefee as in Ethereum's EIP-1559, Olympia redirects it t
 Five stages from proposal to execution — every step on-chain, transparent, and auditable:
 
 1. Propose — Anyone can submit a governance proposal on-chain (permissionless)
-2. Vote — Soulbound NFT holders cast weighted on-chain votes
+2. Vote — CoreDAO membership NFT holders cast weighted on-chain votes
 3. Queue — Approved proposals enter a security timelock
 4. Execute — After timelock expires, proposals execute automatically on-chain
 5. Disclose — All outcomes publicly reported and independently verifiable
 
 ## Key Design Principles
 
-- Miner rewards intact — 100% of block rewards remain unchanged
+- Miner rewards intact — 100% of block rewards and tips remain unchanged
 - Opt-in participation — legacy Type-0/1 transactions remain valid indefinitely
 - EVM compatibility — Type-2 transactions integrate seamlessly with existing tooling
 - Transparent funding — treasury revenues and disbursements fully auditable on-chain
@@ -36,7 +36,7 @@ Five stages from proposal to execution — every step on-chain, transparent, and
 
 - Configurable security timelock on all proposals
 - Three-layer on-chain sanctions screening (OFAC compliance)
-- Soulbound (non-transferable) voting tokens prevent vote buying
+- Non-transferable membership NFTs prevent vote buying
 - Emergency pause capability
 
 ## ECIP Specifications
@@ -55,7 +55,7 @@ Nine contracts deployed via deterministic CREATE2 (salt: OLYMPIA_DEMO_V0_3) — 
 - OlympiaExecutor — Proposal execution
 - TimelockController — Security timelock
 - ECFPRegistry — Proposal registry
-- OlympiaMemberNFT — Soulbound membership
+- OlympiaMemberNFT — Non-transferable membership NFT
 - SanctionsOracle — Compliance screening
 - OlympiaMemberRenderer — On-chain SVG membership cards
 - MembershipVerifier — Sybil resistance
@@ -66,7 +66,7 @@ Nine contracts deployed via deterministic CREATE2 (salt: OLYMPIA_DEMO_V0_3) — 
 - ETC Mainnet: Chain ID 61
 - Next Step: Mordor Testnet Deployment
 
-## Upgrade Your Node
+## View Clients
 
 Three independent client implementations support the Olympia upgrade:
 
@@ -76,7 +76,7 @@ Three independent client implementations support the Olympia upgrade:
 
 All three clients implement the full Olympia specification independently, ensuring no single point of failure. Cross-client test matrix covers 14 historical forks and all Olympia specifications.
 
-Node operators must upgrade before the activation block to stay on the canonical chain. Block rewards remain completely untouched — the Olympia upgrade only redirects EIP-1559 basefee to the treasury.
+Node operators must upgrade before the activation block to stay on the canonical chain. Block rewards and tips remain completely untouched — the Olympia upgrade only redirects EIP-1559 basefee to the treasury.
 
 ## Web Properties
 
