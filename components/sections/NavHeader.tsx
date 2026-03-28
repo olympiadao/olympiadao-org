@@ -11,6 +11,8 @@ import { useChainConfig } from "@/lib/hooks/use-chain-config";
 const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "Contracts", href: "#contracts" },
+  { label: "Upgrade", href: "/upgrade" },
+  { label: "Clients", href: "/clients" },
 ];
 
 export function NavHeader() {

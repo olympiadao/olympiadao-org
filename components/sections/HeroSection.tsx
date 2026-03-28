@@ -1,5 +1,6 @@
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { OlympiaCountdown } from "@/components/ui/OlympiaCountdown";
 
 export function HeroSection() {
   return (
@@ -17,6 +18,12 @@ export function HeroSection() {
             The Olympia{" "}
             <span className="text-[var(--brand-green)]">Upgrade</span>
           </h1>
+        </FadeIn>
+
+        <FadeIn delay={150}>
+          <div className="mx-auto mb-8 max-w-lg">
+            <OlympiaCountdown variant="hero" />
+          </div>
         </FadeIn>
 
         <FadeIn delay={200}>
