@@ -5,16 +5,16 @@ import { SectionDivider } from "@/components/ui/SectionDivider";
 const steps = [
   {
     icon: Wallet,
-    title: "Transaction Fees",
+    title: "Basefee Revenue",
     description:
-      "Every transaction pays a basefee via EIP-1559. The basefee is directed to the Treasury. Block rewards remain completely untouched \u2014 miners are unaffected.",
+      "Every transaction pays a basefee via EIP-1559. The basefee is directed to the Treasury. Block rewards and tips remain completely untouched \u2014 miners are unaffected.",
     detail: "Funded by basefee revenue, not inflation",
   },
   {
     icon: Landmark,
     title: "Treasury",
     description:
-      "Protocol-managed vault accumulates transaction fee revenue, voluntary donations, and mining rewards directed to the treasury address. Real-time monitoring via public dashboard.",
+      "Protocol-managed vault accumulates basefee revenue, voluntary donations, and mining rewards directed to the treasury address. Real-time monitoring via public dashboard.",
     detail: "Immutable vault with on-chain transparency",
   },
   {
@@ -22,7 +22,7 @@ const steps = [
     title: "Governance",
     description:
       "Community proposals allocate treasury funds through on-chain voting with timelock security and sanctions compliance at every layer.",
-    detail: "Membership-based voting with 3-layer sanctions defense",
+    detail: "CoreDAO membership NFTs + futarchy prediction markets",
   },
 ];
 
@@ -41,7 +41,7 @@ export function HowItWorksSection() {
             </h2>
             <p className="mb-12 max-w-2xl text-sm text-[var(--text-muted)]">
               Sustainable protocol funding without impacting miners. Transaction
-              fee revenue flows through three stages.
+              basefee revenue flows through three stages.
             </p>
           </FadeIn>
 

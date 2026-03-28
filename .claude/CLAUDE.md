@@ -86,7 +86,7 @@ Follows ETC DAO institutional patterns from `ethereumclassicdao-org`:
 - SectionDivider gradient lines between sections
 - Card pattern: `rounded-xl border border-[var(--divider)] bg-[var(--bg-elevated)]`
 - Section-alt alternating backgrounds
-- Narrative: "Coordinating Organizations", "transaction fee revenue", "block rewards untouched"
+- Narrative: "Coordinating Organizations", "basefee revenue", "block rewards untouched"
 
 ## Boundaries
 
