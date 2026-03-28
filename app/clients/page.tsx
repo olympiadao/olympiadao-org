@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
+
+export const metadata: Metadata = {
+  title: "Client Implementations",
+  description:
+    "Three independent client implementations ensure no single point of failure for Ethereum Classic — Fukuii (Scala), Core-Geth (Go), and Hyperledger Besu (Java).",
+};
 
 const clients = [
   {

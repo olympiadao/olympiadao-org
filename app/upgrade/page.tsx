@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { OlympiaCountdown } from "@/components/ui/OlympiaCountdown";
+
+export const metadata: Metadata = {
+  title: "Upgrade Your Node",
+  description:
+    "How to upgrade your Ethereum Classic node for the Olympia hard fork. Guides for Core-Geth, Hyperledger Besu, and Fukuii.",
+};
 
 const clients = [
   {

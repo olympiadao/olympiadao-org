@@ -68,6 +68,18 @@ Contracts include:
 - ETC Mainnet: Chain ID 61
 - Activation: Block TBD
 
+## Upgrade Your Node
+
+Three independent client implementations support the Olympia upgrade:
+
+- **Fukuii** (Scala) — Primary client post-Olympia. 143 RPC methods, 2,706 tests, full SNAP sync. JDK 21+.
+- **Core-Geth** (Go) — Battle-tested ETC client, transitioning to maintenance role. Go 1.24+.
+- **Hyperledger Besu** (Java) — Enterprise-grade, Hyperledger Foundation. JDK 21+.
+
+All three clients implement the full Olympia specification independently, ensuring no single point of failure. Cross-client test matrix covers 14 historical forks and all Olympia specifications.
+
+Node operators must upgrade before the activation block to stay on the canonical chain. Block rewards remain completely untouched — the Olympia upgrade only redirects EIP-1559 basefee to the treasury.
+
 ## Web Properties
 
 - olympiadao.org — This site (governance landing page)
