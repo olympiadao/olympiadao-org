@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -50,7 +51,7 @@ const clients = [
 export default function ClientsPage() {
   return (
     <>
-      <NavHeader />
+      <Suspense><NavHeader /></Suspense>
       <main className="min-h-screen pt-28 pb-20">
       <div className="mx-auto max-w-4xl px-6">
         <FadeIn>
