@@ -41,8 +41,14 @@ Five stages from proposal to execution — every step on-chain, transparent, and
 
 ## ECIP Specifications
 
-- ECIP-1111 — Olympia EVM and Protocol Upgrades
-- ECIP-1112 — Olympia Treasury Contract
+Three client-facing ECIPs form the core of the Olympia protocol upgrade:
+
+- ECIP-1111 — Olympia EVM and Protocol Upgrades (EIP-1559 fee market)
+- ECIP-1112 — Olympia Treasury Contract (protocol-controlled vault)
+- ECIP-1121 — EVM Alignment with Ethereum's Fusaka execution layer (brings ETC's EVM to full Fusaka parity)
+
+Contract layer ECIPs (no client development required):
+
 - ECIP-1113 — DAO Governance Framework
 - ECIP-1114 — Funding Proposal Process
 
