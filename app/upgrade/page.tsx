@@ -3,6 +3,8 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { OlympiaCountdown } from "@/components/ui/OlympiaCountdown";
+import { NavHeader } from "@/components/sections/NavHeader";
+import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
   title: "View Clients",
@@ -20,11 +22,11 @@ const clients = [
     version: "TBD",
     prerequisites: ["JDK 21+", "8 GB RAM minimum", "500 GB SSD (full sync)"],
     installCommands: [
-      { platform: "Docker", command: "docker pull ghcr.io/alanverbner/fukuii:latest" },
+      { platform: "Docker", command: "docker pull ghcr.io/ethereumclassic/fukuii:latest" },
       { platform: "Source", command: "sbt stage" },
     ],
     verifyCommand: "fukuii --version",
-    githubUrl: "https://github.com/AlanVerbner/fukuii",
+    githubUrl: "https://github.com/ethereumclassic/fukuii",
   },
   {
     name: "Core-Geth",
@@ -35,32 +37,34 @@ const clients = [
     version: "TBD",
     prerequisites: ["Go 1.24+", "8 GB RAM minimum", "500 GB SSD (full sync)"],
     installCommands: [
-      { platform: "Docker", command: "docker pull etclabscore/core-geth:latest" },
+      { platform: "Docker", command: "docker pull ghcr.io/ethereumclassic/core-geth:latest" },
       { platform: "Linux/macOS", command: "make geth" },
     ],
     verifyCommand: "geth version",
-    githubUrl: "https://github.com/etclabscore/core-geth",
+    githubUrl: "https://github.com/ethereumclassic/core-geth",
   },
   {
     name: "Hyperledger Besu",
     language: "Java",
     languageColor: "#B07219",
-    role: "Enterprise",
+    role: "Reference",
     roleColor: "#38bdf8",
     version: "TBD",
     prerequisites: ["JDK 21+", "8 GB RAM minimum", "500 GB SSD (full sync)"],
     installCommands: [
-      { platform: "Docker", command: "docker pull hyperledger/besu:latest" },
+      { platform: "Docker", command: "docker pull ghcr.io/ethereumclassic/besu:latest" },
       { platform: "Binary", command: "Download from GitHub releases" },
     ],
     verifyCommand: "besu --version",
-    githubUrl: "https://github.com/hyperledger/besu",
+    githubUrl: "https://github.com/ethereumclassic/besu",
   },
 ];
 
 export default function UpgradePage() {
   return (
-    <main className="min-h-screen pt-28 pb-20">
+    <>
+      <NavHeader />
+      <main className="min-h-screen pt-28 pb-20">
       <div className="mx-auto max-w-4xl px-6">
         <FadeIn>
           <Link
@@ -175,5 +179,7 @@ export default function UpgradePage() {
         </div>
       </div>
     </main>
+    <FooterSection />
+    </>
   );
 }

@@ -118,7 +118,7 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
         <div className="flex items-center gap-3 rounded-lg border border-[var(--border-default)] bg-[var(--bg-elevated)] px-4 py-3">
           <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--brand-green)]" />
           <span className="text-sm text-[var(--text-muted)]">
-            Olympia Activation: Block TBD — announced after CDC-23
+            Olympia Activation: Block TBD — announced on the Olympia Upgrade core developers call
           </span>
         </div>
       );
@@ -133,7 +133,7 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
           </span>
         </div>
         <p className="text-sm text-[var(--text-muted)]">
-          The Olympia activation block will be announced after CDC-23.
+          The Mordor Testnet and Ethereum Classic Mainnet activation blocks will be announced on the Olympia Upgrade core developers call.
         </p>
       </div>
     );

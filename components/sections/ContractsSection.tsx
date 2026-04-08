@@ -24,8 +24,7 @@ export function ContractsSection() {
               On-Chain Infrastructure
             </h2>
             <p className="mb-12 max-w-2xl text-sm text-[var(--text-muted)]">
-              Seven contracts deployed via deterministic CREATE2 &mdash; identical
-              addresses on Mordor Testnet and ETC Mainnet.
+              Review the contract suite that forms the Olympia framework.
             </p>
           </FadeIn>
 

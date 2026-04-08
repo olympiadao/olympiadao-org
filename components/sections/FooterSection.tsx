@@ -45,7 +45,7 @@ export function FooterSection() {
           </div>
 
           <p className="mt-8 text-center text-xs text-[var(--text-subtle)]">
-            On-chain governance and treasury infrastructure for Ethereum Classic.
+            On-chain governance and treasury infrastructure for Ethereum Classic&rsquo;s core development, critical infrastructure, and network security.
           </p>
         </div>
       </footer>

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | OlympiaDAO",
   },
   description:
-    "On-chain governance and treasury infrastructure for Ethereum Classic. Basefee revenue funds the protocol vault — block rewards and tips remain completely untouched.",
+    "On-chain governance and treasury infrastructure for Ethereum Classic's core development, critical infrastructure, and network security. Basefee funds the protocol vault, a value that was set to be destroyed. Miner block rewards and tips remain completely untouched.",
   keywords: [
     "Ethereum Classic",
     "ETC",
@@ -32,6 +32,11 @@ export const metadata: Metadata = {
     "ECIP-1111",
     "ECIP-1112",
     "protocol funding",
+    "basefee",
+    "miner rewards untouched",
+    "block rewards",
+    "ETC treasury",
+    "core development funding",
   ],
   authors: [
     { name: "Cody Burns", url: "https://github.com/realcodywburns" },
@@ -48,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "OlympiaDAO",
     title: "OlympiaDAO — On-Chain Governance for Ethereum Classic",
     description:
-      "On-chain governance and treasury infrastructure for Ethereum Classic. Basefee revenue funds the protocol vault.",
+      "On-chain governance and treasury for Ethereum Classic. Basefee funds the protocol vault — a value set to be destroyed. Miner block rewards and tips remain completely untouched.",
     images: [
       {
         url: "https://olympiadao.org/og-image.png",
@@ -62,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "OlympiaDAO — On-Chain Governance for Ethereum Classic",
     description:
-      "On-chain governance and treasury infrastructure for Ethereum Classic. Basefee revenue funds the protocol vault.",
+      "On-chain governance and treasury for Ethereum Classic. Basefee funds the protocol vault — a value set to be destroyed. Miner block rewards and tips remain completely untouched.",
     images: ["https://olympiadao.org/og-image.png"],
   },
   robots: {

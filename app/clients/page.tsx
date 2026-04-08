@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { NavHeader } from "@/components/sections/NavHeader";
+import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
   title: "Client Implementations",
@@ -17,15 +19,9 @@ const clients = [
     role: "Primary Client",
     roleColor: "#00ffae",
     description:
-      "Next-generation ETC client built from the ground up. Full SNAP sync support, comprehensive RPC coverage, and the most extensive test suite in the ETC ecosystem.",
-    stats: [
-      { label: "RPC Methods", value: "143" },
-      { label: "Tests", value: "2,706" },
-      { label: "Runtime", value: "JDK 21" },
-    ],
-    githubUrl: "https://github.com/AlanVerbner/fukuii",
-    docsUrl: "https://github.com/AlanVerbner/fukuii#readme",
-    organization: "White B0x Inc.",
+      "The primary Ethereum Classic client for the Olympia upgrade. Built from the ground up to support the full Olympia feature set with a focus on long-term protocol stewardship.",
+    githubUrl: "https://github.com/ethereumclassic/fukuii",
+    docsUrl: "https://github.com/ethereumclassic/fukuii#readme",
   },
   {
     name: "Core-Geth",
@@ -34,38 +30,28 @@ const clients = [
     role: "Maintenance",
     roleColor: "#a78bfa",
     description:
-      "Battle-tested ETC client based on go-ethereum. The current primary client, transitioning to maintenance role as Fukuii takes over post-Olympia.",
-    stats: [
-      { label: "Version", value: "v1.12.21" },
-      { label: "Forks", value: "8 supported" },
-      { label: "Runtime", value: "Go 1.24" },
-    ],
-    githubUrl: "https://github.com/etclabscore/core-geth",
-    docsUrl: "https://etclabscore.github.io/core-geth/",
-    organization: "ETC Labs",
+      "The established Ethereum Classic client with years of mainnet history. Widely deployed and well understood, continuing in a maintenance role alongside Fukuii.",
+    githubUrl: "https://github.com/ethereumclassic/core-geth",
+    docsUrl: "https://github.com/ethereumclassic/core-geth#readme",
   },
   {
     name: "Hyperledger Besu",
     language: "Java",
     languageColor: "#B07219",
-    role: "Enterprise",
+    role: "Reference",
     roleColor: "#38bdf8",
     description:
-      "Enterprise-grade client maintained by the Hyperledger Foundation. Supports SNAP state serving, permissioning, and privacy features for institutional deployments.",
-    stats: [
-      { label: "Version", value: "v26.3" },
-      { label: "Foundation", value: "Hyperledger" },
-      { label: "Runtime", value: "Java 21" },
-    ],
-    githubUrl: "https://github.com/hyperledger/besu",
-    docsUrl: "https://besu.hyperledger.org/",
-    organization: "Hyperledger Foundation",
+      "An independent implementation maintained by the Hyperledger Foundation. Provides a second point of verification for the Olympia upgrade, ensuring no single team controls the protocol.",
+    githubUrl: "https://github.com/ethereumclassic/besu",
+    docsUrl: "https://github.com/ethereumclassic/besu#readme",
   },
 ];
 
 export default function ClientsPage() {
   return (
-    <main className="min-h-screen pt-28 pb-20">
+    <>
+      <NavHeader />
+      <main className="min-h-screen pt-28 pb-20">
       <div className="mx-auto max-w-4xl px-6">
         <FadeIn>
           <Link
@@ -125,19 +111,6 @@ export default function ClientsPage() {
                   {client.description}
                 </p>
 
-                <div className="mt-4 grid grid-cols-3 gap-2">
-                  {client.stats.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="rounded-lg bg-[var(--background)] px-2 py-2 text-center"
-                    >
-                      <p className="text-xs text-[var(--text-muted)]">{stat.label}</p>
-                      <p className="mt-0.5 text-sm font-semibold">{stat.value}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <p className="mt-3 text-xs text-[var(--text-muted)]">{client.organization}</p>
 
                 <div className="mt-4 flex gap-3">
                   <a
@@ -163,5 +136,7 @@ export default function ClientsPage() {
         </div>
       </div>
     </main>
+    <FooterSection />
+    </>
   );
 }
