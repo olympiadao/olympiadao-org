@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Providers } from "@/lib/providers";
 import "./globals.css";
@@ -90,6 +91,11 @@ export default function RootLayout({
         <ThemeProvider>
           <Providers>{children}</Providers>
         </ThemeProvider>
+        <Script
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "2725d4c6d2924e7e8b1ddfab7b4df968"}'
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
