@@ -136,6 +136,17 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
     if (variant === "banner") {
       return (
         <>
+          <div className="mb-4 flex flex-col items-center gap-2">
+            <div className="flex gap-3">
+              <DigitBox value={tbdDays} label="Days" />
+              <DigitBox value={tbdHours} label="Hrs" />
+              <DigitBox value={tbdMinutes} label="Min" />
+              <DigitBox value={tbdSecs} label="Sec" />
+            </div>
+            <p className="text-center text-[10px] italic text-[var(--text-subtle)]">
+              * Countdown is set to January 1, 2027 until the ETC mainnet activation block is set
+            </p>
+          </div>
           <div className="flex items-start gap-3 rounded-lg border border-[var(--border-default)] bg-[var(--bg-elevated)] px-4 py-3">
             <span className="mt-1 h-2 w-2 shrink-0 animate-pulse rounded-full bg-[var(--brand-green)]" />
             <div>
@@ -147,23 +158,21 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
               </p>
             </div>
           </div>
-          <div className="mt-4 flex flex-col items-center gap-2">
-            <div className="flex gap-3">
-              <DigitBox value={tbdDays} label="Days" />
-              <DigitBox value={tbdHours} label="Hrs" />
-              <DigitBox value={tbdMinutes} label="Min" />
-              <DigitBox value={tbdSecs} label="Sec" />
-            </div>
-            <p className="text-center text-[10px] italic text-[var(--text-subtle)]">
-              * Countdown is set to January 1, 2027 until the ETC mainnet activation block is set
-            </p>
-          </div>
         </>
       );
     }
 
     return (
       <div className="rounded-xl border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] p-6 text-center">
+        <div className="mb-4 flex justify-center gap-4">
+          <DigitBox value={tbdDays} label="Days" />
+          <DigitBox value={tbdHours} label="Hours" />
+          <DigitBox value={tbdMinutes} label="Minutes" />
+          <DigitBox value={tbdSecs} label="Seconds" />
+        </div>
+        <p className="mb-4 text-center text-[10px] italic text-[var(--text-subtle)]">
+          * Countdown is set to January 1, 2027 until the ETC mainnet activation block is set
+        </p>
         <div className="mb-2 flex items-center justify-center gap-2">
           <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--brand-green)]" />
           <span className="text-sm font-medium text-[var(--brand-green)]">
@@ -175,15 +184,6 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
         </p>
         <p className="mt-1 text-xs text-[var(--text-subtle)]">
           The exact block number will be announced after the Olympia Upgrade core developers call.
-        </p>
-        <div className="mt-5 flex justify-center gap-4">
-          <DigitBox value={tbdDays} label="Days" />
-          <DigitBox value={tbdHours} label="Hours" />
-          <DigitBox value={tbdMinutes} label="Minutes" />
-          <DigitBox value={tbdSecs} label="Seconds" />
-        </div>
-        <p className="mt-3 text-center text-[10px] italic text-[var(--text-subtle)]">
-          * Countdown is set to January 1, 2027 until the ETC mainnet activation block is set
         </p>
       </div>
     );
