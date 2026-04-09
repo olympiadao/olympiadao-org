@@ -13,8 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://olympiadao.org/upgrade",
       lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
+      changeFrequency: "weekly",
+      priority: 0.95,
     },
     {
       url: "https://olympiadao.org/clients",
