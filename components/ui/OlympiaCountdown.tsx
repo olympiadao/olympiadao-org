@@ -49,6 +49,8 @@ export function OlympiaCountdown({ variant = "hero" }: { variant?: "hero" | "ban
   );
 }
 
+const FALLBACK_TARGET_MS = new Date("2027-01-01T00:00:00Z").getTime();
+
 function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banner" }) {
   const chainId = useActiveChainId();
   const { data: currentBlock = null } = useQuery({
@@ -111,21 +113,52 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
     return () => clearInterval(id);
   }, [status, tick]);
 
-  // TBD state
+  // Fallback date-based countdown (used when activation block is TBD)
+  const [tbdSecondsLeft, setTbdSecondsLeft] = useState<number>(() =>
+    Math.max(0, Math.floor((FALLBACK_TARGET_MS - Date.now()) / 1000))
+  );
+
+  useEffect(() => {
+    if (status !== "tbd") return;
+    const id = setInterval(() => {
+      setTbdSecondsLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(id);
+  }, [status]);
+
+  // TBD state — show date-based countdown to Jan 1, 2027
   if (status === "tbd") {
+    const tbdDays = Math.floor(tbdSecondsLeft / 86400);
+    const tbdHours = Math.floor((tbdSecondsLeft % 86400) / 3600);
+    const tbdMinutes = Math.floor((tbdSecondsLeft % 3600) / 60);
+    const tbdSecs = tbdSecondsLeft % 60;
+
     if (variant === "banner") {
       return (
-        <div className="flex items-start gap-3 rounded-lg border border-[var(--border-default)] bg-[var(--bg-elevated)] px-4 py-3">
-          <span className="mt-1 h-2 w-2 shrink-0 animate-pulse rounded-full bg-[var(--brand-green)]" />
-          <div>
-            <p className="text-sm text-[var(--text-muted)]">
-              Olympia is in final testing on the Mordor Testnet — Activation Block: TBD
-            </p>
-            <p className="mt-1 text-xs text-[var(--text-subtle)]">
-              The exact block number will be announced after the Olympia Upgrade core developers call. Upgrade your node as soon as a compatible release is available.
+        <>
+          <div className="flex items-start gap-3 rounded-lg border border-[var(--border-default)] bg-[var(--bg-elevated)] px-4 py-3">
+            <span className="mt-1 h-2 w-2 shrink-0 animate-pulse rounded-full bg-[var(--brand-green)]" />
+            <div>
+              <p className="text-sm text-[var(--text-muted)]">
+                Olympia is in final testing on the Mordor Testnet — Activation Block: TBD
+              </p>
+              <p className="mt-1 text-xs text-[var(--text-subtle)]">
+                The exact block number will be announced after the Olympia Upgrade core developers call. Upgrade your node as soon as a compatible release is available.
+              </p>
+            </div>
+          </div>
+          <div className="mt-4 flex flex-col items-center gap-2">
+            <div className="flex gap-3">
+              <DigitBox value={tbdDays} label="Days" />
+              <DigitBox value={tbdHours} label="Hrs" />
+              <DigitBox value={tbdMinutes} label="Min" />
+              <DigitBox value={tbdSecs} label="Sec" />
+            </div>
+            <p className="text-center text-[10px] italic text-[var(--text-subtle)]">
+              * Countdown is set to January 1, 2027 until the ETC mainnet activation block is set
             </p>
           </div>
-        </div>
+        </>
       );
     }
 
@@ -140,8 +173,17 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
         <p className="text-sm text-[var(--text-muted)]">
           Olympia is in final testing on the Mordor Testnet — Activation Block: TBD
         </p>
-        <p className="mt-2 text-xs text-[var(--text-subtle)]">
-          The exact block number will be announced after the Olympia Upgrade core developers call. Upgrade your node as soon as a compatible release is available.
+        <p className="mt-1 text-xs text-[var(--text-subtle)]">
+          The exact block number will be announced after the Olympia Upgrade core developers call.
+        </p>
+        <div className="mt-5 flex justify-center gap-4">
+          <DigitBox value={tbdDays} label="Days" />
+          <DigitBox value={tbdHours} label="Hours" />
+          <DigitBox value={tbdMinutes} label="Minutes" />
+          <DigitBox value={tbdSecs} label="Seconds" />
+        </div>
+        <p className="mt-3 text-center text-[10px] italic text-[var(--text-subtle)]">
+          * Countdown is set to January 1, 2027 until the ETC mainnet activation block is set
         </p>
       </div>
     );
