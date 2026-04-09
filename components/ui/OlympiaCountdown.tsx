@@ -115,11 +115,16 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
   if (status === "tbd") {
     if (variant === "banner") {
       return (
-        <div className="flex items-center gap-3 rounded-lg border border-[var(--border-default)] bg-[var(--bg-elevated)] px-4 py-3">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--brand-green)]" />
-          <span className="text-sm text-[var(--text-muted)]">
-            Olympia Activation: Block TBD — announced after CDC-23
-          </span>
+        <div className="flex items-start gap-3 rounded-lg border border-[var(--border-default)] bg-[var(--bg-elevated)] px-4 py-3">
+          <span className="mt-1 h-2 w-2 shrink-0 animate-pulse rounded-full bg-[var(--brand-green)]" />
+          <div>
+            <p className="text-sm text-[var(--text-muted)]">
+              Olympia is in final testing on the Mordor Testnet — Activation Block: TBD
+            </p>
+            <p className="mt-1 text-xs text-[var(--text-subtle)]">
+              The exact block number will be announced after the Olympia Upgrade core developers call. Upgrade your node as soon as a compatible release is available.
+            </p>
+          </div>
         </div>
       );
     }
@@ -133,7 +138,10 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
           </span>
         </div>
         <p className="text-sm text-[var(--text-muted)]">
-          The Olympia activation block will be announced after CDC-23.
+          Olympia is in final testing on the Mordor Testnet — Activation Block: TBD
+        </p>
+        <p className="mt-2 text-xs text-[var(--text-subtle)]">
+          The exact block number will be announced after the Olympia Upgrade core developers call. Upgrade your node as soon as a compatible release is available.
         </p>
       </div>
     );
