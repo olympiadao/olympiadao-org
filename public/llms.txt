@@ -4,14 +4,22 @@
 
 ## What is Olympia?
 
-Olympia is a coordinated suite of four proposals (ECIPs 1111–1114) that together form Ethereum Classic's first protocol-native, open, and permissionless treasury and governance system.
+Olympia is Ethereum Classic's most significant protocol upgrade — a coordinated suite of ECIPs that delivers the EVM ecosystem's most widely adopted fee market, a protocol-controlled treasury, and full Fusaka EVM alignment to the only Proof-of-Work smart contract platform in the world.
 
-Instead of burning the basefee as in Ethereum's EIP-1559, Olympia redirects it to an on-chain treasury contract. Miner rewards and tips remain completely untouched — Proof-of-Work incentives are preserved.
+The Olympia era marks a shift from reactive maintenance to active development. ETC is now positioned as the Proof-of-Work infrastructure layer for institutions and sovereign nations building compliant financial systems — regulated stablecoins under MiCA and the GENIUS Act, energy grid stabilization backed by immutable settlement, and ETF-compliant digital assets that regulators across the US, EU, Japan, and beyond are moving to define.
+
+## Three Client-Facing ECIPs
+
+**ECIP-1111 — EIP-1559 Fee Market:** The most widely adopted transaction format and fee market in the EVM ecosystem, now on Ethereum Classic. Dynamic gas pricing delivers predictable fees for users and applications. Fully additive — legacy transactions remain valid indefinitely. Unlike Ethereum where the basefee is burned, ETC redirects it to the protocol treasury. Miner block rewards and tips remain completely untouched.
+
+**ECIP-1112 — Protocol Treasury:** A protocol-controlled vault funded by basefee revenue and voluntary contributions. For the first time, institutions, developers, and network stakeholders can directly fund Ethereum Classic's core development and critical infrastructure without fielding their own team. Miners receive everything they do today — block rewards and tips remain completely untouched. No admin keys, no multisig — only on-chain governance can release funds.
+
+**ECIP-1121 — Fusaka EVM Alignment:** Olympia ends Ethereum Classic's longest period of EVM stagnation, advancing the execution layer through London, Dencun, Pectra, and Fusaka in a single upgrade. Exchanges and wallets gain modern RPC compatibility and standard transaction support. Developers gain full access to every current Ethereum tool, library, and framework — one codebase, every EVM chain.
 
 ## How It Works
 
 1. **Basefee Revenue** — Every transaction pays a basefee via EIP-1559. The basefee is directed to the Treasury. Block rewards and tips remain completely untouched — miners are unaffected.
-2. **Treasury** — Protocol-managed vault accumulates basefee revenue, voluntary donations, and mining rewards directed to the treasury address.
+2. **Treasury** — Protocol-managed vault accumulates basefee revenue and voluntary donations. No new token issuance — non-inflationary by design.
 3. **Governance** — Community proposals allocate treasury funds through on-chain voting with timelock security and sanctions compliance at every layer.
 
 ## Governance Process
@@ -19,7 +27,7 @@ Instead of burning the basefee as in Ethereum's EIP-1559, Olympia redirects it t
 Five stages from proposal to execution — every step on-chain, transparent, and auditable:
 
 1. Propose — Anyone can submit a governance proposal on-chain (permissionless)
-2. Vote — CoreDAO membership NFT holders cast weighted on-chain votes
+2. Vote — Olympia membership NFT holders cast weighted on-chain votes
 3. Queue — Approved proposals enter a security timelock
 4. Execute — After timelock expires, proposals execute automatically on-chain
 5. Disclose — All outcomes publicly reported and independently verifiable
@@ -39,24 +47,19 @@ Five stages from proposal to execution — every step on-chain, transparent, and
 - Non-transferable membership NFTs prevent vote buying
 - Emergency pause capability
 
-## ECIP Specifications
+## Olympia Roadmap
 
-Three client-facing ECIPs form the core of the Olympia protocol upgrade:
+Five stages from consensus upgrades to permanent protocol integration:
 
-- ECIP-1111 — Olympia EVM and Protocol Upgrades (EIP-1559 fee market)
-- ECIP-1112 — Olympia Treasury Contract (protocol-controlled vault)
-- ECIP-1121 — EVM Alignment with Ethereum's Fusaka execution layer (brings ETC's EVM to full Fusaka parity)
+1. **Consensus Upgrades** (Complete) — EIP-1559 fee market, dynamic gas limits, basefee redirect to treasury, miner rewards untouched. Three independent client implementations complete.
+2. **Core Governance** (Active) — Governance and treasury contracts deployed. Open, transparent funding proposals with competitive bidding. Removes organizational overhead from the funding pipeline.
+3. **Prediction Markets** (Research) — Futarchy-assisted governance using prediction markets to inform treasury allocation. Requires ECIP-1121 Fusaka EVM alignment.
+4. **Treasury Distribution** (Future) — Optional governance-controlled smoothing of basefee revenue back to miners via ECIP-1115 L-curve mechanism. Supplements long-term miner security budget through ECIP-1017 emission reduction events.
+5. **Protocol Integration** (Future) — Permanent consensus integration of proven governance mechanisms.
 
-Contract layer ECIPs (no client development required):
+## Deployed Contracts (Demo v0.3)
 
-- ECIP-1113 — DAO Governance Framework
-- ECIP-1114 — Funding Proposal Process
-
-## Deployed Contracts
-
-Contract addresses TBD — production deployment after Olympia activates on ETC mainnet.
-
-Contracts include:
+Nine contracts deployed via deterministic CREATE2 — identical addresses on Mordor Testnet (chain 63) and ETC Mainnet (chain 61):
 
 - OlympiaTreasury — Protocol-controlled vault
 - OlympiaGovernor — On-chain governance
@@ -72,19 +75,17 @@ Contracts include:
 
 - Mordor Testnet: Chain ID 63
 - ETC Mainnet: Chain ID 61
-- Activation: Block TBD
+- Activation Block: TBD — announced after the Olympia Upgrade core developers call
 
-## View Clients
+## Client Implementations
 
-Three independent client implementations support the Olympia upgrade:
+Three independent implementations ensure zero single points of failure:
 
-- **Fukuii** (Scala) — Primary client post-Olympia. 143 RPC methods, 2,706 tests, full SNAP sync. JDK 21+.
-- **Core-Geth** (Go) — Battle-tested ETC client, transitioning to maintenance role. Go 1.24+.
-- **Hyperledger Besu** (Java) — Enterprise-grade, Hyperledger Foundation. JDK 21+.
+- **Fukuii** (Scala, JDK 21+) — Primary client post-Olympia. 143 RPC methods, 2,706 tests, full SNAP sync.
+- **Core-Geth** (Go 1.24+) — Battle-tested ETC client, transitioning to maintenance role.
+- **Hyperledger Besu** (Java 21+) — Enterprise-grade reference client, Hyperledger Foundation.
 
-All three clients implement the full Olympia specification independently, ensuring no single point of failure. Cross-client test matrix covers 14 historical forks and all Olympia specifications.
-
-Node operators must upgrade before the activation block to stay on the canonical chain. Block rewards and tips remain completely untouched — the Olympia upgrade only redirects EIP-1559 basefee to the treasury.
+Node operators must upgrade before the activation block. Block rewards and tips remain completely untouched — the Olympia upgrade only redirects EIP-1559 basefee to the treasury.
 
 ## Web Properties
 
