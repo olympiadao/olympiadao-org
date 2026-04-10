@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { OlympiaCountdown } from "@/components/ui/OlympiaCountdown";
 
@@ -35,7 +35,7 @@ export function HeroSection() {
         </FadeIn>
 
         <FadeIn delay={300}>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
             <a
               href="https://app.olympiadao.org"
               target="_blank"
@@ -46,13 +46,18 @@ export function HeroSection() {
               <ArrowRight size={16} />
             </a>
             <a
+              href="/upgrade"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--border-default)] px-7 py-3 text-sm font-semibold text-[var(--text-primary)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--brand-green)] hover:text-[var(--brand-green)]"
+            >
+              Upgrade Guide
+            </a>
+            <a
               href="https://olympiatreasury.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--border-default)] px-7 py-3 text-sm font-semibold text-[var(--text-primary)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--brand-green)] hover:text-[var(--brand-green)]"
+              className="text-sm font-medium text-[var(--text-muted)] transition hover:text-[var(--brand-green)]"
             >
-              View Treasury
-              <ExternalLink size={16} />
+              View Treasury →
             </a>
           </div>
         </FadeIn>
