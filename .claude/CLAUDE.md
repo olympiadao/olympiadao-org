@@ -7,7 +7,7 @@ Landing page for the Olympia upgrade — on-chain governance and treasury infras
 **URL:** https://olympiadao.org
 **Repo:** `olympiadao/olympiadao-org`
 **Deploy:** Vercel
-**Version:** 0.2.0 (Demo v0.2)
+**Version:** 0.3.0 (Demo v0.3)
 
 ## Tech Stack
 
@@ -64,12 +64,10 @@ public/
 - Chain selector via URL search params (`?chain=63` or `?chain=61`)
 - Default chain: Mordor (63)
 
-## Deployed Contracts (Demo v0.2)
+## Deployed Contracts (Demo v0.3)
 
-Identical on Mordor (63) and ETC (61) via deterministic CREATE2:
-- OlympiaTreasury: `0x035b2e3c189B772e52F4C3DA6c45c84A3bB871bf`
-- OlympiaExecutor: `0x64624f74F77639CbA268a6c8bEDC2778B707eF9a`
-- 5 more in `components/sections/ContractsSection.tsx`
+All addresses in `lib/contracts.json` (single source of truth).
+`lib/config.ts` and `components/sections/ContractsSection.tsx` read from it.
 
 ## Brand
 

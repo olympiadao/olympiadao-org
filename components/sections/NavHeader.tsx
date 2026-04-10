@@ -27,7 +27,7 @@ export function NavHeader() {
           <span className="text-lg font-bold tracking-tight">OLYMPIA</span>
           <span className="hidden items-center gap-1.5 rounded-full border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-xs font-medium text-[var(--brand-green)] sm:inline-flex">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--brand-green)]" />
-            Demo v0.2 &middot; {config.name}
+            Demo v0.3 &middot; {config.name}
           </span>
         </Link>
 

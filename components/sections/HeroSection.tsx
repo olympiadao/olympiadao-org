@@ -28,9 +28,10 @@ export function HeroSection() {
 
         <FadeIn delay={200}>
           <p className="mx-auto mb-10 max-w-2xl text-lg text-[var(--text-muted)] md:text-xl">
-            On-chain governance and treasury infrastructure for Ethereum Classic.
-            Basefee revenue funds the protocol vault &mdash; block rewards
-            and tips remain completely untouched.
+            On-chain governance and treasury infrastructure for Ethereum Classic&rsquo;s
+            core development, critical infrastructure, and network security.
+            Basefee funds the protocol vault, a value that was set to be destroyed.
+            Miner block rewards and tips remain completely untouched.
           </p>
         </FadeIn>
 

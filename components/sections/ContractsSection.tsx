@@ -4,44 +4,9 @@ import { ExternalLink } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 import { useChainConfig } from "@/lib/hooks/use-chain-config";
+import deployment from "@/lib/contracts.json";
 
-const contracts = [
-  {
-    name: "OlympiaTreasury",
-    address: "0x035b2e3c189B772e52F4C3DA6c45c84A3bB871bf",
-    role: "Protocol-funded vault",
-  },
-  {
-    name: "SanctionsOracle",
-    address: "0xfF2B8D7937D908D81C72D20AC99302EE6ACc2709",
-    role: "OFAC compliance layer",
-  },
-  {
-    name: "OlympiaMemberNFT",
-    address: "0x73e78d3a3470396325b975FcAFA8105A89A9E672",
-    role: "Non-transferable membership",
-  },
-  {
-    name: "TimelockController",
-    address: "0xA5839b3e9445f7eE7AffdBC796DC0601f9b976C2",
-    role: "Security delay enforcement",
-  },
-  {
-    name: "OlympiaGovernor",
-    address: "0xB85dbc899472756470EF4033b9637ff8fa2FD23D",
-    role: "Proposal and voting engine",
-  },
-  {
-    name: "OlympiaExecutor",
-    address: "0x64624f74F77639CbA268a6c8bEDC2778B707eF9a",
-    role: "Treasury withdrawal executor",
-  },
-  {
-    name: "ECFPRegistry",
-    address: "0xFB4De5674a6b9a301d16876795a74f3bdacfa722",
-    role: "Proposal metadata registry",
-  },
-];
+const contracts = Object.values(deployment.contracts);
 
 export function ContractsSection() {
   const config = useChainConfig();
@@ -59,8 +24,7 @@ export function ContractsSection() {
               On-Chain Infrastructure
             </h2>
             <p className="mb-12 max-w-2xl text-sm text-[var(--text-muted)]">
-              Seven contracts deployed via deterministic CREATE2 &mdash; identical
-              addresses on Mordor Testnet and ETC Mainnet.
+              Review the contract suite that forms the Olympia framework.
             </p>
           </FadeIn>
 
