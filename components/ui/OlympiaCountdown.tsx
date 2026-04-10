@@ -114,9 +114,12 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
   }, [status, tick]);
 
   // Fallback date-based countdown (used when activation block is TBD)
-  const [tbdSecondsLeft, setTbdSecondsLeft] = useState<number>(() =>
-    Math.max(0, Math.floor((FALLBACK_TARGET_MS - Date.now()) / 1000))
-  );
+  // Initialize to 0 to avoid SSR/hydration mismatch — Date.now() differs between server and client
+  const [tbdSecondsLeft, setTbdSecondsLeft] = useState<number>(0);
+
+  useEffect(() => {
+    setTbdSecondsLeft(Math.max(0, Math.floor((FALLBACK_TARGET_MS - Date.now()) / 1000)));
+  }, []);
 
   useEffect(() => {
     if (status !== "tbd") return;
