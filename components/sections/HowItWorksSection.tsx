@@ -30,13 +30,13 @@ export function HowItWorksSection() {
   return (
     <>
       <SectionDivider />
-      <section id="how-it-works" className="section-gradient py-20 md:py-28">
+      <section id="how-it-works" aria-labelledby="how-it-works-heading" className="section-gradient py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <FadeIn>
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--brand-green)] font-mono">
               Treasury Funding
             </p>
-            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+            <h2 id="how-it-works-heading" className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
               How It Works
             </h2>
             <p className="mb-12 max-w-2xl text-sm text-[var(--text-muted)]">
@@ -54,6 +54,7 @@ export function HowItWorksSection() {
                       <step.icon
                         size={20}
                         className="text-[var(--brand-green)]"
+                        aria-hidden={true}
                       />
                     </div>
                     <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--brand-green)] text-xs font-bold text-[var(--background)]">

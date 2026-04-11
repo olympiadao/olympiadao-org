@@ -4,7 +4,7 @@ import { OlympiaCountdown } from "@/components/ui/OlympiaCountdown";
 
 export function HeroSection() {
   return (
-    <section className="hero-gradient noise-overlay relative pt-32 pb-20 md:pt-40 md:pb-28">
+    <section aria-labelledby="hero-heading" className="hero-gradient noise-overlay relative pt-32 pb-20 md:pt-40 md:pb-28">
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <FadeIn>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] px-4 py-1.5 text-sm font-medium text-[var(--brand-green)]">
@@ -14,7 +14,7 @@ export function HeroSection() {
         </FadeIn>
 
         <FadeIn delay={100}>
-          <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-6xl">
+          <h1 id="hero-heading" className="mb-6 text-4xl font-bold tracking-tight md:text-6xl">
             The Olympia{" "}
             <span className="text-[var(--brand-green)]">Upgrade</span>
           </h1>
@@ -44,7 +44,7 @@ export function HeroSection() {
               className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green)] px-7 py-3 text-sm font-semibold text-[var(--background)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110"
             >
               Launch Governance App
-              <ArrowRight size={16} />
+              <ArrowRight size={16} aria-hidden="true" />
             </a>
             <a
               href="/upgrade"

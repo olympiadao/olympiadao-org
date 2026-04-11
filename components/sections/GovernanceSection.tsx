@@ -136,10 +136,10 @@ export function GovernanceSection() {
   return (
     <>
       <SectionDivider />
-      <section className="relative py-28">
+      <section aria-labelledby="governance-heading" className="relative py-28">
         <div className="relative z-10 mx-auto max-w-5xl px-6">
           <FadeIn>
-            <h2 className="text-3xl font-bold tracking-tight">
+            <h2 id="governance-heading" className="text-3xl font-bold tracking-tight">
               Governance Architecture
             </h2>
             <p className="mt-3 text-base text-[var(--text-muted)]">
@@ -212,7 +212,7 @@ export function GovernanceSection() {
                     className="inline-flex items-center gap-2 text-sm font-medium text-[var(--brand-green)] transition-colors hover:text-[var(--brand-green-hover)]"
                   >
                     View the Olympia DAO Governance App
-                    <ArrowRight size={14} />
+                    <ArrowRight size={14} aria-hidden="true" />
                   </a>
                 </div>
               </div>

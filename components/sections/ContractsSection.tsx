@@ -14,13 +14,13 @@ export function ContractsSection() {
   return (
     <>
       <SectionDivider />
-      <section id="contracts" className="section-alt py-20 md:py-28">
+      <section id="contracts" aria-labelledby="contracts-heading" className="section-alt py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <FadeIn>
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--brand-green)] font-mono">
               Deployed Contracts
             </p>
-            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+            <h2 id="contracts-heading" className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
               On-Chain Infrastructure
             </h2>
             <p className="mb-12 max-w-2xl text-sm text-[var(--text-muted)]">
@@ -42,6 +42,7 @@ export function ContractsSection() {
                     <ExternalLink
                       size={14}
                       className="text-[var(--text-subtle)] transition-colors group-hover:text-[var(--brand-green)]"
+                      aria-hidden="true"
                     />
                   </div>
                   <p className="mb-2 text-xs text-[var(--text-muted)]">
