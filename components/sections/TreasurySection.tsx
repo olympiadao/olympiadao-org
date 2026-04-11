@@ -28,7 +28,7 @@ export function TreasurySection() {
   return (
     <>
       <SectionDivider variant="strong" />
-      <section className="section-alt px-6 py-16 md:py-20">
+      <section aria-labelledby="treasury-heading" className="section-alt px-6 py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
           {/* Header */}
           <FadeIn>
@@ -37,7 +37,7 @@ export function TreasurySection() {
                 <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--brand-green)] font-mono">
                   Live Data
                 </p>
-                <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                <h2 id="treasury-heading" className="text-2xl font-bold tracking-tight sm:text-3xl">
                   Olympia{" "}
                   <span className="text-[var(--brand-green)]">Treasury</span>
                 </h2>
@@ -53,7 +53,7 @@ export function TreasurySection() {
                   className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-green)] px-5 py-2.5 text-sm font-semibold text-[var(--background)] transition-all duration-200 hover:brightness-110"
                 >
                   Explorer
-                  <ExternalLink size={14} />
+                  <ExternalLink size={14} aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -156,7 +156,7 @@ function KpiCard({
         style={{ boxShadow: "var(--card-shadow)" }}
       >
         <div className="mb-3 flex items-center gap-2">
-          <Icon size={18} className="text-[var(--brand-green)]" />
+          <Icon size={18} className="text-[var(--brand-green)]" aria-hidden={true} />
           <span className="text-xs font-medium uppercase tracking-wider text-[var(--text-subtle)]">
             {label}
           </span>

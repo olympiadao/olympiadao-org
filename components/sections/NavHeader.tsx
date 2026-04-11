@@ -33,15 +33,18 @@ export function NavHeader() {
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--text-primary)]"
-            >
-              {link.label}
-            </a>
-          ))}
+          <ul className="flex items-center gap-6 list-none m-0 p-0">
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  className="text-sm font-medium text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--text-primary)]"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
           <ChainSelector />
           <ThemeToggle />
           <a
@@ -60,23 +63,26 @@ export function NavHeader() {
           className="md:hidden"
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
         </button>
       </nav>
 
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="border-t border-[var(--border-default)] bg-[var(--background)] px-6 py-4 md:hidden">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="block py-3 text-sm font-medium text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
-              onClick={() => setMobileOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
+          <ul className="flex flex-col list-none m-0 p-0">
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  className="block py-3 text-sm font-medium text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
           <div className="flex items-center gap-3 pt-3">
             <ChainSelector />
             <ThemeToggle />

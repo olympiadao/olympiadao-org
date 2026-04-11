@@ -20,28 +20,31 @@ export function FooterSection() {
               OLYMPIA
             </span>
 
-            <div className="flex items-center gap-6">
+            <ul className="flex items-center gap-6 list-none m-0 p-0">
               {links.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+              <li>
                 <a
-                  key={link.label}
-                  href={link.href}
+                  href="https://github.com/olympiadao"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+                  className="text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+                  aria-label="GitHub"
                 >
-                  {link.label}
+                  <Github size={20} aria-hidden="true" />
                 </a>
-              ))}
-              <a
-                href="https://github.com/olympiadao"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
-                aria-label="GitHub"
-              >
-                <Github size={20} />
-              </a>
-            </div>
+              </li>
+            </ul>
           </div>
 
           <p className="mt-8 text-center text-xs text-[var(--text-subtle)]">
