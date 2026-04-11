@@ -15,6 +15,38 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Olympia DAO",
+  alternateName: "OlympiaDAO",
+  url: "https://olympiadao.org",
+  logo: "https://olympiadao.org/logo.svg",
+  description:
+    "On-chain governance and treasury infrastructure for Ethereum Classic. The Olympia DAO governs core client software, critical infrastructure, and network security through binding on-chain proposals.",
+  foundingDate: "2025",
+  sameAs: [
+    "https://x.com/OlympiaDAO_ETC",
+    "https://github.com/olympiadao",
+    "https://app.olympiadao.org",
+    "https://olympiatreasury.org",
+  ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "OlympiaDAO",
+  url: "https://olympiadao.org",
+  description:
+    "On-chain governance and treasury infrastructure for Ethereum Classic's core development, critical infrastructure, and network security.",
+  publisher: {
+    "@type": "Organization",
+    name: "Olympia DAO",
+    url: "https://olympiadao.org",
+  },
+};
+
 export const metadata: Metadata = {
   title: {
     default: "OlympiaDAO — On-Chain Governance for Ethereum Classic",
@@ -103,11 +135,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
         <ThemeProvider>
-          <Providers>{children}</Providers>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[var(--brand-green)] focus:px-4 focus:py-2 focus:text-[var(--background)] focus:outline-none"
+          >
+            Skip to main content
+          </a>
+          <Providers>
+            <div id="main-content">{children}</div>
+          </Providers>
         </ThemeProvider>
         <Script
           src="https://static.cloudflareinsights.com/beacon.min.js"
