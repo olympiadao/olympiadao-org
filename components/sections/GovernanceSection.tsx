@@ -9,6 +9,9 @@ import {
   Scale,
   Lightbulb,
   ArrowRight,
+  GitBranch,
+  Server,
+  CheckCircle,
 } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionDivider } from "@/components/ui/SectionDivider";
@@ -70,6 +73,33 @@ const futarchySteps = [
     number: "04",
     title: "Signal",
     description: "Market prices feed back as on-chain signal into future governance decisions",
+  },
+];
+
+const powSteps = [
+  {
+    icon: Vote,
+    number: "01",
+    title: "DAO Approval",
+    description: "Olympia DAO votes to approve a protocol upgrade through the on-chain governance process",
+  },
+  {
+    icon: GitBranch,
+    number: "02",
+    title: "Client Releases",
+    description: "Independent client teams publish compatible implementations of the approved upgrade",
+  },
+  {
+    icon: Server,
+    number: "03",
+    title: "Network Adoption",
+    description: "Miners, exchanges, wallets, and node operators upgrade their software across the network",
+  },
+  {
+    icon: CheckCircle,
+    number: "04",
+    title: "Distributed Consensus",
+    description: "The upgrade activates when the broader network has adopted the new software — distributed participation made real",
   },
 ];
 
@@ -143,10 +173,11 @@ export function GovernanceSection() {
               Governance Architecture
             </h2>
             <p className="mt-3 text-base text-[var(--text-muted)]">
-              Two complementary systems designed to work together. Membership-based
+              Three complementary systems designed to work together. Membership-based
               on-chain governance handles binding protocol decisions. Open prediction
               markets give the broader public a financially incentivized stake in
-              network direction.
+              network direction. Network participants — miners, exchanges, wallets,
+              and infrastructure providers — govern through the client software they run.
             </p>
           </FadeIn>
 
@@ -250,6 +281,38 @@ export function GovernanceSection() {
                   </div>
                 </div>
                 <StepList steps={futarchySteps} />
+              </div>
+            </FadeIn>
+
+            {/* Network Participant Layer */}
+            <FadeIn delay={240}>
+              <div className="rounded-xl border border-[var(--divider)] bg-[var(--bg-elevated)] p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-mono uppercase tracking-wider text-[var(--brand-green)]">
+                      Network Participant Layer
+                    </p>
+                    <h3 className="mt-1.5 text-lg font-semibold">
+                      Software Adoption as Governance Signal
+                    </h3>
+                    <div className="mt-3 flex gap-2">
+                      <span className="rounded-full bg-[rgba(0,255,174,0.08)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                        ECIP Process
+                      </span>
+                    </div>
+                    <p className="mt-4 text-sm text-[var(--text-muted)]">
+                      The three governance tiers are mutually dependent.
+                      Developers build the software, users create the value,
+                      and network participants — miners, exchanges, wallets,
+                      and infrastructure providers — run the software that
+                      makes the network real. Protocol changes achieve consensus
+                      when the broader network adopts them. Client adoption is
+                      the final expression of distributed consensus: no single
+                      group controls it, and all three tiers need each other.
+                    </p>
+                  </div>
+                </div>
+                <StepList steps={powSteps} />
               </div>
             </FadeIn>
           </div>
