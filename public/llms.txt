@@ -32,15 +32,39 @@ Developer impact: Solidity 0.8.x+, Foundry, Hardhat, wagmi, viem, and ethers.js 
 2. **Treasury:** Protocol-managed vault accumulates basefee revenue and voluntary donations. No new token issuance. Non-inflationary by design.
 3. **Governance:** Community proposals allocate treasury funds through on-chain voting with timelock security and sanctions compliance at every layer.
 
-## Governance Process
+## Governance Architecture
+
+Three complementary systems designed to work together. Each tier is mutually dependent — no single group controls the protocol.
+
+### Binding On-Chain Protocol Governance (Core Development Governance)
 
 Five stages from proposal to execution. Every step on-chain, transparent, and auditable:
 
-1. Propose: Anyone can submit a governance proposal on-chain (permissionless)
+1. Propose: Members submit binding governance proposals on-chain
 2. Vote: Olympia membership NFT holders cast weighted on-chain votes
-3. Queue: Approved proposals enter a security timelock
+3. Queue: Approved proposals enter a configurable security timelock
 4. Execute: After timelock expires, proposals execute automatically on-chain
-5. Disclose: All outcomes publicly reported and independently verifiable
+5. Disclose: All outcomes publicly recorded and independently verifiable
+
+### Open Prediction Markets and Public Signal (Futarchy Markets)
+
+Open to anyone, no membership required. Market prices become on-chain signal that informs governance decisions and funds development through the basefee flywheel:
+
+1. Open: Anyone opens a prediction market on a proposed protocol outcome
+2. Speculate: Public participants stake on outcomes with no membership required
+3. Resolve: Markets settle when the underlying governance event executes on-chain
+4. Signal: Market prices feed back as on-chain signal into future governance decisions
+
+### Software Adoption as Governance Signal (Network Participant Layer)
+
+Miners, exchanges, wallets, and infrastructure providers govern through the client software they run. Protocol changes achieve distributed consensus when the broader network adopts them:
+
+1. DAO Approval: Olympia DAO votes to approve a protocol upgrade through on-chain governance
+2. Client Releases: Independent client teams publish compatible implementations of the approved upgrade
+3. Network Adoption: Miners, exchanges, wallets, and node operators upgrade their software across the network
+4. Distributed Consensus: The upgrade activates when the broader network has adopted the new software — distributed participation made real
+
+The three tiers are mutually dependent. Developers build the software, users create the value, and network participants make the network real. No single group controls it.
 
 ## Key Design Principles
 
