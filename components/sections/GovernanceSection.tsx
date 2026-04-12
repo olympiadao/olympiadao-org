@@ -21,7 +21,7 @@ const formalSteps = [
     icon: FileText,
     number: "01",
     title: "Propose",
-    description: "Members submit binding governance proposals on-chain",
+    description: "Any ETC account can submit a funding proposal on-chain",
   },
   {
     icon: Vote,
