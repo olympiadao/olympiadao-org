@@ -40,7 +40,7 @@ Three complementary systems designed to work together. Each tier is mutually dep
 
 Five stages from proposal to execution. Every step on-chain, transparent, and auditable:
 
-1. Propose: Members submit binding governance proposals on-chain
+1. Propose: Any ETC account can submit a funding proposal on-chain
 2. Vote: Olympia membership NFT holders cast weighted on-chain votes
 3. Queue: Approved proposals enter a configurable security timelock
 4. Execute: After timelock expires, proposals execute automatically on-chain
