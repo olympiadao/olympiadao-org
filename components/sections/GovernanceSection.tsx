@@ -301,14 +301,15 @@ export function GovernanceSection() {
                       </span>
                     </div>
                     <p className="mt-4 text-sm text-[var(--text-muted)]">
-                      The three governance tiers are mutually dependent.
-                      Developers build the software, users create the value,
-                      and network participants — miners, exchanges, wallets,
-                      and infrastructure providers — run the software that
-                      makes the network real. Protocol changes achieve consensus
-                      when the broader network adopts them. Client adoption is
-                      the final expression of distributed consensus: no single
-                      group controls it, and all three tiers need each other.
+                      Every node operator, mining pool, exchange, and wallet
+                      provider participates in governance through the client
+                      software they choose to run. When the DAO approves a
+                      protocol upgrade and independent client teams publish
+                      compatible releases, network adoption is the final step.
+                      An upgrade becomes real when the infrastructure that
+                      secures, settles, and routes ETC transactions upgrades to
+                      support it. No membership required, no market position to
+                      open — running the software is the governance act.
                     </p>
                   </div>
                 </div>
