@@ -32,7 +32,7 @@ const clients = [
     role: "Maintained",
     roleColor: "#a78bfa",
     description:
-      "Two security releases shipped (v1.12.21, v1.12.22) addressing CVE mitigations and DNS discovery updates. The established mainnet client continuing in a maintenance role alongside next-generation implementations.",
+      "The legacy ETC client, actively maintained and carried forward through the Olympia upgrade for network continuity. Core-Geth is scheduled to phase out as Fukuii assumes the primary client role in the Olympia era. The upstream go-ethereum plugin architecture is the long-term path, replacing the need for a dedicated fork.",
     githubUrl: "https://github.com/ethereumclassic/core-geth",
     docsUrl: "https://github.com/ethereumclassic/core-geth#readme",
     releasesUrl: "https://github.com/ethereumclassic/core-geth/releases",
@@ -192,9 +192,14 @@ export default function ClientsPage() {
                     </span>
                     <div>
                       <h3 className="font-semibold">{plugin.name}</h3>
-                      <span className="rounded-full bg-[#38bdf815] px-2 py-0.5 text-xs font-medium text-[#38bdf8]">
-                        Plugin
-                      </span>
+                      <div className="flex items-center gap-1.5">
+                        <span className="rounded-full bg-[#38bdf815] px-2 py-0.5 text-xs font-medium text-[#38bdf8]">
+                          Plugin
+                        </span>
+                        <span className="rounded-full bg-[#f59e0b15] px-2 py-0.5 text-xs font-medium text-[#f59e0b]">
+                          Future
+                        </span>
+                      </div>
                     </div>
                   </div>
 
