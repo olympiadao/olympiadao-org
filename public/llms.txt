@@ -10,7 +10,7 @@ The Olympia era marks a shift from reactive maintenance to active development. E
 
 ## Three Client-Facing ECIPs
 
-**ECIP-1111 — EIP-1559 Fee Market:** The most widely adopted transaction format and fee market in the EVM ecosystem, now on Ethereum Classic. Dynamic gas pricing delivers predictable fees for users and applications. Fully additive: legacy transactions remain valid indefinitely. Unlike Ethereum where the basefee is burned, ETC redirects it to the protocol treasury. Miner block rewards and tips remain completely untouched.
+**ECIP-1111 — EIP-1559 Fee Market:** Unlike Ethereum where the basefee is burned, ETC redirects it to the protocol treasury — the mechanism that funds open-source core development without any foundation or donor dependency. Dynamic gas pricing delivers predictable fees for users and applications. Fully additive: legacy transactions remain valid indefinitely. Miner block rewards and tips remain completely untouched.
 
 **ECIP-1112 — Protocol Treasury:** A protocol-controlled vault funded by basefee revenue and voluntary contributions. For the first time, institutions, developers, and network stakeholders can directly fund Ethereum Classic's core development and critical infrastructure without fielding their own team. Miners receive everything they do today: block rewards and tips remain completely untouched. No admin keys, no multisig. Only on-chain governance can release funds.
 
@@ -41,7 +41,7 @@ Three complementary systems designed to work together. Each tier is mutually dep
 Five stages from proposal to execution. Every step on-chain, transparent, and auditable:
 
 1. Propose: Any ETC account can submit a funding proposal on-chain
-2. Vote: Olympia membership NFT holders cast weighted on-chain votes
+2. Vote: Olympia membership NFT holders cast on-chain votes via the OpenZeppelin Governor 5.x contract suite
 3. Queue: Approved proposals enter a configurable security timelock
 4. Execute: After timelock expires, proposals execute automatically on-chain
 5. Disclose: All outcomes publicly recorded and independently verifiable
@@ -85,7 +85,7 @@ The three tiers are mutually dependent. Developers build the software, users cre
 
 Five stages from consensus upgrades to permanent protocol integration:
 
-1. **Consensus Upgrades** (Complete): EIP-1559 fee market, protocol treasury funded by basefee, Fusaka EVM parity. Three independent client implementations complete.
+1. **Consensus Upgrades** (Complete): EIP-1559 fee market, protocol treasury funded by basefee, Fusaka EVM parity. Multiple independent client implementations complete.
 2. **Core Governance** (Active): Governance and treasury contracts deployed. Open, transparent funding proposals with competitive bidding. Removes organizational overhead from the funding pipeline.
 3. **Prediction Markets** (Research): Futarchy-assisted governance using prediction markets to inform treasury allocation. Requires ECIP-1121 Fusaka EVM alignment.
 4. **Treasury Distribution** (Future): Optional governance-controlled smoothing of basefee revenue back to miners via ECIP-1115. Supplements long-term miner security budget through ECIP-1017 emission reduction events.
@@ -113,7 +113,7 @@ Nine contracts deployed via deterministic CREATE2. Identical addresses on Mordor
 
 ## Client Implementations
 
-Two active implementations at Olympia launch:
+Multiple independent client implementations at Olympia launch:
 
 - **Fukuii** — Primary client for the Olympia era. Purpose-built for Ethereum Classic and designed for long-term protocol stewardship.
 - **Core-Geth** — Legacy ETC client, actively maintained and carried forward through Olympia for network continuity. Scheduled to phase out as Fukuii assumes the primary role. The upstream go-ethereum plugin architecture is the long-term replacement.

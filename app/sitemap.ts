@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://olympiadao.org/clients",
       lastModified: now,
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 0.8,
     },
   ];
