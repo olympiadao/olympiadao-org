@@ -22,7 +22,7 @@ const steps = [
     title: "Governance",
     description:
       "Community proposals allocate treasury funds through on-chain voting with timelock security and sanctions compliance at every layer.",
-    detail: "CoreDAO membership NFTs + futarchy prediction markets",
+    detail: "Olympia DAO membership NFTs + futarchy prediction markets",
   },
 ];
 
