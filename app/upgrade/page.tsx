@@ -10,18 +10,23 @@ import { NavHeader } from "@/components/sections/NavHeader";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
-  title: "Olympia Upgrade: EIP-1559, Protocol Treasury, and Fusaka EVM Alignment for Ethereum Classic",
+  title: "Olympia Upgrade: Fusaka EVM Alignment, EIP-1559 Fee Market, and Protocol Treasury for Ethereum Classic",
   description:
-    "Olympia is Ethereum Classic's most significant protocol upgrade. Adds EIP-1559 fee market (ECIP-1111), protocol treasury (ECIP-1112), and full EVM alignment through Dencun, Pectra, and Fusaka (ECIP-1121). Upgrade guides for Fukuii and Core-Geth.",
+    "Olympia is Ethereum Classic's most significant protocol upgrade. Full Fusaka EVM parity closes years of execution-layer divergence — every Ethereum tool works on ETC without modification. EIP-1559 fee market redirects the basefee to a protocol-managed treasury. Upgrade guides for Fukuii and Core-Geth.",
   keywords: [
+    "Fusaka EVM alignment",
     "Olympia upgrade",
     "Ethereum Classic upgrade",
+    "EVM alignment",
+    "Foundry ETC",
+    "Hardhat ETC",
+    "wagmi ETC",
+    "viem ETC",
     "EIP-1559",
     "ECIP-1111",
     "ECIP-1112",
     "ECIP-1121",
     "Fusaka EVM",
-    "EVM alignment",
     "protocol treasury",
     "Ethereum Classic node upgrade",
     "Fukuii",
@@ -34,7 +39,6 @@ export const metadata: Metadata = {
     "Cancun",
     "EVM upgrade",
     "Solidity compatibility",
-    "Ethereum toolchain",
     "EIP-7702",
     "EIP-2537",
     "BLS12-381",
@@ -244,35 +248,37 @@ export default function UpgradePage() {
       <main>
         {/* Hero */}
         <section className="hero-gradient relative pt-36 pb-16">
-          <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <div className="relative z-10 mx-auto max-w-5xl px-6">
             <FadeIn>
+              <p className="text-sm font-mono uppercase tracking-widest text-[var(--brand-green)]">Olympia</p>
               <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
-                Olympia{" "}
-                <span className="text-[var(--brand-green)]">Upgrade</span>
+                The{" "}
+                <span className="text-[var(--brand-green)]">Olympia</span>{" "}
+                Upgrade
               </h1>
             </FadeIn>
             <FadeIn delay={100}>
-              <p className="mx-auto max-w-2xl text-lg text-[var(--text-muted)]">
+              <p className="text-lg text-[var(--text-muted)]">
                 The Olympia era marks a shift from reactive maintenance to active
                 development on the longest-running EVM and the only Proof-of-Work
                 smart contract platform in the world.
               </p>
-              <ul className="mx-auto mt-6 max-w-2xl space-y-3 text-left text-sm text-[var(--text-muted)]">
+              <ul className="mt-6 space-y-3 text-sm text-[var(--text-muted)]">
                 <li className="flex gap-3">
                   <span className="mt-0.5 shrink-0 text-[var(--brand-green)]">·</span>
-                  <span><span className="font-semibold text-[var(--text-primary)]">EIP-1559 fee market:</span> unlike Ethereum where the basefee is burned, ETC redirects it to the protocol treasury — funding open-source core development without any foundation or donor dependency. Predictable gas pricing, modern tooling compatibility, legacy transactions remain valid indefinitely.</span>
+                  <span><span className="font-semibold text-[var(--text-primary)]">Fusaka EVM alignment:</span> closes years of execution-layer divergence in a single upgrade — every Solidity compiler version, Foundry, Hardhat, wagmi, viem, and ethers.js works on ETC without modification, patching, or ETC-specific overrides. One codebase, every EVM chain.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-0.5 shrink-0 text-[var(--brand-green)]">·</span>
-                  <span><span className="font-semibold text-[var(--text-primary)]">Protocol treasury:</span> basefee revenue redirected to a protocol-managed treasury, funding open-source core development, infrastructure, and long-term network security</span>
+                  <span><span className="font-semibold text-[var(--text-primary)]">EIP-1559 fee market:</span> unlike Ethereum where the basefee is burned, ETC redirects it to the protocol treasury — funding open-source core development without any foundation or donor dependency. Block rewards and tips remain completely untouched and go entirely to miners.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-0.5 shrink-0 text-[var(--brand-green)]">·</span>
-                  <span><span className="font-semibold text-[var(--text-primary)]">Fusaka EVM alignment:</span> closes years of divergence in a single upgrade; every current Ethereum tool, library, and framework works on ETC without modification</span>
+                  <span><span className="font-semibold text-[var(--text-primary)]">Protocol treasury:</span> basefee revenue redirected to a protocol-managed treasury, funding open-source core development, infrastructure, and long-term network security. Anyone can submit proposals on-chain; members vote and execute decisions transparently.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-0.5 shrink-0 text-[var(--brand-green)]">·</span>
-                  <span><span className="font-semibold text-[var(--text-primary)]">Institutional infrastructure:</span> the Proof-of-Work foundation for regulated stablecoin issuance (Classic USD, MiCA and GENIUS Act-compliant), digital commodity classification under the CLARITY Act, and the broadest cross-jurisdictional institutional access profile of any Proof-of-Work smart contract network</span>
+                  <span><span className="font-semibold text-[var(--text-primary)]">Institutional infrastructure:</span> the Proof-of-Work foundation for regulated stablecoin issuance (Classic USD, MiCA and GENIUS Act-compliant), digital commodity classification under the CLARITY Act, and the broadest cross-jurisdictional institutional access profile of any Proof-of-Work smart contract network.</span>
                 </li>
               </ul>
             </FadeIn>
@@ -309,7 +315,7 @@ export default function UpgradePage() {
                 const Icon = item.icon;
                 return (
                   <FadeIn key={item.ecip} delay={i * 80}>
-                    <div className="rounded-xl border border-[var(--border-default)] bg-[var(--bg-elevated)] p-6">
+                    <div className="flex h-full flex-col rounded-xl border border-[var(--border-default)] bg-[var(--bg-elevated)] p-6">
                       <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--brand-green-subtle)]">
                         <Icon size={20} className="text-[var(--brand-green)]" />
                       </div>
@@ -317,7 +323,7 @@ export default function UpgradePage() {
                         {item.ecip}
                       </p>
                       <h3 className="mt-1 text-base font-semibold">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
+                      <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--text-muted)]">
                         {item.description}
                       </p>
                     </div>
@@ -359,7 +365,7 @@ export default function UpgradePage() {
                           {fork.eips.map((eip) => (
                             <span
                               key={eip}
-                              className="rounded-sm border border-[var(--border-default)] bg-[var(--background)] px-1.5 py-0.5 font-mono text-[10px] text-[var(--text-muted)]"
+                              className="rounded-sm border border-[#8b5cf630] bg-[#8b5cf615] px-1.5 py-0.5 font-mono text-[10px] text-[#a78bfa]"
                             >
                               {eip}
                             </span>
@@ -387,7 +393,7 @@ export default function UpgradePage() {
                 const Icon = cat.icon;
                 return (
                   <FadeIn key={cat.title} delay={i * 60}>
-                    <div className="rounded-xl border border-[var(--border-default)] bg-[var(--bg-elevated)] p-5">
+                    <div className="flex h-full flex-col rounded-xl border border-[var(--border-default)] bg-[var(--bg-elevated)] p-5">
                       <div className="mb-3 flex items-center gap-3">
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--brand-green-subtle)]">
                           <Icon size={18} className="text-[var(--brand-green)]" />
@@ -396,12 +402,15 @@ export default function UpgradePage() {
                       </div>
                       <div className="mb-2 flex flex-wrap gap-1">
                         {cat.eips.map((eip) => (
-                          <span
+                          <a
                             key={eip}
-                            className="rounded-sm border border-[var(--border-default)] bg-[var(--background)] px-1.5 py-0.5 font-mono text-[10px] text-[var(--text-muted)]"
+                            href={`https://eips.ethereum.org/EIPS/eip-${eip.toLowerCase().replace("eip-", "")}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="rounded-sm border border-[#8b5cf630] bg-[#8b5cf615] px-1.5 py-0.5 font-mono text-[10px] text-[#a78bfa] transition hover:border-[#8b5cf660] hover:bg-[#8b5cf625]"
                           >
                             {eip}
-                          </span>
+                          </a>
                         ))}
                       </div>
                       <p className="text-xs leading-relaxed text-[var(--text-muted)]">{cat.description}</p>
@@ -536,7 +545,7 @@ export default function UpgradePage() {
 
         {/* FAQ */}
         <section className="py-16 px-6">
-          <div className="mx-auto max-w-3xl">
+          <div className="mx-auto max-w-5xl">
             <FadeIn>
               <h2 className="mb-8 text-2xl font-bold tracking-tight">
                 Frequently Asked Questions
@@ -549,6 +558,20 @@ export default function UpgradePage() {
             </FadeIn>
           </div>
         </section>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqItems.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: { "@type": "Answer", text: item.answer },
+              })),
+            }),
+          }}
+        />
       </main>
       <FooterSection />
     </>

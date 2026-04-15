@@ -53,8 +53,9 @@ export const metadata: Metadata = {
     template: "%s | OlympiaDAO",
   },
   description:
-    "On-chain governance and treasury infrastructure for Ethereum Classic's core development, critical infrastructure, and network security. Basefee funds the protocol vault, a value that was set to be destroyed. Miner block rewards and tips remain completely untouched.",
+    "Olympia delivers full Fusaka EVM alignment for Ethereum Classic — every Solidity compiler, Foundry, Hardhat, wagmi, and viem works on ETC without modification. On-chain governance and treasury infrastructure for Ethereum Classic's core development, critical infrastructure, and network security. Basefee funds the protocol vault, a value that was set to be destroyed. Miner block rewards and tips remain completely untouched.",
   keywords: [
+    "Fusaka EVM alignment",
     "Ethereum Classic",
     "ETC",
     "Olympia",
@@ -68,6 +69,10 @@ export const metadata: Metadata = {
     "Fusaka",
     "EVM upgrade",
     "EVM compatibility",
+    "Foundry ETC",
+    "Hardhat ETC",
+    "wagmi ETC",
+    "EVM tooling",
     "protocol funding",
     "basefee",
     "miner rewards untouched",
@@ -84,10 +89,7 @@ export const metadata: Metadata = {
     "GENIUS Act",
     "Dencun",
     "Pectra",
-    "EVM upgrade",
     "Solidity compatibility",
-    "EIP-3198",
-    "BASEFEE opcode",
   ],
   authors: [
     { name: "Cody Burns", url: "https://github.com/realcodywburns" },

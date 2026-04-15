@@ -7,9 +7,26 @@ import { NavHeader } from "@/components/sections/NavHeader";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
-  title: "Client Implementations",
+  title: "ETC Client Implementations — Fukuii and Core-Geth",
   description:
-    "Independent Ethereum Classic client implementations — full clients and ETC plugins for major upstream clients.",
+    "Independent Ethereum Classic client implementations for the Olympia upgrade. Fukuii (Scala, primary) and Core-Geth (Go, maintained) are full clients. Besu, Erigon, Go-Ethereum, and Nethermind provide ETC compatibility plugins for the broader Ethereum client ecosystem.",
+  keywords: [
+    "Fukuii",
+    "Core-Geth",
+    "Ethereum Classic client",
+    "ETC node",
+    "ETC client implementations",
+    "Olympia client",
+    "Besu ETC",
+    "Erigon ETC",
+    "Go-Ethereum ETC",
+    "Nethermind ETC",
+    "ETC plugin",
+    "Scala blockchain client",
+    "Go ETC client",
+    "ETC node software",
+    "Proof-of-Work client",
+  ],
 };
 
 const clients = [
@@ -79,7 +96,7 @@ export default function ClientsPage() {
     <>
       <Suspense><NavHeader /></Suspense>
       <main className="min-h-screen pt-28 pb-20">
-        <div className="mx-auto max-w-4xl px-6">
+        <div className="mx-auto max-w-5xl px-6">
           <FadeIn>
             <Link
               href="/"
