@@ -320,9 +320,14 @@ export default function UpgradePage() {
                       <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--brand-green-subtle)]">
                         <Icon size={20} className="text-[var(--brand-green)]" />
                       </div>
-                      <p className="font-mono text-xs text-[var(--brand-green)]">
+                      <a
+                        href={`https://ecips.ethereumclassic.org/ECIPs/ecip-${item.ecip.toLowerCase().replace("ecip-", "")}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-xs text-[var(--brand-green)] transition hover:opacity-70"
+                      >
                         {item.ecip}
-                      </p>
+                      </a>
                       <h3 className="mt-1 text-base font-semibold">{item.title}</h3>
                       <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--text-muted)]">
                         {item.description}
@@ -341,7 +346,12 @@ export default function UpgradePage() {
         <section className="py-16 px-6">
           <div className="mx-auto max-w-5xl">
             <FadeIn>
-              <p className="mb-1 font-mono text-xs text-[var(--brand-green)]">ECIP-1121</p>
+              <a
+                href="https://ecips.ethereumclassic.org/ECIPs/ecip-1121"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-1 block font-mono text-xs text-[var(--brand-green)] transition hover:opacity-70"
+              >ECIP-1121</a>
               <h2 className="mb-2 text-2xl font-bold tracking-tight">EVM Compatibility</h2>
               <p className="mb-8 text-sm text-[var(--text-muted)]">
                 Building on Mystique and Spiral, Olympia delivers the EVM execution-layer improvements from Dencun, Pectra, and Fusaka. Every EIP is compatible with Proof-of-Work and independent of blob data availability.
