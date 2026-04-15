@@ -1,0 +1,170 @@
+import type { Metadata } from "next";
+import { Suspense } from "react";
+import { ArrowRight } from "lucide-react";
+import { FadeIn } from "@/components/ui/FadeIn";
+import { SectionDivider } from "@/components/ui/SectionDivider";
+import { Accordion } from "@/components/ui/Accordion";
+import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
+import { GovernanceSection } from "@/components/sections/GovernanceSection";
+import { NavHeader } from "@/components/sections/NavHeader";
+import { FooterSection } from "@/components/sections/FooterSection";
+
+export const metadata: Metadata = {
+  title: "Olympia Governance Architecture — On-Chain Protocol Governance for Ethereum Classic",
+  description:
+    "Three-layer governance for Ethereum Classic's core development: binding on-chain voting via OpenZeppelin Governor 5.x, futarchy prediction markets for public signal, and software adoption as the final network participant layer. Treasury funded by EIP-1559 basefee. Executed by the Wyoming DAO LLC.",
+  keywords: [
+    "Olympia governance",
+    "on-chain governance",
+    "OpenZeppelin Governor",
+    "futarchy",
+    "prediction markets",
+    "membership NFT",
+    "ETC governance",
+    "ECIP-1113",
+    "ECIP-1114",
+    "ECIP-1117",
+    "ECIP-1118",
+    "ECIP-1119",
+    "protocol treasury",
+    "basefee",
+    "timelock",
+    "Ethereum Classic DAO",
+    "Wyoming DAO LLC",
+    "OlympiaMemberNFT",
+    "on-chain voting",
+    "ETC treasury",
+    "governance proposal",
+    "network upgrade governance",
+  ],
+};
+
+const ecips = [
+  { id: "ECIP-1113", label: "ECIP-1113" },
+  { id: "ECIP-1114", label: "ECIP-1114" },
+  { id: "ECIP-1117", label: "ECIP-1117" },
+  { id: "ECIP-1118", label: "ECIP-1118" },
+  { id: "ECIP-1119", label: "ECIP-1119" },
+];
+
+const faqItems = [
+  {
+    question: "How does the protocol treasury work?",
+    answer:
+      "The Olympia Treasury is funded by EIP-1559 basefee revenue, voluntary on-chain donations, and mining rewards directed to the treasury address. Block rewards and tips remain completely untouched and go entirely to miners. Futarchy prediction market activity generates additional transaction volume that flows back into the treasury as basefee revenue. Any stakeholder, whether exchanges, custodians, miners, investment product issuers, or institutions holding ETC on behalf of fund shareholders, can contribute directly on-chain with no overhead. Stakeholders who prefer a traditional giving model can contribute through the ETC Cooperative, a US 501(c)(3) non-profit that accepts tax-deductible donations.",
+  },
+  {
+    question: "Who is coordinating the Olympia upgrade?",
+    answer:
+      "Olympia is coordinated by the same developers, organizations, and community stewards who have delivered every Ethereum Classic network upgrade since 2016. The ETC Cooperative, a US 501(c)(3) non-profit, funds Ethereum Classic's client development teams and has managed the hard fork coordination process throughout that history. Stakeholder outreach, client release sequencing, and cross-client testing are all established practice. Olympia is a significant upgrade carried forward by a team with a clean delivery record across a decade of ETC network upgrades.",
+  },
+  {
+    question: "Who can participate in governance?",
+    answer:
+      "Any ETC account can submit a funding proposal on-chain. Voting is limited to Olympia membership NFT holders — non-transferable ERC-721 tokens with automatic delegation and snapshot-based voting power. Prediction market participation is open to anyone without membership. Network participants (miners, exchanges, wallets, infrastructure providers) govern through the client software they run, with no membership required.",
+  },
+  {
+    question: "How does voting work?",
+    answer:
+      "Proposals pass through five on-chain stages: Submit, Vote, Queue, Execute, Disclose. The voting period uses snapshot-based voting power from OlympiaMemberNFT holdings at proposal creation. Approved proposals enter a configurable timelock before execution. All outcomes are publicly recorded and verifiable on-chain via the Olympia DAO governance app at app.olympiadao.org.",
+  },
+  {
+    question: "When does Olympia activate?",
+    answer:
+      "Olympia is targeted for mainnet activation before 2027. The testnet activation block on Mordor is announced first. The mainnet activation block follows after a successful Mordor run and a coordinated stakeholder readiness check with exchanges, mining pools, node operators, and infrastructure providers. All client implementations publish Olympia-compatible releases well before activation.",
+  },
+  {
+    question: "Is Ethereum Classic a security or commodity after Olympia?",
+    answer:
+      "Olympia strengthens ETC's regulatory profile. As a Proof-of-Work blockchain with no pre-mine, no ICO, no foundation controlling the protocol, and now a community-governed on-chain treasury, ETC is positioned for classification as a digital commodity under the CLARITY Act. In the EU, ETC qualifies as a decentralized asset under MiCA, exempt from per-asset issuer requirements. Japan's FSA lists ETC among approved digital assets. The three-layer governance structure — protocol clients, Wyoming DAO LLC, and on-chain Olympia DAO — maintains clear decentralization while satisfying compliance requirements at the legal entity layer.",
+  },
+];
+
+export default function GovernancePage() {
+  return (
+    <>
+      <Suspense><NavHeader /></Suspense>
+      <main>
+        {/* Hero */}
+        <section className="hero-gradient relative pt-36 pb-16">
+          <div className="relative z-10 mx-auto max-w-5xl px-6">
+            <FadeIn>
+              <p className="text-sm font-mono uppercase tracking-widest text-[var(--brand-green)]">Olympia</p>
+              <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
+                Governance{" "}
+                <span className="text-[var(--brand-green)]">Architecture</span>
+              </h1>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <p className="text-lg text-[var(--text-muted)]">
+                Three complementary systems designed to work together. Membership-based on-chain governance handles binding protocol decisions. Open prediction markets give the broader public a financially incentivized stake in network direction. Network participants — miners, exchanges, wallets, and infrastructure providers — govern through the client software they run.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {ecips.map((ecip) => (
+                  <a
+                    key={ecip.id}
+                    href={`https://ecips.ethereumclassic.org/ECIPs/ecip-${ecip.id.toLowerCase().replace("ecip-", "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-[rgba(0,255,174,0.08)] px-3 py-1 font-mono text-xs text-[var(--brand-green)] transition hover:opacity-70"
+                  >
+                    {ecip.label}
+                  </a>
+                ))}
+              </div>
+              <a
+                href="https://app.olympiadao.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--brand-green)] px-6 py-2.5 text-sm font-semibold text-[var(--background)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110"
+              >
+                View Governance App
+                <ArrowRight size={14} aria-hidden="true" />
+              </a>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* How It Works — treasury funding */}
+        <HowItWorksSection />
+
+        {/* Full Governance Architecture — 3 tiers with StepLists */}
+        <GovernanceSection />
+
+        <SectionDivider />
+
+        {/* FAQ */}
+        <section className="py-16 px-6">
+          <div className="mx-auto max-w-5xl">
+            <FadeIn>
+              <h2 className="mb-8 text-2xl font-bold tracking-tight">
+                Frequently Asked Questions
+              </h2>
+            </FadeIn>
+            <FadeIn delay={60}>
+              <div className="rounded-xl border border-[var(--border-default)] bg-[var(--bg-elevated)] px-6">
+                <Accordion items={faqItems} defaultAllOpen />
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqItems.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: { "@type": "Answer", text: item.answer },
+              })),
+            }),
+          }}
+        />
+      </main>
+      <FooterSection />
+    </>
+  );
+}
