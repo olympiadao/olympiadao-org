@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { ExternalLink, CheckCircle2, Flame, Landmark, Cpu, Layers, Code2, ShieldCheck } from "lucide-react";
+import { ExternalLink, CheckCircle2, Flame, Landmark, Cpu, Layers, Code2, ShieldCheck, LayoutDashboard, Github, Vote } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 import { Accordion } from "@/components/ui/Accordion";
 import { OlympiaCountdown } from "@/components/ui/OlympiaCountdown";
 import { RoadmapSection } from "@/components/sections/RoadmapSection";
+import { PropertyCard } from "@/components/ui/PropertyCard";
 import { NavHeader } from "@/components/sections/NavHeader";
 import { FooterSection } from "@/components/sections/FooterSection";
 
@@ -444,6 +445,71 @@ export default function UpgradePage() {
                 ))}
               </div>
             </FadeIn>
+          </div>
+        </section>
+
+        {/* Olympia Upgrade Callout */}
+        <SectionDivider />
+        <section className="section-alt py-20">
+          <div className="mx-auto max-w-5xl px-6">
+            <FadeIn>
+              <h2 className="text-3xl font-bold tracking-tight">The Olympia Upgrade</h2>
+              <div className="mt-4 rounded-xl border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] p-8 space-y-4 text-base leading-relaxed text-[var(--text-secondary)]">
+                <p>Olympia is Ethereum Classic&rsquo;s most significant protocol upgrade. Three changes arrive in a single activation: Fusaka EVM alignment, EIP-1559 fee market, and a protocol-managed treasury.</p>
+                <p>The headline change is full Fusaka EVM parity &mdash; closing years of execution-layer divergence from Ethereum in a single fork. Every Solidity compiler version, every deployment tool (Foundry, Hardhat), and every major library (wagmi, viem, ethers.js) works on ETC without modification, patching, or ETC-specific overrides. One codebase deploys to every EVM chain. ETC could not credibly claim this before Olympia. After Olympia, it can.</p>
+                <p>The EIP-1559 fee market redirects the basefee &mdash; value that would otherwise be destroyed &mdash; to a protocol-managed treasury. Block rewards and tips remain completely untouched and go entirely to miners. Anyone can submit proposals on-chain. Members vote on resource allocation and execute decisions. Every step is transparent and verifiable on-chain.</p>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* Governance Framework */}
+        <SectionDivider />
+        <section className="py-20">
+          <div className="mx-auto max-w-5xl px-6">
+            <FadeIn>
+              <h2 className="text-3xl font-bold tracking-tight">Olympia Governance Framework</h2>
+              <p className="mt-3 text-base text-[var(--text-muted)]">
+                Operational infrastructure for core developers, protocol contributors, and network security stakeholders. Governance tooling, treasury monitoring, and open-source repositories for those coordinating on critical infrastructure and emergency response.
+              </p>
+            </FadeIn>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+              {[
+                {
+                  icon: Vote,
+                  name: "Governance App",
+                  description: "Proposal submission, on-chain voting, and execution tooling for network contributors",
+                  href: "https://app.olympiadao.org",
+                },
+                {
+                  icon: Landmark,
+                  name: "Olympia Treasury",
+                  description: "Real-time treasury monitoring — funding allocation, balance, and disbursement history",
+                  href: "https://olympiatreasury.org",
+                },
+                {
+                  icon: LayoutDashboard,
+                  name: "Ethereum Classic DAO",
+                  description: "Institutional site for the Wyoming DAO LLC — the legal entity behind Olympia governance",
+                  href: "https://ethereumclassicdao.org",
+                },
+                {
+                  icon: Github,
+                  name: "GitHub",
+                  description: "Client implementations, governance contracts, and protocol infrastructure — all open-source",
+                  href: "https://github.com/olympiadao",
+                },
+              ].map((p, i) => (
+                <FadeIn key={p.name} delay={i * 80}>
+                  <PropertyCard
+                    icon={p.icon}
+                    name={p.name}
+                    description={p.description}
+                    href={p.href}
+                  />
+                </FadeIn>
+              ))}
+            </div>
           </div>
         </section>
 
