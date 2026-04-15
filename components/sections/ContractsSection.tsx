@@ -23,7 +23,7 @@ export function ContractsSection() {
             <h2 id="contracts-heading" className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
               On-Chain Infrastructure
             </h2>
-            <p className="mb-12 max-w-2xl text-sm text-[var(--text-muted)]">
+            <p className="mb-12 text-sm text-[var(--text-muted)]">
               Review the contract suite that forms the Olympia framework.
             </p>
           </FadeIn>

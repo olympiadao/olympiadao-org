@@ -5,7 +5,7 @@ import { OlympiaCountdown } from "@/components/ui/OlympiaCountdown";
 export function HeroSection() {
   return (
     <section aria-labelledby="hero-heading" className="hero-gradient noise-overlay relative pt-32 pb-20 md:pt-40 md:pb-28">
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         <FadeIn>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] px-4 py-1.5 text-sm font-medium text-[var(--brand-green)]">
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-green)]" />
@@ -27,7 +27,7 @@ export function HeroSection() {
         </FadeIn>
 
         <FadeIn delay={200}>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-[var(--text-muted)] md:text-xl">
+          <p className="mb-10 text-lg text-[var(--text-muted)] md:text-xl">
             On-chain governance and treasury infrastructure for Ethereum Classic&rsquo;s
             core development, critical infrastructure, and network security.
             Basefee funds the protocol vault, a value that was set to be destroyed.

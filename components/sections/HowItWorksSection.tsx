@@ -39,7 +39,7 @@ export function HowItWorksSection() {
             <h2 id="how-it-works-heading" className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
               How It Works
             </h2>
-            <p className="mb-12 max-w-2xl text-sm text-[var(--text-muted)]">
+            <p className="mb-12 text-sm text-[var(--text-muted)]">
               Sustainable protocol funding without impacting miners. Transaction
               basefee revenue flows through three stages.
             </p>
@@ -48,7 +48,7 @@ export function HowItWorksSection() {
           <div className="grid gap-6 md:grid-cols-3">
             {steps.map((step, i) => (
               <FadeIn key={step.title} delay={i * 100}>
-                <div className="rounded-xl border border-[var(--divider)] bg-[var(--bg-elevated)] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--border-brand)]">
+                <div className="flex h-full flex-col rounded-xl border border-[var(--divider)] bg-[var(--bg-elevated)] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--border-brand)]">
                   <div className="mb-4 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--brand-green-subtle)]">
                       <step.icon
