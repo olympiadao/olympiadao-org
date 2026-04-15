@@ -9,7 +9,7 @@ import { ChainSelector } from "@/components/chain-selector";
 import { useChainConfig } from "@/lib/hooks/use-chain-config";
 
 const navLinks = [
-  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Governance", href: "/governance" },
   { label: "Contracts", href: "/#contracts" },
   { label: "Upgrade", href: "/upgrade" },
   { label: "Clients", href: "/clients" },
