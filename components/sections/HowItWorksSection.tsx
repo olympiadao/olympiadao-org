@@ -21,7 +21,7 @@ const steps = [
     icon: Vote,
     title: "Governance",
     description:
-      "Community proposals allocate treasury funds through on-chain voting with timelock security and sanctions compliance at every layer.",
+      "Community proposals allocate treasury funds through on-chain voting with timelock security and sanctions compliance at every layer. Funding proposals require a 1 ETC quality bond — returned when activated, slashed to the treasury if rejected.",
     detail: "Olympia DAO membership NFTs + futarchy prediction markets",
   },
 ];

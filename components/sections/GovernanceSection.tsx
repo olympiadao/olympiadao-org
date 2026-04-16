@@ -21,7 +21,7 @@ const formalSteps = [
     icon: FileText,
     number: "01",
     title: "Propose",
-    description: "Any ETC account can submit a funding proposal on-chain",
+    description: "Any ETC account can submit a funding proposal on-chain. A 1 ETC quality bond is required — returned in full when activated, slashed to the treasury if rejected.",
   },
   {
     icon: Vote,
@@ -231,6 +231,15 @@ export function GovernanceSection() {
                       integrations. Open proposals, open bids, open funding,
                       all executed by the Wyoming DAO LLC on behalf of what the
                       Olympia DAO approves on-chain.
+                    </p>
+                    <p className="mt-3 text-sm text-[var(--text-muted)]">
+                      Funding proposals enter a mandatory intake review before
+                      any governance vote. Each submitter is limited to three
+                      active proposals at a time. A 1 ETC submission bond is
+                      held by the registry — returned in full when a proposal
+                      is activated for a vote, or slashed to the treasury if
+                      it fails intake as spam, out of scope, or low quality.
+                      Spam attacks the DAO and fund the DAO simultaneously.
                     </p>
                   </div>
                 </div>
