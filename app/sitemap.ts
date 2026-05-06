@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://olympiadao.org/governance",
-      lastModified: now,
+      lastModified: gitDate("app/governance/page.tsx"),
       changeFrequency: "weekly",
       priority: 0.9,
     },
