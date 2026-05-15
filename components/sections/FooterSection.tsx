@@ -3,6 +3,7 @@ import { Github } from "lucide-react";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 
 const links = [
+  { label: "Ethereum Classic", href: "https://ethereumclassic.com" },
   { label: "Ethereum Classic DAO", href: "https://ethereumclassicdao.org" },
   { label: "Olympia Treasury", href: "https://olympiatreasury.org" },
   { label: "Governance App", href: "https://app.olympiadao.org" },
