@@ -9,7 +9,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 export const metadata: Metadata = {
   title: "ETC Client Implementations — Fukuii and Core-Geth",
   description:
-    "Independent Ethereum Classic client implementations. Fukuii (Scala) is the primary client for the Olympia era — purpose-built for ETC protocol stewardship. Core-Geth (Go) is actively maintained through Olympia. ETC plugins for Besu, Erigon, Go-Ethereum, Nethermind, and Reth are planned post-Olympia.",
+    "Fukuii (Scala) is a multi-network Ethereum execution layer client — native PoW for ETC and Mordor, Engine API for Sepolia and ETH mainnet. Core-Geth (Go) is actively maintained through the Olympia upgrade. ETC plugins for Besu, Erigon, Go-Ethereum, Nethermind, and Reth are planned post-Olympia.",
   keywords: [
     "Fukuii",
     "Core-Geth",
@@ -37,11 +37,11 @@ const clients = [
     role: "Primary",
     roleColor: "#00ffae",
     description:
-      "EVM-compliant execution layer client in Scala 3. Native PoW consensus for ETC and Mordor; pairs with any consensus client via Engine API V1–V4 for post-Merge Ethereum. Forked from Mantis, purpose-built for the Olympia era.",
+      "Ethereum execution layer client in Scala 3 — native Proof-of-Work consensus for Ethereum Classic and Mordor, plus Engine API V1–V4 for post-Merge Ethereum. Pairs with Lighthouse, Prysm, Teku, Lodestar, or Nimbus to run Sepolia and ETH mainnet. One binary, four networks. The primary ETC client for the Olympia era.",
     websiteUrl: "https://fukuii.com",
-    githubUrl: "https://github.com/ethereumclassic/fukuii",
-    docsUrl: "https://github.com/ethereumclassic/fukuii#readme",
-    releasesUrl: "https://github.com/ethereumclassic/fukuii/releases",
+    githubUrl: "https://github.com/chippr-robotics/fukuii",
+    docsUrl: "https://chippr-robotics.github.io/fukuii",
+    releasesUrl: "https://github.com/chippr-robotics/fukuii/releases",
   },
   {
     name: "Core-Geth",
