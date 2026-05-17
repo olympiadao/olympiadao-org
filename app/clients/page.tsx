@@ -38,6 +38,7 @@ const clients = [
     roleColor: "#00ffae",
     description:
       "EVM-compliant execution layer client in Scala 3. Native PoW consensus for ETC and Mordor; pairs with any consensus client via Engine API V1–V4 for post-Merge Ethereum. Forked from Mantis, purpose-built for the Olympia era.",
+    websiteUrl: "https://fukuii.com",
     githubUrl: "https://github.com/ethereumclassic/fukuii",
     docsUrl: "https://github.com/ethereumclassic/fukuii#readme",
     releasesUrl: "https://github.com/ethereumclassic/fukuii/releases",
@@ -50,6 +51,7 @@ const clients = [
     roleColor: "#a78bfa",
     description:
       "The legacy ETC client, actively maintained and carried forward through the Olympia upgrade for network continuity. Core-Geth is scheduled to phase out as Fukuii assumes the primary client role in the Olympia era. The upstream go-ethereum plugin architecture is the long-term path, replacing the need for a dedicated fork.",
+    websiteUrl: "https://github.com/ethereumclassic/core-geth",
     githubUrl: "https://github.com/ethereumclassic/core-geth",
     docsUrl: "https://github.com/ethereumclassic/core-geth#readme",
     releasesUrl: "https://github.com/ethereumclassic/core-geth/releases",
@@ -93,8 +95,8 @@ const plugins = [
     name: "Reth",
     language: "Rust",
     languageColor: "#DEA584",
-    releasesUrl: "https://github.com/ethereumclassic/reth-etc/releases",
-    docsUrl: "https://github.com/ethereumclassic/reth-etc#readme",
+    releasesUrl: "https://github.com/ethereumclassic/reth/releases",
+    docsUrl: "https://github.com/ethereumclassic/reth#readme",
     description: "A plugin that adds ETC support into the Reth codebase.",
   },
 ];
@@ -164,6 +166,16 @@ export default function ClientsPage() {
                     </p>
 
                     <div className="mt-4 flex gap-3">
+                      {client.websiteUrl && (
+                        <a
+                          href={client.websiteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-sm font-medium text-[var(--brand-green)] transition hover:opacity-80"
+                        >
+                          Website <ExternalLink size={12} />
+                        </a>
+                      )}
                       <a
                         href={client.githubUrl}
                         target="_blank"
