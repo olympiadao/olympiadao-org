@@ -117,10 +117,10 @@ Nine contracts deployed via deterministic CREATE2. Identical addresses on Mordor
 
 Multiple independent client implementations at Olympia launch:
 
-- **Fukuii** — Primary client for the Olympia era. Purpose-built for Ethereum Classic and designed for long-term protocol stewardship.
+- **Fukuii** (fukuii.com) — Primary client for the Olympia era. Purpose-built for Ethereum Classic and designed for long-term protocol stewardship.
 - **Core-Geth** — Legacy ETC client, actively maintained and carried forward through Olympia for network continuity. Scheduled to phase out as Fukuii assumes the primary role. The upstream go-ethereum plugin architecture is the long-term replacement.
 
-ETC plugins for Besu, Erigon, Go-Ethereum, and Nethermind are planned for future release — compatibility layers that bring ETC support to major upstream clients without maintaining full forks.
+ETC plugins for Besu, Erigon, Go-Ethereum, Nethermind, and Reth are planned for future release — compatibility layers that bring ETC support to major upstream clients without maintaining full forks.
 
 Node operators must upgrade before the activation block. Block rewards and tips remain completely untouched. The Olympia upgrade only redirects EIP-1559 basefee to the treasury.
 
