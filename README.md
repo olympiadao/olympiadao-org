@@ -1,50 +1,44 @@
-# OlympiaDAO.org — Demo v0.1
+# OlympiaDAO
 
-> **Branch:** `demo_v0.1` (preserved snapshot)
-> **Superseded by:** `demo_v0.2`
->
-> **Note:** Demo v0.1 was a fast-iteration development branch and is not aligned to the public Olympia ECIP specifications. See `demo_v0.2` for the spec-compliant implementation.
+On-chain governance and treasury infrastructure for Ethereum Classic.
 
-Landing page for the Olympia upgrade — a staged governance and funding system for Ethereum Classic.
+OlympiaDAO funds core development, critical infrastructure, and network security for Ethereum Classic through on-chain governance — smart contract-powered voting, a protocol treasury funded by basefee revenue, and verifiable membership. No multisigs. No trusted intermediaries.
 
-## Version Context
+## Website
 
-Demo v0.1 was the initial public deployment of the Olympia website ecosystem. Key characteristics:
+[olympiadao.org](https://olympiadao.org)
 
-- **Single chain:** Mordor Testnet only (Chain 63)
-- **Treasury:** OZ 5.6 AccessControlDefaultAdminRules (`0xd6165F3aF4281037bce810621F62B43077Fb0e37`)
-- **Static content:** No live treasury data (Blockscout integration added in v0.2)
-- **Sections:** Hero, Problem, Timeline, ECIP Suite, Client Status, Key Dates, Principles, Contracts, Footer
+## Built With
 
-This branch is preserved as a historical snapshot. Active development continues on `demo_v0.2`.
-
-## Tech Stack
-
-- Next.js 16 (App Router, Turbopack)
-- React 19, TypeScript 5 (strict)
-- Tailwind CSS 4 (CSS-first config)
-- Lucide React (icons)
-- pnpm 10, Node 24
+- [Next.js 16](https://nextjs.org) (App Router)
+- [React 19](https://react.dev) + [TypeScript](https://www.typescriptlang.org) (strict)
+- [Tailwind CSS 4](https://tailwindcss.com)
+- [Viem](https://viem.sh) + [React Query](https://tanstack.com/query)
 
 ## Development
 
 ```bash
 pnpm install
-pnpm dev          # Dev server (Turbopack)
-pnpm build        # Production build
-pnpm lint         # ESLint
-pnpm typecheck    # TypeScript check
+pnpm dev        # Dev server
+pnpm build      # Production build
+pnpm lint       # Lint
+pnpm typecheck  # Type check
 ```
 
-## Branch Strategy
+## Related
 
-| Branch | Purpose |
-|--------|---------|
-| `demo_v0.1` | Preserved snapshot — initial public demo |
-| `demo_v0.2` | Active development — live treasury data, multi-chain, institutional redesign |
-| `main` | Production — deployed after Olympia activates on ETC mainnet |
+- [olympia-brand](https://github.com/olympiadao/olympia-brand) — Design tokens, logos, favicons
+- [olympiatreasury-org](https://github.com/olympiadao/olympiatreasury-org) — Treasury dashboard
+- [ethereumclassicdao-org](https://github.com/EthereumClassicDAO/ethereumclassicdao-org) — Institutional site
+- [olympia-app](https://github.com/olympiadao/olympia-app) — Governance UI
+- [olympia-governance-contracts](https://github.com/olympiadao/olympia-governance-contracts) — Governor, Executor, Registry
+- [olympia-treasury-contract](https://github.com/olympiadao/olympia-treasury-contract) — Treasury vault
 
-## Authors
+## Ethereum Classic Core Developers
 
 - [Cody Burns](https://github.com/realcodywburns)
 - [Chris Mercer](https://github.com/chris-mercer)
+
+## License
+
+[Apache 2.0](LICENSE)
