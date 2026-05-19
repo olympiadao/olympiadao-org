@@ -44,16 +44,15 @@ keystore/
 *.keystore
 wallet.json
 mnemonic.txt
-*.scratch.*
-*.draft.*
-
-# Claude internal
-.claude/SESSION_NOTES.md
-.claude/reports/
-.claude/debug.log
+# Claude Code local workspace and internal dev files
+.claude/
+CLAUDE.md
+.local/
 SESSION_NOTES.md
 PLANNING.md
 SCRATCH.md
+*.scratch.*
+*.draft.*
 
 # vercel
 .vercel
