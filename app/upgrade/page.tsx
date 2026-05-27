@@ -189,7 +189,7 @@ const forkTimeline = [
     name: "Fusaka",
     fullName: "Fulu-Osaka",
     year: "2025",
-    eips: ["EIP-7623", "EIP-7951", "EIP-7825"],
+    eips: ["EIP-7623", "EIP-7642", "EIP-7823", "EIP-7825", "EIP-7939", "EIP-7951"],
   },
 ];
 
@@ -197,16 +197,16 @@ const evmCategories = [
   {
     title: "Gas & State Access",
     icon: Layers,
-    eips: ["EIP-7702", "EIP-7623", "EIP-7825", "EIP-7883", "EIP-7935"],
+    eips: ["EIP-7623", "EIP-7702", "EIP-7823", "EIP-7825", "EIP-7883", "EIP-7935"],
     description:
-      "Account delegation, cheaper calldata, gas limit enforcement, opcode repricing: making ETC state access more efficient and cost-predictable for modern applications.",
+      "Account delegation, cheaper calldata, gas limit enforcement, MODEXP input bounds, opcode repricing: making ETC state access more efficient and cost-predictable for modern applications.",
   },
   {
     title: "EVM Safety",
     icon: ShieldCheck,
-    eips: ["EIP-6780", "EIP-7934", "EIP-7910"],
+    eips: ["EIP-6780", "EIP-7642", "EIP-7910", "EIP-7934"],
     description:
-      "SELFDESTRUCT restricted to deployment context, stack size enforcement, and call target constraints: eliminating entire categories of smart contract vulnerabilities.",
+      "SELFDESTRUCT restricted to deployment context, eth/69 wire protocol with simplified receipts, stack size enforcement, and call target constraints: eliminating entire categories of smart contract vulnerabilities.",
   },
   {
     title: "Cryptographic Precompiles",
@@ -218,9 +218,9 @@ const evmCategories = [
   {
     title: "Execution Context",
     icon: Code2,
-    eips: ["EIP-5656", "EIP-2935", "EIP-1153"],
+    eips: ["EIP-1153", "EIP-2935", "EIP-5656", "EIP-7939"],
     description:
-      "MCOPY for efficient memory operations, historical block hashes accessible in state, and transient storage (TSTORE/TLOAD) for gas-efficient cross-call communication.",
+      "MCOPY for efficient memory operations, CLZ opcode for leading-zero counting, historical block hashes accessible in state, and transient storage (TSTORE/TLOAD) for gas-efficient cross-call communication.",
   },
 ];
 
@@ -376,7 +376,7 @@ export default function UpgradePage() {
                           {fork.eips.map((eip) => (
                             <span
                               key={eip}
-                              className="rounded-sm border border-[#8b5cf630] bg-[#8b5cf615] px-1.5 py-0.5 font-mono text-[10px] text-[#a78bfa]"
+                              className="rounded-sm border border-[var(--color-violet)]/20 bg-[var(--color-violet-bg)] px-1.5 py-0.5 font-mono text-[10px] text-[var(--color-violet)]"
                             >
                               {eip}
                             </span>
@@ -418,7 +418,7 @@ export default function UpgradePage() {
                             href={`https://eips.ethereum.org/EIPS/eip-${eip.toLowerCase().replace("eip-", "")}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-sm border border-[#8b5cf630] bg-[#8b5cf615] px-1.5 py-0.5 font-mono text-[10px] text-[#a78bfa] transition hover:border-[#8b5cf660] hover:bg-[#8b5cf625]"
+                            className="rounded-sm border border-[var(--color-violet)]/20 bg-[var(--color-violet-bg)] px-1.5 py-0.5 font-mono text-[10px] text-[var(--color-violet)] transition hover:bg-[var(--color-violet)]/15 hover:text-[var(--color-violet)]/80"
                           >
                             {eip}
                           </a>
