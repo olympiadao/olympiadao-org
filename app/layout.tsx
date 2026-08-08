@@ -53,8 +53,10 @@ export const metadata: Metadata = {
     template: "%s | OlympiaDAO",
   },
   description:
-    "Olympia delivers full Fusaka EVM alignment for Ethereum Classic — every Solidity compiler, Foundry, Hardhat, wagmi, and viem works on ETC without modification. On-chain governance and treasury infrastructure for Ethereum Classic's core development, critical infrastructure, and network security. Basefee funds the protocol vault, a value that was set to be destroyed. Miner block rewards and tips remain completely untouched.",
+    "Olympia delivers Glamsterdam-era EVM alignment for Ethereum Classic — every Solidity compiler, Foundry, Hardhat, wagmi, and viem works on ETC without modification. On-chain governance and treasury infrastructure for Ethereum Classic's core development, critical infrastructure, and network security. Basefee funds the protocol vault, a value that was set to be destroyed. Miner block rewards and tips remain completely untouched.",
   keywords: [
+    "Glamsterdam EVM alignment",
+    "Glamsterdam",
     "Fusaka EVM alignment",
     "Ethereum Classic",
     "ETC",
@@ -66,6 +68,7 @@ export const metadata: Metadata = {
     "ECIP-1111",
     "ECIP-1112",
     "ECIP-1121",
+    "ECIP-1122",
     "Fusaka",
     "EVM upgrade",
     "EVM compatibility",

@@ -4,12 +4,13 @@ import { ExternalLink } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 import { NavHeader } from "@/components/sections/NavHeader";
+import { NavHeaderFallback } from "@/components/ui/SsrFallbacks";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
   title: "ETC Client Implementations — Fukuii and Core-Geth",
   description:
-    "Fukuii (Scala) is a multi-network Ethereum execution layer client — native PoW for ETC and Mordor, Engine API for Sepolia and ETH mainnet. Core-Geth (Go) is actively maintained through the Olympia upgrade. ETC plugins for Besu, Erigon, Go-Ethereum, Nethermind, and Reth are planned post-Olympia.",
+    "Fukuii (Scala 3) is Ethereum Classic's first native client — an EVM execution client running several networks at once in one JVM process, where a further network is configuration rather than a new client. Core-Geth (Go), a go-ethereum derivative, is maintained through the Olympia upgrade. ETC compatibility plugins extend support to Besu, Erigon, Ethrex, Go-Ethereum, Nethermind, and Reth.",
   keywords: [
     "Fukuii",
     "Core-Geth",
@@ -19,8 +20,10 @@ export const metadata: Metadata = {
     "Olympia client",
     "Besu ETC",
     "Erigon ETC",
+    "Ethrex ETC",
     "Go-Ethereum ETC",
     "Nethermind ETC",
+    "Reth ETC",
     "ETC plugin",
     "Scala blockchain client",
     "Go ETC client",
@@ -29,72 +32,92 @@ export const metadata: Metadata = {
   ],
 };
 
+// Client framing, descriptions and URLs are aligned with ethereumclassicdao-org,
+// which is the reference for shared positioning across the Olympia sites.
 const clients = [
   {
     name: "Fukuii",
     language: "Scala",
     languageColor: "#DC322F",
     role: "Primary",
-    roleColor: "#00ffae",
+    roleTheme: "brand" as const,
     description:
-      "Ethereum execution layer client in Scala 3 — native Proof-of-Work consensus for Ethereum Classic and Mordor, plus Engine API V1–V4 for post-Merge Ethereum. Pairs with Lighthouse, Prysm, Teku, Lodestar, or Nimbus. One binary, four networks. The primary ETC client for the Olympia era.",
-    githubUrl: "https://github.com/chippr-robotics/fukuii",
-    docsUrl: "https://chippr-robotics.github.io/fukuii",
-    releasesUrl: "https://github.com/chippr-robotics/fukuii/releases",
+      "EVM execution client in Scala 3 — one binary runs several networks at once in one JVM process, each isolated with its own state, metrics, and configuration. A further network is configuration rather than a new client. Consensus is selected per deployment: native Proof-of-Work for Ethereum Classic and Mordor, or Proof-of-Stake with a built-in consensus layer or an external client over the Engine API. Ethereum Classic's first native client — built ground-up for ETC rather than derived from an Ethereum client — and the primary ETC client for the Olympia era.",
+    websiteUrl: "https://fukuii.org",
+    docsUrl: "https://docs.fukuii.org",
+    releasesUrl: "https://github.com/fukuii-project/fukuii-cli/releases",
   },
   {
     name: "Core-Geth",
     language: "Go",
     languageColor: "#00ADD8",
     role: "Maintained",
-    roleColor: "#a78bfa",
+    roleTheme: "muted" as const,
     description:
-      "The legacy ETC client, actively maintained and carried forward through the Olympia upgrade for network continuity. Core-Geth is scheduled to phase out as Fukuii assumes the primary client role in the Olympia era. The upstream go-ethereum plugin architecture is the long-term path, replacing the need for a dedicated fork.",
-    githubUrl: "https://github.com/ethereumclassic/core-geth",
+      "A go-ethereum derivative maintained for Ethereum Classic, in maintenance only. It implements the full Olympia specification — ECIP-1111, 1112, 1121 and 1122 — and its Mordor sync is confirmed, so existing operators have a supported path through the upgrade. New deployments should use Fukuii.",
+    websiteUrl: "https://github.com/ethereumclassic/core-geth",
     docsUrl: "https://github.com/ethereumclassic/core-geth#readme",
     releasesUrl: "https://github.com/ethereumclassic/core-geth/releases",
   },
 ];
 
+/**
+ * Language chips carry the language's own brand color, so the chip is opaque and
+ * its label switches between white and near-black — whichever clears 4.5:1 on
+ * that color. A translucent tint of the same color cannot: it fails in one theme
+ * or both (Rust on a 12.5% tint measured 1.80:1 in light mode).
+ */
+function languageChipText(hex: string): string {
+  const lin = (c: number) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+  const channel = (i: number) => lin(parseInt(hex.slice(i, i + 2), 16) / 255);
+  const L = 0.2126 * channel(1) + 0.7152 * channel(3) + 0.0722 * channel(5);
+  // contrast against white vs against near-black (#0a0f10, relative luminance
+  // 0.0044); take whichever is higher
+  return 1.05 / (L + 0.05) >= (L + 0.05) / 0.0544 ? "#ffffff" : "#0a0f10";
+}
+
+// Cards link the upstream project each plugin targets.
 const plugins = [
   {
     name: "Besu",
     language: "Java",
     languageColor: "#B07219",
-    releasesUrl: "https://github.com/ethereumclassic/besu/releases",
-    docsUrl: "https://github.com/ethereumclassic/besu#readme",
+    upstreamUrl: "https://github.com/besu-eth/besu",
     description: "A plugin that adds ETC support into the Besu codebase.",
   },
   {
     name: "Erigon",
     language: "Go",
     languageColor: "#00ADD8",
-    releasesUrl: "https://github.com/ethereumclassic/erigon/releases",
-    docsUrl: "https://github.com/ethereumclassic/erigon#readme",
+    upstreamUrl: "https://github.com/erigontech/erigon",
     description: "A plugin that adds ETC support into the Erigon codebase.",
+  },
+  {
+    name: "Ethrex",
+    language: "Rust",
+    languageColor: "#DEA584",
+    upstreamUrl: "https://github.com/lambdaclass/ethrex",
+    description: "A plugin that adds ETC support into the Ethrex codebase.",
   },
   {
     name: "Go-Ethereum",
     language: "Go",
     languageColor: "#00ADD8",
-    releasesUrl: "https://github.com/ethereumclassic/go-ethereum/releases",
-    docsUrl: "https://github.com/ethereumclassic/go-ethereum#readme",
+    upstreamUrl: "https://github.com/ethereum/go-ethereum",
     description: "A plugin that adds ETC support into the Go-Ethereum codebase.",
   },
   {
     name: "Nethermind",
     language: "C#",
     languageColor: "#178600",
-    releasesUrl: "https://github.com/ethereumclassic/nethermind/releases",
-    docsUrl: "https://github.com/ethereumclassic/nethermind#readme",
+    upstreamUrl: "https://github.com/NethermindEth/nethermind",
     description: "A plugin that adds ETC support into the Nethermind codebase.",
   },
   {
     name: "Reth",
     language: "Rust",
     languageColor: "#DEA584",
-    releasesUrl: "https://github.com/ethereumclassic/reth-etc/releases",
-    docsUrl: "https://github.com/ethereumclassic/reth-etc#readme",
+    upstreamUrl: "https://github.com/paradigmxyz/reth",
     description: "A plugin that adds ETC support into the Reth codebase.",
   },
 ];
@@ -102,7 +125,7 @@ const plugins = [
 export default function ClientsPage() {
   return (
     <>
-      <Suspense><NavHeader /></Suspense>
+      <Suspense fallback={<NavHeaderFallback />}><NavHeader /></Suspense>
       <main>
         {/* Hero */}
         <section className="hero-gradient relative pt-36 pb-16">
@@ -139,8 +162,8 @@ export default function ClientsPage() {
                       <span
                         className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-sm font-bold"
                         style={{
-                          backgroundColor: `${client.languageColor}20`,
-                          color: client.languageColor,
+                          backgroundColor: client.languageColor,
+                          color: languageChipText(client.languageColor),
                         }}
                       >
                         {client.language.slice(0, 2)}
@@ -148,11 +171,11 @@ export default function ClientsPage() {
                       <div>
                         <h2 className="font-semibold">{client.name}</h2>
                         <span
-                          className="rounded-full px-2 py-0.5 text-xs font-medium"
-                          style={{
-                            backgroundColor: `${client.roleColor}15`,
-                            color: client.roleColor,
-                          }}
+                          className={`rounded-full px-2 py-0.5 text-xs font-medium ${
+                            client.roleTheme === "brand"
+                              ? "bg-[var(--brand-green-subtle)] text-[var(--brand-green)]"
+                              : "bg-[var(--border-subtle)] text-[var(--text-secondary)]"
+                          }`}
                         >
                           {client.role}
                         </span>
@@ -165,12 +188,12 @@ export default function ClientsPage() {
 
                     <div className="mt-4 flex gap-3">
                       <a
-                        href={client.githubUrl}
+                        href={client.websiteUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 text-sm font-medium text-[var(--brand-green)] transition hover:opacity-80"
                       >
-                        GitHub <ExternalLink size={12} />
+                        Website <ExternalLink size={12} />
                       </a>
                       <a
                         href={client.releasesUrl}
@@ -204,12 +227,13 @@ export default function ClientsPage() {
             <FadeIn>
               <h2 className="mb-2 text-2xl font-bold tracking-tight">ETC Plugins</h2>
               <p className="mb-8 text-sm text-[var(--text-muted)]">
-                ETC compatibility layers for major upstream clients — bringing Ethereum Classic
-                support to the broader Ethereum client ecosystem without maintaining full forks.
+                Future work, not shipping today. These are upstream cross-client references —
+                established Ethereum clients that an ETC plugin would bring Ethereum Classic
+                support to, without maintaining full forks.
               </p>
             </FadeIn>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {plugins.map((plugin, i) => (
                 <FadeIn key={plugin.name} delay={i * 80} className="h-full">
                   <div className="flex h-full flex-col rounded-xl border border-[var(--border-default)] bg-[var(--bg-elevated)] p-5">
@@ -217,8 +241,8 @@ export default function ClientsPage() {
                       <span
                         className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-sm font-bold"
                         style={{
-                          backgroundColor: `${plugin.languageColor}20`,
-                          color: plugin.languageColor,
+                          backgroundColor: plugin.languageColor,
+                          color: languageChipText(plugin.languageColor),
                         }}
                       >
                         {plugin.language.slice(0, 2)}
@@ -226,10 +250,10 @@ export default function ClientsPage() {
                       <div>
                         <h3 className="font-semibold">{plugin.name}</h3>
                         <div className="flex items-center gap-1.5">
-                          <span className="rounded-full bg-[#38bdf815] px-2 py-0.5 text-xs font-medium text-[#38bdf8]">
+                          <span className="rounded-full bg-[var(--color-sky-bg)] px-2 py-0.5 text-xs font-medium text-[var(--color-sky)]">
                             Plugin
                           </span>
-                          <span className="rounded-full bg-[#f59e0b15] px-2 py-0.5 text-xs font-medium text-[#f59e0b]">
+                          <span className="rounded-full bg-[var(--color-amber-bg)] px-2 py-0.5 text-xs font-medium text-[var(--color-amber)]">
                             Future
                           </span>
                         </div>
@@ -242,20 +266,12 @@ export default function ClientsPage() {
 
                     <div className="mt-3 flex gap-3">
                       <a
-                        href={plugin.releasesUrl}
+                        href={plugin.upstreamUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 text-xs font-medium text-[var(--brand-green)] transition hover:opacity-80"
                       >
-                        Releases <ExternalLink size={11} />
-                      </a>
-                      <a
-                        href={plugin.docsUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-medium text-[var(--brand-green)] transition hover:opacity-80"
-                      >
-                        Docs <ExternalLink size={11} />
+                        Upstream project <ExternalLink size={11} />
                       </a>
                     </div>
                   </div>

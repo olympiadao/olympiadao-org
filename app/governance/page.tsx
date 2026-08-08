@@ -7,6 +7,7 @@ import { Accordion } from "@/components/ui/Accordion";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { GovernanceSection } from "@/components/sections/GovernanceSection";
 import { NavHeader } from "@/components/sections/NavHeader";
+import { NavHeaderFallback } from "@/components/ui/SsrFallbacks";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
@@ -51,7 +52,7 @@ const faqItems = [
   {
     question: "How does the protocol treasury work?",
     answer:
-      "The Olympia Treasury is funded by EIP-1559 basefee revenue, voluntary on-chain donations, and mining rewards directed to the treasury address. Block rewards and tips remain completely untouched and go entirely to miners. Futarchy prediction market activity generates additional transaction volume that flows back into the treasury as basefee revenue. Any stakeholder, whether exchanges, custodians, miners, investment product issuers, or institutions holding ETC on behalf of fund shareholders, can contribute directly on-chain with no overhead. Stakeholders who prefer a traditional giving model can contribute through the ETC Cooperative, a US 501(c)(3) non-profit that accepts tax-deductible donations.",
+      "The Olympia Treasury is funded by EIP-1559 basefee revenue, the only protocol-defined source, alongside voluntary on-chain donations. No ECIP directs mining revenue to the Treasury: block rewards and tips remain completely untouched and go entirely to miners. Futarchy prediction market activity generates additional transaction volume that flows back into the treasury as basefee revenue. Any stakeholder, whether exchanges, custodians, miners, investment product issuers, or institutions holding ETC on behalf of fund shareholders, can contribute directly on-chain with no overhead. Stakeholders who prefer a traditional giving model can contribute through the ETC Cooperative, a US 501(c)(3) non-profit that accepts tax-deductible donations.",
   },
   {
     question: "Who is coordinating the Olympia upgrade?",
@@ -83,7 +84,7 @@ const faqItems = [
 export default function GovernancePage() {
   return (
     <>
-      <Suspense><NavHeader /></Suspense>
+      <Suspense fallback={<NavHeaderFallback />}><NavHeader /></Suspense>
       <main>
         {/* Hero */}
         <section className="hero-gradient relative pt-36 pb-16">
@@ -106,7 +107,7 @@ export default function GovernancePage() {
                     href={`https://ecips.ethereumclassic.org/ECIPs/ecip-${ecip.id.toLowerCase().replace("ecip-", "")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full bg-[rgba(0,255,174,0.08)] px-3 py-1 font-mono text-xs text-[var(--brand-green)] transition hover:opacity-70"
+                    className="rounded-full bg-[var(--brand-green-subtle)] px-3 py-1 font-mono text-xs text-[var(--brand-green)] transition hover:opacity-70"
                   >
                     {ecip.label}
                   </a>
