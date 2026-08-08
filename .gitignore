@@ -47,13 +47,34 @@ mnemonic.txt
 *.scratch.*
 *.draft.*
 
-# Claude Code local workspace and internal dev files
-.claude/
-CLAUDE.md
+# Claude Code — this directory is TRACKED so repo-local agents, skills and rules
+# travel with the repo. Only machine-local and agent-written state is held back.
+# Do not invert this into a blanket ignore: an agent inside an ignored directory
+# never reaches a clone.
+.claude/settings.local.json
+.claude/worktrees/
+.claude/agent-memory-local/
+.claude/launch.json
+.claude/scheduled_tasks.json
+CLAUDE.local.md
+.claude/**/*.local.*
+.claude/**/*-local/
+
+# Internal development directory — session notes, briefs, dev logs. Never commit.
 .local/
 SESSION_NOTES.md
 PLANNING.md
 SCRATCH.md
+
+# Package-registry auth — these carry registry tokens (_authToken, npmAuthIdent).
+.npmrc
+.yarnrc
+.yarnrc.yml
+
+# SSH keys are extensionless, so *.key and *.pem miss them
+id_rsa
+id_ecdsa
+id_ed25519
 *.scratch.*
 *.draft.*
 

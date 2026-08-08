@@ -42,10 +42,55 @@ pnpm typecheck    # tsc --noEmit
 
 1. Use TypeScript strict mode
 2. Use CSS custom properties from `app/globals.css` for brand colors
-3. Use `cn()` from `@/lib/utils` for class merging
+3. Use `cn()` from `@/lib/utils` for class merging. It is a thin `clsx` wrapper —
+   there is no `tailwind-merge` here, so it does not de-duplicate conflicting
+   Tailwind classes
 4. Use Lucide React for icons — no Font Awesome
 5. CSS transitions only — no GSAP, R3F, or Lenis
-6. Contract addresses must match olympia-framework README
+6. `lib/contracts.json` is the single source of truth for contract addresses
+7. There is **no `test` script and no test runner** in this repo. Do not invent a
+   call to one. There is no Prettier config either — match style by hand
+
+## Server Rendering
+
+A client component IS server-rendered. `useSearchParams()`, reached through the
+chain hooks, opts a subtree out of static prerender, so a crawler receives the
+**Suspense fallback**. A bare `<Suspense>` has no fallback and emits nothing.
+Fallbacks live in `components/ui/SsrFallbacks.tsx` and carry the same headings
+and links as the real components. Fix the fallback, not the boundary, and never
+add a `<Suspense>` without one.
+
+## Color and Contrast
+
+Every `:root` token in `app/globals.css` has a matching `.dark` override — keep
+it that way, or a token inherits its light value into dark mode.
+
+- Measure contrast against the **actual composited background, not white**. The
+  worst real light surface is `--bg-elevated`; measuring against white inflates
+  every number
+- Small badge and body text needs **4.5:1**; 3.0 is for large text and graphical
+  objects only
+- Never hardcode a hex or `rgba()` in a component — it cannot invert
+- Recharts needs literal colors, so chart colors switch on `resolvedTheme`. Every
+  color in such a file must switch; none may be a bare hex
+- Badge convention: **violet** = Ethereum upgrade tracks, **green** = ETC-native,
+  **gray** = maintenance/neutral. **Amber is reserved for olympiatreasury-org**
+  and must not be used here
+
+## Content Accuracy
+
+- Nothing has activated; activation blocks are **TBD**. Status goes in a badge,
+  never in prose
+- Basefee is the **only** protocol-defined Treasury funding source — no ECIP
+  directs mining revenue to it
+- Treasury and Timelock use plain `CREATE`; only CoreNFT, Executor and Governor
+  use `CREATE2`
+- The process is an **OFP** (ECIP-1114). The deployed Demo v0.3 contract is still
+  named `ECFPRegistry` — correct in a contract listing
+- Glamsterdam is the alignment target; Fusaka is a delivered cycle and stays.
+  Never write "full Glamsterdam parity"
+- Verify enumeration counts match what is enumerated
+- Keep `public/llms.txt` in sync with page copy
 
 ## Protected Files
 
@@ -88,6 +133,10 @@ pnpm lint && pnpm typecheck && pnpm build
 - Skip type errors with `@ts-ignore`
 - Use deprecated versions
 - Add animation libraries
+- Add wallet connectivity — this is the marketing site, not the dApp
+- Drop or regenerate `pnpm.overrides` in `package.json` — each pin closes a
+  specific security advisory
+- Add, change, or recommend changing `LICENSE` — licensing is deliberate
 
 ## Response Style
 
