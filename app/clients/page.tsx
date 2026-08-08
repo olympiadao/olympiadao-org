@@ -62,6 +62,17 @@ const clients = [
 ];
 
 /**
+ * Role badge colour keyed by theme, not decided in a ternary at the call site.
+ * A ternary's else-branch silently absorbs every value it was not written for,
+ * so a third role would inherit "muted" without anyone choosing that. Indexing a
+ * map makes an unhandled role a type error instead.
+ */
+const roleThemeClass: Record<(typeof clients)[number]["roleTheme"], string> = {
+  brand: "bg-[var(--brand-green-subtle)] text-[var(--brand-green)]",
+  muted: "bg-[var(--border-subtle)] text-[var(--text-secondary)]",
+};
+
+/**
  * Language chips carry the language's own brand color, so the chip is opaque and
  * its label switches between white and near-black — whichever clears 4.5:1 on
  * that color. A translucent tint of the same color cannot: it fails in one theme
@@ -171,11 +182,7 @@ export default function ClientsPage() {
                       <div>
                         <h2 className="font-semibold">{client.name}</h2>
                         <span
-                          className={`rounded-full px-2 py-0.5 text-xs font-medium ${
-                            client.roleTheme === "brand"
-                              ? "bg-[var(--brand-green-subtle)] text-[var(--brand-green)]"
-                              : "bg-[var(--border-subtle)] text-[var(--text-secondary)]"
-                          }`}
+                          className={`rounded-full px-2 py-0.5 text-xs font-medium ${roleThemeClass[client.roleTheme]}`}
                         >
                           {client.role}
                         </span>
@@ -227,7 +234,7 @@ export default function ClientsPage() {
             <FadeIn>
               <h2 className="mb-2 text-2xl font-bold tracking-tight">ETC Plugins</h2>
               <p className="mb-8 text-sm text-[var(--text-muted)]">
-                Future work, not shipping today. These are upstream cross-client references —
+                Future work. These are upstream cross-client references —
                 established Ethereum clients that an ETC plugin would bring Ethereum Classic
                 support to, without maintaining full forks.
               </p>
