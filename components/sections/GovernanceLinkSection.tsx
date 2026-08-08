@@ -13,7 +13,7 @@ const tiers = [
   {
     icon: TrendingUp,
     title: "Open Prediction Markets",
-    ecips: ["ECIP-1117", "ECIP-1118"],
+    ecips: ["ECIP-1117", "ECIP-1118", "ECIP-1119"],
     description:
       "Anyone can open a prediction market on a proposed protocol outcome without membership. Market prices feed back as financially-backed signal into governance decisions.",
   },

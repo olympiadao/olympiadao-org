@@ -267,6 +267,9 @@ export function GovernanceSection() {
                       <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         ECIP-1118
                       </span>
+                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                        ECIP-1119
+                      </span>
                     </div>
                     <p className="mt-4 text-sm text-[var(--text-muted)]">
                       Open prediction markets where anyone can speculate on
