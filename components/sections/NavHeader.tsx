@@ -7,13 +7,7 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ChainSelector } from "@/components/chain-selector";
 import { useChainConfig } from "@/lib/hooks/use-chain-config";
-
-const navLinks = [
-  { label: "Governance", href: "/governance" },
-  { label: "Contracts", href: "/#contracts" },
-  { label: "Upgrade", href: "/upgrade" },
-  { label: "Clients", href: "/clients" },
-];
+import { navLinks } from "@/lib/nav-links";
 
 export function NavHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);

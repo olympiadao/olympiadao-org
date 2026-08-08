@@ -20,7 +20,7 @@ interface CountdownValues {
 function DigitBox({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
-      <div className="flex h-14 w-16 items-center justify-center rounded-lg border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] font-mono text-2xl font-bold text-[var(--brand-green)] shadow-[0_0_12px_rgba(0,255,174,0.15)]">
+      <div className="flex h-14 w-16 items-center justify-center rounded-lg border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] font-mono text-2xl font-bold text-[var(--brand-green)] shadow-[0_0_12px_var(--border-glow)]">
         {String(value).padStart(2, "0")}
       </div>
       <span className="mt-1.5 text-xs text-[var(--text-muted)]">{label}</span>
@@ -43,9 +43,24 @@ async function fetchCurrentBlock(chainId: number): Promise<number | null> {
 
 export function OlympiaCountdown({ variant = "hero" }: { variant?: "hero" | "banner" }) {
   return (
-    <Suspense>
+    <Suspense fallback={<OlympiaCountdownFallback />}>
       <OlympiaCountdownInner variant={variant} />
     </Suspense>
+  );
+}
+
+/**
+ * Static prerender fallback. The live count needs the chain, which reaches
+ * useSearchParams() and so opts this subtree out of static prerender — without a
+ * fallback a crawler received nothing here. Status is a badge, never prose.
+ */
+function OlympiaCountdownFallback() {
+  return (
+    <p className="text-sm text-[var(--text-muted)]">
+      Olympia activation block:{" "}
+      <span className="font-mono font-medium text-[var(--brand-green)]">TBD</span>
+      {" "}— announced after the Olympia Upgrade core developers call.
+    </p>
   );
 }
 

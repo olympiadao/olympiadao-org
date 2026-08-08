@@ -6,21 +6,34 @@ import { BalanceChart } from "@/components/sections/BalanceChart";
 import { GovernanceLinkSection } from "@/components/sections/GovernanceLinkSection";
 import { ContractsSection } from "@/components/sections/ContractsSection";
 import { FooterSection } from "@/components/sections/FooterSection";
+import {
+  NavHeaderFallback,
+  TreasurySectionFallback,
+  BalanceChartFallback,
+  ContractsSectionFallback,
+} from "@/components/ui/SsrFallbacks";
 
 export default function Home() {
   return (
     <>
-      <Suspense>
+      <Suspense fallback={<NavHeaderFallback />}>
         <NavHeader />
       </Suspense>
       <main>
         <HeroSection />
-        <Suspense>
+        <Suspense
+          fallback={
+            <>
+              <TreasurySectionFallback />
+              <BalanceChartFallback />
+            </>
+          }
+        >
           <TreasurySection />
           <BalanceChart />
         </Suspense>
         <GovernanceLinkSection />
-        <Suspense>
+        <Suspense fallback={<ContractsSectionFallback />}>
           <ContractsSection />
         </Suspense>
       </main>
