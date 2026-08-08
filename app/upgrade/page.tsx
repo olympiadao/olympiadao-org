@@ -108,6 +108,7 @@ const clients = [
     language: "Scala",
     languageColor: "#DC322F",
     badges: ["Primary Client", "First Native ETC Client"],
+    badgeTheme: "native" as const,
     version: "TBD",
     runtime: "JDK 25+",
     disk: "500 GB+ (SNAP sync)",
@@ -126,6 +127,7 @@ const clients = [
     language: "Go",
     languageColor: "#00ADD8",
     badges: ["go-ethereum Derivative", "Maintenance Mode"],
+    badgeTheme: "maintenance" as const,
     version: "TBD",
     runtime: "Go 1.26+",
     disk: "500 GB+ (full sync)",
@@ -140,6 +142,18 @@ const clients = [
     docsUrl: "https://github.com/ethereumclassic/core-geth#readme",
   },
 ];
+
+/**
+ * Client badge colour by category, keyed rather than chosen at the call site.
+ * Suite convention: green marks ETC-native work, gray marks maintenance and
+ * neutral status. Core-Geth is a go-ethereum derivative in maintenance, so
+ * rendering its badges in brand green would assert ETC-native for a client that
+ * is not one. Matches ethereumclassicdao-org@147b0fa.
+ */
+const clientBadgeClass = {
+  native: "bg-[var(--brand-green-subtle)] text-[var(--brand-green)]",
+  maintenance: "bg-[var(--border-subtle)] text-[var(--text-secondary)]",
+} as const;
 
 const faqItems = [
   {
@@ -599,7 +613,7 @@ export default function UpgradePage() {
                           {client.badges.map((badge) => (
                             <span
                               key={badge}
-                              className="rounded-full bg-[var(--brand-green-subtle)] px-2 py-0.5 text-[10px] font-medium text-[var(--brand-green)]"
+                              className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${clientBadgeClass[client.badgeTheme]}`}
                             >
                               {badge}
                             </span>
