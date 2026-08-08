@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { ExternalLink, CheckCircle2, Flame, Landmark, Cpu, Layers, Code2, ShieldCheck, LayoutDashboard, Github, Vote } from "lucide-react";
+import { ExternalLink, CheckCircle2, Flame, Landmark, Cpu, Layers, Code2, ShieldCheck, Network, LayoutDashboard, Github, Vote } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 import { Accordion } from "@/components/ui/Accordion";
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     "Olympia is Ethereum Classic's most significant protocol upgrade. Glamsterdam-era EVM alignment closes years of execution-layer divergence — every Ethereum tool works on ETC without modification. EIP-1559 fee market redirects the basefee to a protocol-managed treasury. Upgrade guides for Fukuii and Core-Geth.",
   keywords: [
     "Glamsterdam EVM alignment",
+    "Glamsterdam EVM",
     "Glamsterdam",
-    "Fusaka EVM alignment",
     "Olympia upgrade",
     "Ethereum Classic upgrade",
     "EVM alignment",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "ECIP-1112",
     "ECIP-1121",
     "ECIP-1122",
-    "Fusaka EVM",
+    "Fusaka",
     "protocol treasury",
     "Ethereum Classic node upgrade",
     "Fukuii",
@@ -53,6 +53,22 @@ export const metadata: Metadata = {
     "EIP-5656",
     "London hard fork ETC",
   ],
+  openGraph: {
+    type: "website",
+    url: "/upgrade",
+    siteName: "OlympiaDAO",
+    title: "Olympia Upgrade: Glamsterdam EVM Alignment, EIP-1559 Fee Market, and Protocol Treasury",
+    description:
+      "Glamsterdam-era EVM alignment closes years of execution-layer divergence \u2014 every Ethereum tool works on ETC without modification. EIP-1559 redirects the basefee to a protocol treasury. Upgrade guides for Fukuii and Core-Geth.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "OlympiaDAO" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Olympia Upgrade: Glamsterdam EVM Alignment, EIP-1559 Fee Market, and Protocol Treasury",
+    description:
+      "Glamsterdam-era EVM alignment closes years of execution-layer divergence \u2014 every Ethereum tool works on ETC without modification. EIP-1559 redirects the basefee to a protocol treasury. Upgrade guides for Fukuii and Core-Geth.",
+    images: ["/og-image.png"],
+  },
 };
 
 const ecips = [
@@ -68,21 +84,21 @@ const ecips = [
     title: "Protocol Treasury",
     icon: Landmark,
     description:
-      "A protocol-controlled vault funded by basefee revenue and voluntary contributions. For the first time, institutions, developers, and network stakeholders can directly fund Ethereum Classic's core development and critical infrastructure without fielding their own team. Miners receive everything they do today: block rewards and tips remain completely untouched.",
+      "A protocol-controlled vault funded by basefee revenue and voluntary contributions — delivering on the treasury model first identified during the 2022 Mystique upgrade, when EIP-1559 was deferred pending a decision on where the basefee should flow. For the first time, institutions, developers, and network stakeholders can directly fund Ethereum Classic's core development and critical infrastructure without fielding their own team. Miners receive everything they do today: block rewards and tips remain completely untouched.",
   },
   {
     ecip: "ECIP-1121",
     title: "Glamsterdam EVM Alignment",
     icon: Cpu,
     description:
-      "Building on Mystique and Spiral, Olympia delivers the remaining EVM execution-layer improvements from Dencun, Pectra, and Fusaka, covering every improvement that is independent of Proof-of-Stake and blob data availability, and carries that work into Glamsterdam. Exchanges and wallets gain modern RPC compatibility. Developers gain full access to every current Ethereum tool, library, and framework: one codebase, every EVM chain.",
+      "Building on Mystique and Spiral, ECIP-1121 fills the remaining Shanghai gaps from Spiral's partial implementation and delivers the execution-layer improvements from Dencun, Pectra, and Fusaka that are independent of Proof-of-Stake and blob data availability, then carries that work into Glamsterdam. Exchanges and wallets gain modern RPC compatibility. Developers gain access to every current Ethereum tool, library, and framework. One codebase, every EVM chain.",
   },
   {
     ecip: "ECIP-1122",
     title: "Network Security Client Configuration",
     icon: ShieldCheck,
     description:
-      "Three ETC-specific client configuration parameters that protect long-term network security: a minimum effective miner tip floor, a network-authoritative gas target schedule (Spiral era 8,000,000; Olympia era 60,000,000), and re-activation of Modified Exponential Subjective Scoring. These are chain configuration values rather than consensus rules, but they require cross-client coordination to be effective.",
+      "Three parameters every Olympia client enforces identically: a 1 gwei minimum effective miner tip, so miners keep an economic incentive to process transactions once the basefee is redirected; a network-authoritative gas target that overrides operator flags (Spiral era 8,000,000; Olympia era 60,000,000), closing the gas-limit manipulation vector demonstrated in 2024; and MESS re-activation, restoring the chain-reorganization resistance that was switched off at Spiral. These are chain configuration rather than consensus rules — a client that omits them provides weaker guarantees without forking.",
   },
 ];
 
@@ -91,7 +107,7 @@ const clients = [
     name: "Fukuii",
     language: "Scala",
     languageColor: "#DC322F",
-    role: "Primary Client · First Native ETC Client",
+    badges: ["Primary Client", "First Native ETC Client"],
     version: "TBD",
     runtime: "JDK 25+",
     disk: "500 GB+ (SNAP sync)",
@@ -109,7 +125,7 @@ const clients = [
     name: "Core-Geth",
     language: "Go",
     languageColor: "#00ADD8",
-    role: "go-ethereum Derivative · Maintenance Mode",
+    badges: ["go-ethereum Derivative", "Maintenance Mode"],
     version: "TBD",
     runtime: "Go 1.26+",
     disk: "500 GB+ (full sync)",
@@ -142,9 +158,9 @@ const faqItems = [
       "Grayscale launched the Grayscale Ethereum Classic Trust (ETCG) in 2018, years before Bitcoin ETFs existed as a product category, and became a major institutional donor to the ETC Cooperative, indirectly funding the network's core client development at a time when no other investment product issuer was doing anything comparable. What Grayscale was practicing on Ethereum Classic in 2018 is now a recognized trend: ETF issuers funding protocol development, corporate treasury strategies reinvesting in network ecosystems. Taking that model on-chain is only possible on Ethereum Classic because ETC is the only Proof-of-Work blockchain with native smart contracts. Olympia DAO makes it permissionless, opening a direct on-chain contribution path to every holder, whether through ETCG, a direct wallet, or any future investment product.",
   },
   {
-    question: "What does EVM alignment to Fusaka actually mean for builders?",
+    question: "What does EVM alignment to Glamsterdam actually mean for builders?",
     answer:
-      "ECIP-1121 closes years of EVM divergence in a single upgrade, delivering every execution-layer improvement from Dencun, Pectra, and Fusaka that is independent of Proof-of-Stake and blob data availability. Before Olympia, ETC lagged behind on these EIPs, creating real friction for developers deploying across EVM chains. After Olympia, Solidity 0.8.x, Foundry, Hardhat, wagmi, viem, and ethers.js all work on ETC without modification, patching, or ETC-specific overrides. One codebase deploys to every EVM chain. ETC could not credibly claim full tooling compatibility before Olympia. After Olympia, it can.",
+      "ECIP-1121 closes years of EVM divergence in a single upgrade, filling the remaining Shanghai gaps from Spiral's partial implementation and delivering the execution-layer improvements from Dencun, Pectra, and Fusaka that are independent of Proof-of-Stake and blob data availability, and carrying that work into Glamsterdam. Before Olympia, ETC lagged behind on these EIPs, creating real friction for developers deploying across EVM chains. After Olympia, Solidity 0.8.x, Foundry, Hardhat, wagmi, viem, and ethers.js all work on ETC without modification, patching, or ETC-specific overrides. One codebase deploys to every EVM chain. ETC could not credibly claim full tooling compatibility before Olympia. After Olympia, it can. The consequences extend beyond tooling. Wallets, exchanges, oracles, and bridges make integration decisions based on EVM compatibility — ETC re-enters the default support scope of every product in that ecosystem without requiring custom work from those teams. Security auditing tools, compiler improvements, and best practices that the EVM community produces continuously now apply to ETC automatically. And the millions of Solidity developers, auditors, and protocol engineers already working on the EVM can deploy to ETC immediately, with no custom onboarding, no ETC-specific documentation, and no learning curve.",
   },
   {
     question: "How does the protocol treasury work?",
@@ -202,6 +218,12 @@ const forkTimeline = [
     year: "2025",
     eips: ["EIP-7623", "EIP-7642", "EIP-7823", "EIP-7825", "EIP-7939", "EIP-7951"],
   },
+  {
+    name: "Glamsterdam",
+    fullName: "Gloas-Amsterdam",
+    year: "2026",
+    eips: ["EIP-7975", "EIP-7997"],
+  },
 ];
 
 const evmCategories = [
@@ -210,28 +232,35 @@ const evmCategories = [
     icon: Layers,
     eips: ["EIP-7623", "EIP-7702", "EIP-7823", "EIP-7825", "EIP-7883", "EIP-7935"],
     description:
-      "Account delegation, cheaper calldata, gas limit enforcement, MODEXP input bounds, opcode repricing: making ETC state access more efficient and cost-predictable for modern applications.",
+      "Account delegation for EOAs, recalibrated calldata and MODEXP pricing, MODEXP input bounds, a per-transaction gas cap, and a 60M default gas limit. Aligns gas accounting with real resource cost and enables smart account patterns without protocol changes.",
   },
   {
     title: "EVM Safety",
     icon: ShieldCheck,
-    eips: ["EIP-6780", "EIP-7642", "EIP-7910", "EIP-7934"],
+    eips: ["EIP-6780", "EIP-7910", "EIP-7934", "EIP-7997"],
     description:
-      "SELFDESTRUCT restricted to deployment context, eth/69 wire protocol with simplified receipts, stack size enforcement, and call target constraints: eliminating entire categories of smart contract vulnerabilities.",
+      "SELFDESTRUCT restricted to deployment context, block size limits, RPC config method, and a deterministic CREATE2 factory at the same address as every other EVM chain. Makes contract behavior more predictable and reduces attack surface.",
   },
   {
     title: "Cryptographic Precompiles",
     icon: Cpu,
     eips: ["EIP-2537", "EIP-7951"],
     description:
-      "BLS12-381 pairing operations for ZK-friendly proof verification, and P256VERIFY for WebAuthn and passkey authentication: cryptographic primitives ETC previously lacked.",
+      "BLS12-381 pairing operations for ZK-friendly proof verification, P256VERIFY for WebAuthn and passkey authentication. Native cryptographic primitives for privacy and identity.",
   },
   {
     title: "Execution Context",
     icon: Code2,
     eips: ["EIP-1153", "EIP-2935", "EIP-5656", "EIP-7939"],
     description:
-      "MCOPY for efficient memory operations, CLZ opcode for leading-zero counting, historical block hashes accessible in state, and transient storage (TSTORE/TLOAD) for gas-efficient cross-call communication.",
+      "MCOPY for efficient memory operations, CLZ opcode for leading-zero counting, historical block hashes in state, and transient storage TSTORE/TLOAD. Unlocks reentrancy guards, flash loans, and cross-contract patterns without persistent storage.",
+  },
+  {
+    title: "Networking",
+    icon: Network,
+    eips: ["EIP-7642", "EIP-7975"],
+    description:
+      "eth/69 retains total difficulty for Proof-of-Work chain selection and drops receipt bloom filters; eth/70 paginates receipts for blocks above the p2p size limit. Both activate through devp2p capability negotiation rather than a hard fork.",
   },
 ];
 
@@ -278,7 +307,7 @@ export default function UpgradePage() {
               <ul className="mt-6 space-y-3 text-sm text-[var(--text-muted)]">
                 <li className="flex gap-3">
                   <span className="mt-0.5 shrink-0 text-[var(--brand-green)]">·</span>
-                  <span><span className="font-semibold text-[var(--text-primary)]">Fusaka EVM alignment:</span> closes years of execution-layer divergence in a single upgrade — every Solidity compiler version, Foundry, Hardhat, wagmi, viem, and ethers.js works on ETC without modification, patching, or ETC-specific overrides. One codebase, every EVM chain.</span>
+                  <span><span className="font-semibold text-[var(--text-primary)]">Glamsterdam EVM alignment:</span> the headline change — closes years of execution-layer divergence from Ethereum in a single fork. Every Solidity compiler version, Foundry, Hardhat, wagmi, viem, and ethers.js works on ETC without modification, patching, or ETC-specific overrides. One codebase, every EVM chain.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-0.5 shrink-0 text-[var(--brand-green)]">·</span>
@@ -364,7 +393,7 @@ export default function UpgradePage() {
               >ECIP-1121</a>
               <h2 className="mb-2 text-2xl font-bold tracking-tight">EVM Compatibility</h2>
               <p className="mb-8 text-sm text-[var(--text-muted)]">
-                Building on Mystique and Spiral, Olympia delivers the EVM execution-layer improvements from Dencun, Pectra, and Fusaka. Every EIP is compatible with Proof-of-Work and independent of blob data availability.
+                Building on Mystique and Spiral, ECIP-1121 fills the remaining Shanghai gaps from Spiral&rsquo;s partial implementation and advances the execution layer through Dencun, Pectra, and Fusaka, then carries that work into Glamsterdam. Every EIP is compatible with Proof-of-Work and independent of blob data availability. Together, Olympia brings ETC current through Fusaka and opens Glamsterdam.
               </p>
             </FadeIn>
 
@@ -564,8 +593,18 @@ export default function UpgradePage() {
                       <div>
                         <h3 className="font-semibold">{client.name}</h3>
                         <span className="text-xs text-[var(--text-muted)]">
-                          {client.role} · {client.language}
+                          {client.language}
                         </span>
+                        <div className="mt-1 flex flex-wrap gap-1">
+                          {client.badges.map((badge) => (
+                            <span
+                              key={badge}
+                              className="rounded-full bg-[var(--brand-green-subtle)] px-2 py-0.5 text-[10px] font-medium text-[var(--brand-green)]"
+                            >
+                              {badge}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                       <span className="ml-auto rounded-full border border-[var(--border-default)] px-3 py-1 font-mono text-xs text-[var(--text-muted)]">
                         Version: {client.version}

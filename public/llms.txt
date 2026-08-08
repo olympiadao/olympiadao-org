@@ -12,19 +12,20 @@ The Olympia era marks a shift from reactive maintenance to active development. E
 
 ## Four Client-Facing ECIPs
 
-**ECIP-1121 — Glamsterdam EVM Alignment:** Advances the ETC execution layer through Dencun (Cancun-Deneb), Pectra (Prague-Electra), and Fusaka (Fulu-Osaka), and carries that work into Glamsterdam. ETC implemented partial London EIPs in Mystique (2022) and partial Shanghai EIPs in Spiral (2024), deferring the EIP-1559 fee market for independent governance design. ECIP-1121 delivers the remaining execution-layer EIPs from Dencun, Pectra, and Fusaka that are independent of Proof-of-Stake and blob data availability. ECIP-1121 covers 2 of Glamsterdam's 7 execution-layer EIPs; the remainder are blocked on EIP-7928 and EIP-4788 dependencies, not on Proof-of-Stake grounds. After Olympia, every Ethereum tool works on ETC without modification.
+**ECIP-1121 — Glamsterdam EVM Alignment:** Fills the remaining Shanghai gaps from Spiral's partial implementation and advances the ETC execution layer through Dencun (Cancun-Deneb), Pectra (Prague-Electra), and Fusaka (Fulu-Osaka), then carries that work into Glamsterdam (Gloas-Amsterdam). ETC implemented partial London EIPs in Mystique (2022) and partial Shanghai EIPs in Spiral (2024), deferring the EIP-1559 fee market for independent governance design. ECIP-1121 delivers the remaining execution-layer EIPs that are independent of Proof-of-Stake and blob data availability. Together, Olympia brings ETC current through Fusaka and opens Glamsterdam. ECIP-1121 covers 2 of Glamsterdam's 7 execution-layer EIPs; the remainder are blocked on EIP-7928 and EIP-4788 dependencies, not on Proof-of-Stake grounds. After Olympia, every Ethereum tool works on ETC without modification.
 
 **ECIP-1111 — EIP-1559 Fee Market:** Unlike Ethereum where the basefee is burned, ETC redirects it to the protocol treasury — the mechanism that funds open-source core development without any foundation or donor dependency. Dynamic gas pricing delivers predictable fees for users and applications. Fully additive: legacy transactions remain valid indefinitely. Miner block rewards and tips remain completely untouched.
 
 **ECIP-1112 — Protocol Treasury:** A protocol-controlled vault funded by basefee revenue and voluntary contributions. For the first time, institutions, developers, and network stakeholders can directly fund Ethereum Classic's core development and critical infrastructure without fielding their own team. Miners receive everything they do today: block rewards and tips remain completely untouched. No admin keys, no multisig. Only on-chain governance can release funds.
 
-**ECIP-1122 — ETC Network Security Client Configuration:** Three ETC-specific client configuration parameters for the Olympia hard fork that protect long-term network security: a minimum effective miner tip floor, a network-authoritative gas target schedule (Spiral era 8,000,000; Olympia era 60,000,000), and re-activation of Modified Exponential Subjective Scoring (ECIP-1100). These are chain configuration values rather than consensus rules, but they require cross-client coordination to be effective.
+**ECIP-1122 — ETC Network Security Client Configuration:** Three parameters every Olympia client enforces identically: a 1 gwei minimum effective miner tip, so miners keep an economic incentive to process transactions once the basefee is redirected; a network-authoritative gas target that overrides operator flags (Spiral era 8,000,000; Olympia era 60,000,000), closing the gas-limit manipulation vector demonstrated in 2024; and re-activation of Modified Exponential Subjective Scoring (ECIP-1100), restoring the chain-reorganization resistance that was switched off at Spiral. These are chain configuration rather than consensus rules — a client that omits them provides weaker guarantees without forking.
 
 Included EIP categories:
 - Gas & State Access: EIP-7702 (set EOA account code), EIP-7623 (increase calldata cost), EIP-7825 (transaction gas limit cap, 2^24), EIP-7823 (MODEXP input bounds, 8192 bits), EIP-7883 (MODEXP gas cost increase), EIP-7935 (default gas limit 60M)
-- EVM Safety & Forward Compatibility: EIP-6780 (SELFDESTRUCT only in same tx), EIP-7934 (RLP block size limit, 8 MiB on ETC), EIP-7910 (eth_config JSON-RPC method), EIP-7642 (eth/69 wire protocol, retaining total difficulty for PoW chain selection), EIP-7997 (deterministic factory contract)
+- EVM Safety: EIP-6780 (SELFDESTRUCT only in same tx), EIP-7910 (eth_config JSON-RPC method), EIP-7934 (RLP block size limit, 8 MiB on ETC), EIP-7997 (deterministic CREATE2 factory at the same address as every other EVM chain)
 - Cryptographic Precompiles: EIP-2537 (BLS12-381 for ZK-friendly proofs), EIP-7951 (secp256r1 / P256VERIFY for WebAuthn and passkeys)
-- Execution Context: EIP-5656 (MCOPY memory copy), EIP-2935 (historical block hashes in state), EIP-1153 (transient storage TSTORE/TLOAD), EIP-7939 (CLZ opcode)
+- Execution Context: EIP-1153 (transient storage TSTORE/TLOAD), EIP-2935 (historical block hashes in state), EIP-5656 (MCOPY memory copy), EIP-7939 (CLZ opcode)
+- Networking: EIP-7642 (eth/69 — retains total difficulty for Proof-of-Work chain selection, drops receipt bloom filters), EIP-7975 (eth/70 — paginates receipts for blocks above the p2p size limit). Both activate through devp2p capability negotiation rather than a hard fork.
 
 Explicitly excluded: all blob-dependent EIPs (EIP-4844, EIP-7516, EIP-7691). Ethereum Classic is a pure Layer 1 execution chain with no data availability requirement. Blobs are L2 scaffolding ETC does not need.
 
@@ -135,6 +136,30 @@ ETC's regulatory surface spans two distinct trajectories: the commodity classifi
 - United States: Proof-of-Work EVM platform for regulated stablecoin deployment under the GENIUS Act
 - European Union: decentralized asset under MiCA (Markets in Crypto-Assets Regulation), exempt from issuer obligations as a fully decentralized protocol
 - Japan: recognized crypto-asset on the FSA Green List (JVCEA), fast-track listing across all Japanese regulated exchanges
+
+## Olympia Upgrade FAQ
+
+**Who is coordinating the Olympia upgrade?** The same developers, organizations, and community stewards who have delivered every ETC network upgrade since 2016 — Gotham, Die Hard, Defuse Difficulty Bomb, Thanos, and the EVM compatibility series through Gas Reprice, Atlantis, Agharta, Phoenix, Magneto, Mystique and Spiral. The ETC Cooperative, a US 501(c)(3) non-profit, funds client development teams and has managed hard fork coordination throughout.
+
+**What does EVM alignment to Glamsterdam mean for builders?** ECIP-1121 fills the remaining Shanghai gaps from Spiral's partial implementation, delivers the Dencun, Pectra and Fusaka execution-layer improvements that are independent of Proof-of-Stake and blob data availability, and carries that work into Glamsterdam. Solidity 0.8.x, Foundry, Hardhat, wagmi, viem and ethers.js work on ETC without modification or ETC-specific overrides.
+
+**How does the protocol treasury work?** Funded by EIP-1559 basefee revenue — the only protocol-defined source — alongside voluntary on-chain donations. No ECIP directs mining revenue to the Treasury. No admin keys, no multisig; only on-chain governance can release funds.
+
+**When is the mainnet activation block?** Targeted for mainnet activation in 2027; the block is TBD. Mordor testnet activates first, and the mainnet block follows a successful Mordor run and a coordinated stakeholder readiness check.
+
+**Will my miner rewards change?** No. Block rewards and tips remain completely untouched and go entirely to miners. Olympia redirects only the EIP-1559 basefee, a value that would otherwise be destroyed. ECIP-1122 additionally sets a 1 gwei minimum effective miner tip.
+
+**What happens if I do not upgrade my node?** A node that is not upgraded before the activation block stops following the canonical chain and must be upgraded and resynced from the fork point. Exchanges, wallets and RPC providers on outdated clients cannot process transactions on the post-Olympia chain.
+
+**How was Olympia tested?** Across multiple independent client implementations, with cross-client validation on the Mordor Proof-of-Work testnet before any mainnet activation is scheduled.
+
+## Governance FAQ
+
+**Who can participate in governance?** Any ETC account can submit a funding proposal on-chain. Voting is limited to CoreNFT holders — soulbound, non-transferable ERC-721 tokens carrying exactly one non-delegable vote per member. Prediction market participation is open to anyone without membership. Network participants govern through the client software they run.
+
+**How does voting work?** Proposals pass through five on-chain stages: submit, vote, queue, execute, disclose. Voting power is snapshot-based at proposal creation. Approved proposals enter a configurable timelock before execution. Approval is `GovernorCountingSimple`'s fixed strict majority of For over Against, with Abstain counting toward quorum but not toward the majority — no OpenZeppelin v5.x counting module offers a configurable approval percentage.
+
+**Is Ethereum Classic a security or commodity after Olympia?** ETC is a Proof-of-Work chain with no pre-mine, no ICO, and no foundation controlling the protocol. Olympia adds a community-governed on-chain treasury. The three-layer structure — protocol clients, the Wyoming DAO LLC, and the on-chain Olympia DAO — maintains decentralization while satisfying compliance requirements at the legal entity layer.
 
 ## Web Properties
 
