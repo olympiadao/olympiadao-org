@@ -67,7 +67,7 @@ export function GovernanceLinkSection() {
                             href={`https://ecips.ethereumclassic.org/ECIPs/ecip-${ecip.toLowerCase().replace("ecip-", "")}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-full bg-[rgba(0,255,174,0.08)] px-2.5 py-0.5 font-mono text-[10px] text-[var(--brand-green)] transition hover:opacity-70"
+                            className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 font-mono text-[10px] text-[var(--brand-green)] transition hover:opacity-70"
                           >
                             {ecip}
                           </a>

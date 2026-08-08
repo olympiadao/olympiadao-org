@@ -8,14 +8,15 @@
 
 /* --- Light mode (default) --- */
 :root {
-  /* Brand — darker shade for WCAG AA on white */
-  --brand-green: #00a872;
-  --brand-green-hover: #009e6a;
-  --brand-green-active: #008c5e;
-  --brand-green-muted: #007a53;
-  --brand-green-subtle: rgba(0, 168, 114, 0.08);
-  --brand-green-glow: rgba(0, 168, 114, 0.3);
-  --brand-amber: #F59E0B;
+  /* Brand — WCAG AA (>=4.5:1) against the worst real surface, --bg-elevated #f1f5f3.
+     Measured on the composited surface, never on white: white inflates every number. */
+  --brand-green: #00734d;
+  --brand-green-hover: #006544;
+  --brand-green-active: #005c3e;
+  --brand-green-muted: #00734d;
+  --brand-green-subtle: rgba(0, 115, 77, 0.08);
+  --brand-green-glow: rgba(0, 115, 77, 0.3);
+  --brand-amber: #92400e;
 
   /* Backgrounds */
   --background: #f8faf9;
@@ -29,24 +30,31 @@
   /* Text */
   --text-primary: #0a0f10;
   --text-secondary: #374151;
-  --text-muted: #6b7280;
-  --text-subtle: #9ca3af;
+  --text-muted: #5f6673;
+  --text-subtle: #5b6472;
 
   /* Borders */
   --border-default: #e2e8f0;
   --border-subtle: rgba(0, 0, 0, 0.04);
   --border-strong: rgba(0, 0, 0, 0.16);
-  --border-brand: rgba(0, 168, 114, 0.3);
-  --border-glow: rgba(0, 168, 114, 0.15);
+  --border-brand: rgba(0, 115, 77, 0.3);
+  --border-glow: rgba(0, 115, 77, 0.15);
   --divider: rgba(0, 0, 0, 0.06);
 
   /* Semantic */
-  --color-success: #059669;
-  --color-error: #ef4444;
-  --color-warning: #F59E0B;
-  --color-info: #0ea5e9;
+  --color-success: #047857;
+  --color-error: #b91c1c;
+  --color-warning: #92400e;
+  --color-info: #0369a1;
+  --color-info-bg: rgba(3, 105, 161, 0.1);
+  --color-warning-bg: rgba(146, 64, 14, 0.1);
   --color-violet: #6d28d9;
   --color-violet-bg: rgba(109, 40, 217, 0.08);
+  /* Badge vocabulary shared with ethereumclassicdao-org */
+  --color-sky: #0369a1;
+  --color-sky-bg: rgba(3, 105, 161, 0.08);
+  --color-amber: #92400e;
+  --color-amber-bg: rgba(180, 83, 9, 0.08);
 
   /* Card */
   --card-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
@@ -58,7 +66,7 @@
   --brand-green: #00ffae;
   --brand-green-hover: #14f1b4;
   --brand-green-active: #00cc8a;
-  --brand-green-muted: #007a53;
+  --brand-green-muted: #00b87d;
   --brand-green-subtle: rgba(0, 255, 174, 0.08);
   --brand-green-glow: rgba(0, 255, 174, 0.4);
   --brand-amber: #F59E0B;
@@ -74,7 +82,7 @@
   --text-primary: #ffffff;
   --text-secondary: #c3c5cb;
   --text-muted: #9ca3af;
-  --text-subtle: #6b7280;
+  --text-subtle: #8b93a1;
 
   --border-default: #1a1a1a;
   --border-subtle: rgba(255, 255, 255, 0.04);
@@ -87,8 +95,15 @@
   --color-error: #ef4444;
   --color-warning: #F59E0B;
   --color-info: #38bdf8;
+  --color-info-bg: rgba(56, 189, 248, 0.1);
+  --color-warning-bg: rgba(245, 158, 11, 0.1);
   --color-violet: #a78bfa;
   --color-violet-bg: rgba(167, 139, 250, 0.1);
+  /* Badge vocabulary shared with ethereumclassicdao-org */
+  --color-sky: #38bdf8;
+  --color-sky-bg: rgba(56, 189, 248, 0.1);
+  --color-amber: #f59e0b;
+  --color-amber-bg: rgba(245, 158, 11, 0.12);
 
   --card-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
   --card-hover-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
@@ -230,7 +245,7 @@ body {
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 500;
-  background: rgba(56, 189, 248, 0.1);
+  background: var(--color-info-bg);
   color: var(--color-info);
 }
 
@@ -242,7 +257,7 @@ body {
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 500;
-  background: rgba(245, 158, 11, 0.1);
+  background: var(--color-warning-bg);
   color: var(--color-warning);
 }
 

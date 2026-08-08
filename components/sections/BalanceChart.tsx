@@ -24,11 +24,14 @@ export function BalanceChart() {
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
 
-  const tickColor = isDark ? "#6b7280" : "#9ca3af";
+  // Recharts needs literal color values, so every colour here must switch on the
+  // resolved theme. A bare hex is a bug: it renders the dark-mode value in light mode.
+  const tickColor = isDark ? "#9ca3af" : "#5b6472";
   const axisColor = isDark ? "#1f292b" : "#e2e8f0";
   const tooltipBg = isDark ? "#0f1614" : "#ffffff";
   const tooltipBorder = isDark ? "#1f292b" : "#e2e8f0";
   const tooltipText = isDark ? "#fff" : "#0a0f10";
+  const seriesColor = isDark ? "#00ffae" : "#007a53";
 
   const chartData = useMemo(() => {
     if (!events || events.length === 0) return [];
@@ -88,8 +91,8 @@ export function BalanceChart() {
             >
               <defs>
                 <linearGradient id="balanceGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#00ffae" stopOpacity={0.3} />
-                  <stop offset="100%" stopColor="#00ffae" stopOpacity={0} />
+                  <stop offset="0%" stopColor={seriesColor} stopOpacity={0.3} />
+                  <stop offset="100%" stopColor={seriesColor} stopOpacity={0} />
                 </linearGradient>
               </defs>
               <XAxis
@@ -124,7 +127,7 @@ export function BalanceChart() {
               <Area
                 type="monotone"
                 dataKey="balance"
-                stroke="#00ffae"
+                stroke={seriesColor}
                 strokeWidth={2}
                 fill="url(#balanceGrad)"
               />

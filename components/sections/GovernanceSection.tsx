@@ -194,13 +194,13 @@ export function GovernanceSection() {
                       Binding On-Chain Protocol Governance
                     </h3>
                     <div className="mt-3 flex gap-2">
-                      <span className="rounded-full bg-[rgba(0,255,174,0.08)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         ECIP-1113
                       </span>
-                      <span className="rounded-full bg-[rgba(0,255,174,0.08)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         ECIP-1114
                       </span>
-                      <span className="rounded-full bg-[rgba(0,255,174,0.08)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         ECIP-1119
                       </span>
                     </div>
@@ -261,10 +261,10 @@ export function GovernanceSection() {
                       Open Prediction Markets and Public Signal
                     </h3>
                     <div className="mt-3 flex gap-2">
-                      <span className="rounded-full bg-[rgba(0,255,174,0.08)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         ECIP-1117
                       </span>
-                      <span className="rounded-full bg-[rgba(0,255,174,0.08)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         ECIP-1118
                       </span>
                     </div>
@@ -296,7 +296,7 @@ export function GovernanceSection() {
                       Software Adoption as Governance Signal
                     </h3>
                     <div className="mt-3 flex gap-2">
-                      <span className="rounded-full bg-[rgba(0,255,174,0.08)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         Software Releases
                       </span>
                     </div>
