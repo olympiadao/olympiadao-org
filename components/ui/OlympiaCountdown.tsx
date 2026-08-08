@@ -64,7 +64,7 @@ function OlympiaCountdownFallback() {
   );
 }
 
-const FALLBACK_TARGET_MS = new Date("2027-01-01T00:00:00Z").getTime();
+const FALLBACK_TARGET_MS = new Date("2027-03-31T00:00:00Z").getTime();
 
 function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banner" }) {
   const chainId = useActiveChainId();
@@ -144,7 +144,7 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
     return () => clearInterval(id);
   }, [status]);
 
-  // TBD state — show date-based countdown to Jan 1, 2027
+  // TBD state — show date-based countdown to Mar 31, 2027
   if (status === "tbd") {
     const tbdDays = Math.floor(tbdSecondsLeft / 86400);
     const tbdHours = Math.floor((tbdSecondsLeft % 86400) / 3600);
@@ -162,7 +162,7 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
               <DigitBox value={tbdSecs} label="Sec" />
             </div>
             <p className="text-center text-[10px] italic text-[var(--text-subtle)]">
-              * Countdown is set to January 1, 2027 until the ETC mainnet activation block is set
+              * Countdown is set to March 31, 2027 until the ETC mainnet activation block is set
             </p>
           </div>
           <div className="flex items-start gap-3 rounded-lg border border-[var(--border-default)] bg-[var(--bg-elevated)] px-4 py-3">
@@ -189,7 +189,7 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
           <DigitBox value={tbdSecs} label="Seconds" />
         </div>
         <p className="mb-4 text-center text-[10px] italic text-[var(--text-subtle)]">
-          * Countdown is set to January 1, 2027 until the ETC mainnet activation block is set
+          * Countdown is set to March 31, 2027 until the ETC mainnet activation block is set
         </p>
         <div className="mb-2 flex items-center justify-center gap-2">
           <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--brand-green)]" />

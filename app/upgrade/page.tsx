@@ -159,7 +159,7 @@ const faqItems = [
   {
     question: "When is the mainnet activation block?",
     answer:
-      "Olympia is targeted for mainnet activation before 2027. The testnet activation block on Mordor is announced first. The mainnet activation block follows after a successful Mordor run and a coordinated stakeholder readiness check with exchanges, mining pools, node operators, and infrastructure providers. All client implementations publish Olympia-compatible releases well before activation. The process follows the same sequence used for every previous ETC hard fork.",
+      "Olympia is targeted for mainnet activation in 2027. The testnet activation block on Mordor is announced first. The mainnet activation block follows after a successful Mordor run and a coordinated stakeholder readiness check with exchanges, mining pools, node operators, and infrastructure providers. All client implementations publish Olympia-compatible releases well before activation. The process follows the same sequence used for every previous ETC hard fork.",
   },
   {
     question: "Will my miner rewards change?",

@@ -114,6 +114,7 @@ Nine contracts, deployed in a staged sequence at identical addresses on Mordor T
 - Mordor Testnet: Chain ID 63
 - ETC Mainnet: Chain ID 61
 - Activation Block: TBD — announced after the Olympia Upgrade core developers call
+- Targeted for mainnet activation in 2027. Mordor testnet activates first; the mainnet block follows a successful Mordor run and a coordinated stakeholder readiness check.
 
 ## Client Implementations
 
