@@ -30,6 +30,22 @@ export const metadata: Metadata = {
     "ETC node software",
     "Proof-of-Work client",
   ],
+  openGraph: {
+    type: "website",
+    url: "/clients",
+    siteName: "OlympiaDAO",
+    title: "ETC Client Implementations \u2014 Fukuii and Core-Geth",
+    description:
+      "Fukuii (Scala 3) is Ethereum Classic's first native client. Core-Geth (Go), a go-ethereum derivative, is maintained through the Olympia upgrade. ETC plugins are future work for Besu, Erigon, Ethrex, Go-Ethereum, Nethermind and Reth.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "OlympiaDAO" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ETC Client Implementations \u2014 Fukuii and Core-Geth",
+    description:
+      "Fukuii (Scala 3) is Ethereum Classic's first native client. Core-Geth (Go), a go-ethereum derivative, is maintained through the Olympia upgrade. ETC plugins are future work for Besu, Erigon, Ethrex, Go-Ethereum, Nethermind and Reth.",
+    images: ["/og-image.png"],
+  },
 };
 
 // Client framing, descriptions and URLs are aligned with ethereumclassicdao-org,

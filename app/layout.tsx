@@ -56,8 +56,8 @@ export const metadata: Metadata = {
     "Olympia delivers Glamsterdam-era EVM alignment for Ethereum Classic — every Solidity compiler, Foundry, Hardhat, wagmi, and viem works on ETC without modification. On-chain governance and treasury infrastructure for Ethereum Classic's core development, critical infrastructure, and network security. Basefee funds the protocol vault, a value that was set to be destroyed. Miner block rewards and tips remain completely untouched.",
   keywords: [
     "Glamsterdam EVM alignment",
+    "Glamsterdam EVM",
     "Glamsterdam",
-    "Fusaka EVM alignment",
     "Ethereum Classic",
     "ETC",
     "Olympia",
@@ -129,6 +129,20 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  // "./" resolves against metadataBase AND the current route, so every page
+  // is self-canonical. An absolute URL here would be inherited verbatim by
+  // every child route, pointing /upgrade, /governance and /clients at the
+  // homepage and asking Google to drop them from the index.
+  alternates: {
+    canonical: "./",
   },
   metadataBase: new URL("https://olympiadao.org"),
 };

@@ -38,6 +38,22 @@ export const metadata: Metadata = {
     "governance proposal",
     "network upgrade governance",
   ],
+  openGraph: {
+    type: "website",
+    url: "/governance",
+    siteName: "OlympiaDAO",
+    title: "Olympia Governance Architecture \u2014 On-Chain Protocol Governance for Ethereum Classic",
+    description:
+      "Three-layer governance for ETC core development: binding on-chain voting via OpenZeppelin Governor 5.x, futarchy prediction markets for public signal, and software adoption as the network participant layer.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "OlympiaDAO" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Olympia Governance Architecture \u2014 On-Chain Protocol Governance for Ethereum Classic",
+    description:
+      "Three-layer governance for ETC core development: binding on-chain voting via OpenZeppelin Governor 5.x, futarchy prediction markets for public signal, and software adoption as the network participant layer.",
+    images: ["/og-image.png"],
+  },
 };
 
 const ecips = [
