@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { Github } from "lucide-react";
 import { SectionDivider } from "@/components/ui/SectionDivider";
+import { OlympiaMark } from "@/components/ui/OlympiaMark";
 
 const links = [
   { label: "Ethereum Classic", href: "https://ethereumclassic.com" },
@@ -17,7 +17,7 @@ export function FooterSection() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
             <span className="flex items-center gap-2 text-sm font-semibold tracking-tight text-[var(--text-muted)]">
-              <Image src="/logo.svg" alt="" width={28} height={28} />
+              <OlympiaMark size={28} alt="" />
               OLYMPIA
             </span>
 

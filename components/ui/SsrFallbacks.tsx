@@ -1,26 +1,14 @@
-import Image from "next/image";
 import Link from "next/link";
 import { navLinks } from "@/lib/nav-links";
+import { OlympiaMark } from "@/components/ui/OlympiaMark";
 
-/**
- * Static prerender fallbacks.
- *
- * A client component IS server-rendered. What opts these subtrees out of static
- * prerender is `useSearchParams()` (reached via the chain hooks), and what a
- * crawler then receives is the Suspense *fallback*. A bare `<Suspense>` has no
- * fallback, so those subtrees emitted nothing at all — the homepage prerendered
- * a single h2.
- *
- * These carry the same landmarks, headings and links as the real components, so
- * the SSR HTML is complete. Fix the fallback, not the boundary.
- */
 
 export function NavHeaderFallback() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border-default)] bg-[var(--bg-overlay)] backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.svg" alt="Olympia" width={36} height={36} />
+          <OlympiaMark size={36} alt="Olympia" />
           <span className="text-lg font-bold tracking-tight">OLYMPIA</span>
         </Link>
         <div className="hidden items-center gap-6 md:flex">
@@ -50,7 +38,8 @@ export function TreasurySectionFallback() {
           Olympia <span className="text-[var(--brand-green)]">Treasury</span>
         </h2>
         <p className="mt-2 max-w-lg text-sm text-[var(--text-muted)]">
-          Live monitoring of the protocol-funded vault for Ethereum Classic.
+          Live monitoring of Ethereum Classic&rsquo;s sovereignty vault &mdash; funded by the
+          network&rsquo;s own base-fee revenue and owned by no company, foundation, or individual.
         </p>
       </div>
     </section>
