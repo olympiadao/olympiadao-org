@@ -109,7 +109,7 @@ export const metadata: Metadata = {
     siteName: "OlympiaDAO",
     title: "OlympiaDAO. On-Chain Governance for Ethereum Classic",
     description:
-      "On-chain governance and treasury for Ethereum Classic. Basefee funds the protocol vault, a value set to be destroyed. Miner block rewards and tips remain completely untouched.",
+      "Ethereum Classic is adopting the fee market the rest of the EVM world runs on. Ethereum destroys the base fee; Ethereum Classic will fund core development with it. Miners keep block rewards and tips in full.",
     images: [
       {
         url: "https://olympiadao.org/og-image.png",
@@ -123,7 +123,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "OlympiaDAO. On-Chain Governance for Ethereum Classic",
     description:
-      "On-chain governance and treasury for Ethereum Classic. Basefee funds the protocol vault, a value set to be destroyed. Miner block rewards and tips remain completely untouched.",
+      "Ethereum Classic is adopting the fee market the rest of the EVM world runs on. Ethereum destroys the base fee; Ethereum Classic will fund core development with it. Miners keep block rewards and tips in full.",
     images: ["https://olympiadao.org/og-image.png"],
   },
   robots: {

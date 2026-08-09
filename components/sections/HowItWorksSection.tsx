@@ -7,7 +7,7 @@ const steps = [
     icon: Wallet,
     title: "Base Fee Revenue",
     description:
-      "A transaction pays a base fee plus a priority-fee tip. Ethereum burns the base fee; Olympia redirects that half to the Treasury and changes nothing else. Tips and ECIP-1017 block rewards remain completely untouched \u2014 miners are unaffected.",
+      "Every transaction pays a base fee, set by the network, plus an optional tip to the miner. Ethereum destroys the base fee. Olympia sends it to the Treasury instead and changes nothing else: tips and block rewards are untouched, so miners earn exactly what they earn today.",
     detail: "Funded by base-fee revenue, not inflation",
   },
   {
@@ -40,8 +40,8 @@ export function HowItWorksSection() {
               How It Works
             </h2>
             <p className="mb-12 text-sm text-[var(--text-muted)]">
-              Sustainable protocol funding without impacting miners. Transaction
-              basefee revenue flows through three stages.
+              Funding that does not come out of anyone&rsquo;s pocket. Here is the path a
+              fee takes, from the transaction that pays it to the work it funds.
             </p>
           </FadeIn>
 

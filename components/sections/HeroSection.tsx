@@ -28,10 +28,11 @@ export function HeroSection() {
 
         <FadeIn delay={200}>
           <p className="mb-10 text-lg text-[var(--text-muted)] md:text-xl">
-            On-chain governance and treasury infrastructure for Ethereum Classic&rsquo;s core
-            development, critical infrastructure and network security. Olympia redirects the
-            base fee, value the protocol would otherwise destroy, into a vault the network
-            owns. Block rewards and tips still go entirely to miners.
+            Ethereum Classic is adopting the fee market the rest of the EVM world already
+            runs on. Ethereum destroys the base portion of every transaction fee. Ethereum
+            Classic will put it into a fund the network itself owns, paying for the
+            developers, infrastructure and security the chain depends on. Miners keep their
+            block rewards and tips in full.
           </p>
         </FadeIn>
 
