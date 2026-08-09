@@ -12,9 +12,9 @@ import { NavHeaderFallback } from "@/components/ui/SsrFallbacks";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
-  title: "Olympia Upgrade: Glamsterdam EVM Alignment, EIP-1559 Fee Market, and Protocol Treasury for Ethereum Classic",
+  title: "Olympia Upgrade: Glamsterdam EVM Alignment",
   description:
-    "Olympia is Ethereum Classic's most significant protocol upgrade. Glamsterdam-era EVM alignment closes years of execution-layer divergence — every Ethereum tool works on ETC without modification. EIP-1559 fee market redirects the basefee to a protocol-managed treasury. Upgrade guides for Fukuii and Core-Geth.",
+    "Glamsterdam-era EVM alignment, an EIP-1559 fee market redirecting the base fee to a protocol treasury, and node upgrade guides for Fukuii and Core-Geth.",
   keywords: [
     "Glamsterdam EVM alignment",
     "Glamsterdam EVM",
@@ -143,13 +143,6 @@ const clients = [
   },
 ];
 
-/**
- * Client badge colour by category, keyed rather than chosen at the call site.
- * Suite convention: green marks ETC-native work, gray marks maintenance and
- * neutral status. Core-Geth is a go-ethereum derivative in maintenance, so
- * rendering its badges in brand green would assert ETC-native for a client that
- * is not one. Matches ethereumclassicdao-org@147b0fa.
- */
 const clientBadgeClass = {
   native: "bg-[var(--brand-green-subtle)] text-[var(--brand-green)]",
   maintenance: "bg-[var(--border-subtle)] text-[var(--text-secondary)]",
@@ -179,7 +172,7 @@ const faqItems = [
   {
     question: "How does the protocol treasury work?",
     answer:
-      "The Olympia Treasury is funded by EIP-1559 basefee revenue, voluntary on-chain donations, and mining rewards directed to the treasury address. Block rewards and tips remain completely untouched and go entirely to miners. Futarchy prediction market activity generates additional transaction volume that flows back into the treasury as basefee revenue. Any stakeholder, whether exchanges, custodians, miners, investment product issuers, or institutions holding ETC on behalf of fund shareholders, can contribute directly on-chain with no overhead. Stakeholders who prefer a traditional giving model can contribute through the ETC Cooperative, a US 501(c)(3) non-profit that accepts tax-deductible donations.",
+      "The Olympia Treasury is funded by EIP-1559 base-fee revenue, the only protocol-defined source, alongside voluntary on-chain donations. No ECIP directs mining revenue to the Treasury. A transaction pays a base fee plus a priority-fee tip; Ethereum burns the base fee and Olympia redirects that half instead. Tips and ECIP-1017 block rewards remain completely untouched and go entirely to miners. Futarchy prediction market activity generates additional transaction volume that flows back into the treasury as basefee revenue. Any stakeholder, whether exchanges, custodians, miners, investment product issuers, or institutions holding ETC on behalf of fund shareholders, can contribute directly on-chain with no overhead. Stakeholders who prefer a traditional giving model can contribute through the ETC Cooperative, a US 501(c)(3) non-profit that accepts tax-deductible donations.",
   },
   {
     question: "How was Olympia tested before mainnet?",

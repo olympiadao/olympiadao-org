@@ -5,23 +5,23 @@ import { SectionDivider } from "@/components/ui/SectionDivider";
 const steps = [
   {
     icon: Wallet,
-    title: "Basefee Revenue",
+    title: "Base Fee Revenue",
     description:
-      "Every transaction pays a basefee via EIP-1559. The basefee is directed to the Treasury. Block rewards and tips remain completely untouched \u2014 miners are unaffected.",
-    detail: "Funded by basefee revenue, not inflation",
+      "A transaction pays a base fee plus a priority-fee tip. Ethereum burns the base fee; Olympia redirects that half to the Treasury and changes nothing else. Tips and ECIP-1017 block rewards remain completely untouched \u2014 miners are unaffected.",
+    detail: "Funded by base-fee revenue, not inflation",
   },
   {
     icon: Landmark,
     title: "Treasury",
     description:
-      "Protocol-managed vault accumulates basefee revenue, voluntary donations, and mining rewards directed to the treasury address. Real-time monitoring via public dashboard.",
+      "Ethereum Classic's sovereignty vault accumulates base-fee revenue and voluntary on-chain donations, owned by no company, foundation, or individual. It holds funds and has one withdrawal path \u2014 it does not invest, allocate, or choose recipients. Real-time monitoring via public dashboard.",
     detail: "Immutable vault with on-chain transparency",
   },
   {
     icon: Vote,
     title: "Governance",
     description:
-      "Community proposals allocate treasury funds through on-chain voting with timelock security and sanctions compliance at every layer.",
+      "Community proposals allocate treasury funds through on-chain voting with timelock security. Every contract that releases value screens the recipient; for Treasury funds the binding check is the Executor, at execution time.",
     detail: "Olympia DAO membership NFTs + futarchy prediction markets",
   },
 ];

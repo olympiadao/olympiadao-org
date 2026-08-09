@@ -18,13 +18,16 @@ export function ContractsSection() {
         <div className="mx-auto max-w-6xl px-6">
           <FadeIn>
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--brand-green)] font-mono">
-              Deployed Contracts
+              Demo v{deployment.version} &middot; Mordor Testnet
             </p>
             <h2 id="contracts-heading" className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
               On-Chain Infrastructure
             </h2>
             <p className="mb-12 text-sm text-[var(--text-muted)]">
-              Review the contract suite that forms the Olympia framework.
+              The contract suite that forms the Olympia framework, deployed at identical
+              addresses on Mordor Testnet and ETC Mainnet. These are demonstration
+              contracts from an earlier draft of the specification, superseded by the next
+              demo deployment, which is aligned to the ECIP suite.
             </p>
           </FadeIn>
 

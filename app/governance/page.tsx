@@ -11,9 +11,9 @@ import { NavHeaderFallback } from "@/components/ui/SsrFallbacks";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
-  title: "Olympia Governance Architecture — On-Chain Protocol Governance for Ethereum Classic",
+  title: "Olympia Governance Architecture",
   description:
-    "Three-layer governance for Ethereum Classic's core development: binding on-chain voting via OpenZeppelin Governor 5.x, futarchy prediction markets for public signal, and software adoption as the final network participant layer. Treasury funded by EIP-1559 basefee. Executed by the Wyoming DAO LLC.",
+    "Three-layer governance for Ethereum Classic core development: binding on-chain voting, futarchy prediction markets, and adoption by network participants.",
   keywords: [
     "Olympia governance",
     "on-chain governance",
@@ -79,6 +79,11 @@ const faqItems = [
     question: "Who can participate in governance?",
     answer:
       "Any ETC account can submit a funding proposal on-chain. Voting is limited to Olympia membership NFT holders — non-transferable ERC-721 tokens with automatic delegation and snapshot-based voting power. Prediction market participation is open to anyone without membership. Network participants (miners, exchanges, wallets, infrastructure providers) govern through the client software they run, with no membership required.",
+  },
+  {
+    question: "Does the DAO fund work before or after it is done?",
+    answer:
+      "Both are available, and retrospective is the preferred form. In a retrospective Olympia Funding Proposal the work is already complete and independently verifiable when the proposal is submitted, so the DAO votes on delivered work carrying evidence — merged changes, a published audit, an operated service with a usage record — rather than on a plan. Prospective funding remains available where work cannot reasonably be delivered first, such as a third-party security audit, infrastructure that must be paid for before it can run, or sustained work no contributor can reasonably self-finance; a prospective proposal must state why. Two points are easy to get backwards in opposite directions. Completed work creates no claim on the Treasury: a retrospective proposal may be declined like any other, and performing work confers no entitlement to payment. And the preference is a governance norm, not a contract-level rule — nothing on-chain distinguishes the two forms, both reach the Treasury through the same Governor, Timelock and Executor pipeline, and voters enforce the preference by how they vote. The closest precedents are Optimism Retro Funding and Base Builder Grants.",
   },
   {
     question: "How does voting work?",

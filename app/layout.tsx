@@ -21,9 +21,9 @@ const organizationJsonLd = {
   name: "Olympia DAO",
   alternateName: "OlympiaDAO",
   url: "https://olympiadao.org",
-  logo: "https://olympiadao.org/logo.svg",
+  logo: "https://olympiadao.org/logo-light.svg",
   description:
-    "On-chain governance and treasury infrastructure for Ethereum Classic. The Olympia DAO governs core client software, critical infrastructure, and network security through binding on-chain proposals.",
+    "On-chain governance and treasury infrastructure for Ethereum Classic's core development, critical infrastructure, and network security. The Olympia Treasury is Ethereum Classic's sovereignty vault, funded by the network's own base-fee revenue.",
   foundingDate: "2025",
   sameAs: [
     "https://x.com/OlympiaDAO_ETC",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     template: "%s | OlympiaDAO",
   },
   description:
-    "Olympia delivers Glamsterdam-era EVM alignment for Ethereum Classic — every Solidity compiler, Foundry, Hardhat, wagmi, and viem works on ETC without modification. On-chain governance and treasury infrastructure for Ethereum Classic's core development, critical infrastructure, and network security. Basefee funds the protocol vault, a value that was set to be destroyed. Miner block rewards and tips remain completely untouched.",
+    "Glamsterdam-era EVM alignment and on-chain treasury governance for Ethereum Classic. Base-fee revenue funds core development; block rewards stay untouched.",
   keywords: [
     "Glamsterdam EVM alignment",
     "Glamsterdam EVM",
@@ -137,10 +137,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  // "./" resolves against metadataBase AND the current route, so every page
-  // is self-canonical. An absolute URL here would be inherited verbatim by
-  // every child route, pointing /upgrade, /governance and /clients at the
-  // homepage and asking Google to drop them from the index.
   alternates: {
     canonical: "./",
   },

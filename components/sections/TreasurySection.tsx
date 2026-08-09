@@ -42,7 +42,9 @@ export function TreasurySection() {
                   <span className="text-[var(--brand-green)]">Treasury</span>
                 </h2>
                 <p className="mt-2 max-w-lg text-sm text-[var(--text-muted)]">
-                  Live monitoring of the protocol-funded vault for Ethereum Classic.
+                  Live monitoring of Ethereum Classic&rsquo;s sovereignty vault &mdash; funded by
+                  the network&rsquo;s own base-fee revenue and owned by no company, foundation, or
+                  individual.
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -63,7 +65,7 @@ export function TreasurySection() {
           <FadeIn delay={100}>
             <div className="mb-8 rounded-lg border border-[var(--border-default)] bg-[var(--bg-card)] px-5 py-3">
               <span className="mr-3 text-xs font-medium uppercase tracking-wider text-[var(--text-subtle)]">
-                Vault
+                Vault &middot; Demo
               </span>
               <code className="font-mono text-sm text-[var(--brand-green)]">
                 {config.treasury}

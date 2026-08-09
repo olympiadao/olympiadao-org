@@ -8,9 +8,9 @@ import { NavHeaderFallback } from "@/components/ui/SsrFallbacks";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
-  title: "ETC Client Implementations — Fukuii and Core-Geth",
+  title: "ETC Clients: Fukuii and Core-Geth",
   description:
-    "Fukuii (Scala 3) is Ethereum Classic's first native client — an EVM execution client running several networks at once in one JVM process, where a further network is configuration rather than a new client. Core-Geth (Go), a go-ethereum derivative, is maintained through the Olympia upgrade. ETC compatibility plugins extend support to Besu, Erigon, Ethrex, Go-Ethereum, Nethermind, and Reth.",
+    "Fukuii is Ethereum Classic's first native client. Core-Geth is a go-ethereum derivative in maintenance. ETC plugins for upstream clients are future work.",
   keywords: [
     "Fukuii",
     "Core-Geth",
@@ -48,8 +48,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Client framing, descriptions and URLs are aligned with ethereumclassicdao-org,
-// which is the reference for shared positioning across the Olympia sites.
 const clients = [
   {
     name: "Fukuii",
@@ -77,33 +75,18 @@ const clients = [
   },
 ];
 
-/**
- * Role badge colour keyed by theme, not decided in a ternary at the call site.
- * A ternary's else-branch silently absorbs every value it was not written for,
- * so a third role would inherit "muted" without anyone choosing that. Indexing a
- * map makes an unhandled role a type error instead.
- */
 const roleThemeClass: Record<(typeof clients)[number]["roleTheme"], string> = {
   brand: "bg-[var(--brand-green-subtle)] text-[var(--brand-green)]",
   muted: "bg-[var(--border-subtle)] text-[var(--text-secondary)]",
 };
 
-/**
- * Language chips carry the language's own brand color, so the chip is opaque and
- * its label switches between white and near-black — whichever clears 4.5:1 on
- * that color. A translucent tint of the same color cannot: it fails in one theme
- * or both (Rust on a 12.5% tint measured 1.80:1 in light mode).
- */
 function languageChipText(hex: string): string {
   const lin = (c: number) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
   const channel = (i: number) => lin(parseInt(hex.slice(i, i + 2), 16) / 255);
   const L = 0.2126 * channel(1) + 0.7152 * channel(3) + 0.0722 * channel(5);
-  // contrast against white vs against near-black (#0a0f10, relative luminance
-  // 0.0044); take whichever is higher
   return 1.05 / (L + 0.05) >= (L + 0.05) / 0.0544 ? "#ffffff" : "#0a0f10";
 }
 
-// Cards link the upstream project each plugin targets.
 const plugins = [
   {
     name: "Besu",
