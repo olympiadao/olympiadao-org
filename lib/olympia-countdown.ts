@@ -1,5 +1,4 @@
-// Olympia Activation Block — Update this ONE value when CDC-23 sets the block.
-// All countdown components read from here.
+// Set once the Olympia activation block is announced.
 export const OLYMPIA_ACTIVATION_BLOCK: number | null = null;
 
 export const AVG_BLOCK_TIME_SECONDS = 13;

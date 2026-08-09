@@ -49,11 +49,6 @@ export function OlympiaCountdown({ variant = "hero" }: { variant?: "hero" | "ban
   );
 }
 
-/**
- * Static prerender fallback. The live count needs the chain, which reaches
- * useSearchParams() and so opts this subtree out of static prerender — without a
- * fallback a crawler received nothing here. Status is a badge, never prose.
- */
 function OlympiaCountdownFallback() {
   return (
     <p className="text-sm text-[var(--text-muted)]">
@@ -128,8 +123,6 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
     return () => clearInterval(id);
   }, [status, tick]);
 
-  // Fallback date-based countdown (used when activation block is TBD)
-  // Initialize to 0 to avoid SSR/hydration mismatch — Date.now() differs between server and client
   const [tbdSecondsLeft, setTbdSecondsLeft] = useState<number>(0);
 
   useEffect(() => {
@@ -144,7 +137,6 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
     return () => clearInterval(id);
   }, [status]);
 
-  // TBD state — show date-based countdown to Mar 31, 2027
   if (status === "tbd") {
     const tbdDays = Math.floor(tbdSecondsLeft / 86400);
     const tbdHours = Math.floor((tbdSecondsLeft % 86400) / 3600);

@@ -35,7 +35,6 @@ export function getChainConfig(chainId: number): ChainConfig {
   return config;
 }
 
-// Backward compat
 export const TREASURY_ADDRESS = CHAIN_CONFIG[63].treasury;
 export const MORDOR_EXPLORER = CHAIN_CONFIG[63].explorer;
 export const MORDOR_API = CHAIN_CONFIG[63].api;
