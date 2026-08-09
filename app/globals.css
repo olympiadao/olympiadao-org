@@ -8,14 +8,13 @@
 
 /* --- Light mode (default) --- */
 :root {
-  /* Brand — WCAG AA (>=4.5:1) against the worst real surface, --bg-elevated #f1f5f3.
-     Measured on the composited surface, never on white: white inflates every number. */
-  --brand-green: #00734d;
-  --brand-green-hover: #006544;
-  --brand-green-active: #005c3e;
-  --brand-green-muted: #00734d;
-  --brand-green-subtle: rgba(0, 115, 77, 0.08);
-  --brand-green-glow: rgba(0, 115, 77, 0.3);
+  /* Brand */
+  --brand-green: #007a53;
+  --brand-green-hover: #006644;
+  --brand-green-active: #005238;
+  --brand-green-muted: #004d30;
+  --brand-green-subtle: rgba(0, 122, 83, 0.08);
+  --brand-green-glow: rgba(0, 122, 83, 0.2);
   --brand-amber: #92400e;
 
   /* Backgrounds */
@@ -31,26 +30,25 @@
   --text-primary: #0a0f10;
   --text-secondary: #374151;
   --text-muted: #5f6673;
-  --text-subtle: #5b6472;
+  --text-subtle: #666d7a;
 
   /* Borders */
   --border-default: #e2e8f0;
   --border-subtle: rgba(0, 0, 0, 0.04);
-  --border-strong: rgba(0, 0, 0, 0.16);
-  --border-brand: rgba(0, 115, 77, 0.3);
-  --border-glow: rgba(0, 115, 77, 0.15);
+  --border-strong: rgba(0, 0, 0, 0.43);
+  --border-brand: rgba(0, 122, 83, 0.73);
+  --border-glow: rgba(0, 122, 83, 0.15);
   --divider: rgba(0, 0, 0, 0.06);
 
   /* Semantic */
-  --color-success: #047857;
+  --color-success: #006644;
   --color-error: #b91c1c;
   --color-warning: #92400e;
-  --color-info: #0369a1;
+  --color-info: #0268a0;
   --color-info-bg: rgba(3, 105, 161, 0.1);
   --color-warning-bg: rgba(146, 64, 14, 0.1);
   --color-violet: #6d28d9;
   --color-violet-bg: rgba(109, 40, 217, 0.08);
-  /* Badge vocabulary shared with ethereumclassicdao-org */
   --color-sky: #0369a1;
   --color-sky-bg: rgba(3, 105, 161, 0.08);
   --color-amber: #92400e;
@@ -59,6 +57,16 @@
   /* Card */
   --card-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
   --card-hover-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+  --text-disabled: #b6bcc6;
+  --brand-amber-hover: #7c3308;
+  --brand-amber-subtle: rgba(146, 64, 14, 0.08);
+  --focus-ring: #007a53;
+  --accent-violet: #6d28d9;
+  --accent-sky: #0268a0;
+  --accent-teal: #006f67;
+  --accent-rose: #c30033;
+  --accent-amber: #92400e;
+  --accent-orange: #b53400;
 }
 
 /* --- Dark mode --- */
@@ -66,7 +74,7 @@
   --brand-green: #00ffae;
   --brand-green-hover: #14f1b4;
   --brand-green-active: #00cc8a;
-  --brand-green-muted: #00b87d;
+  --brand-green-muted: #2d926a;
   --brand-green-subtle: rgba(0, 255, 174, 0.08);
   --brand-green-glow: rgba(0, 255, 174, 0.4);
   --brand-amber: #F59E0B;
@@ -86,8 +94,8 @@
 
   --border-default: #1a1a1a;
   --border-subtle: rgba(255, 255, 255, 0.04);
-  --border-strong: rgba(255, 255, 255, 0.16);
-  --border-brand: rgba(0, 255, 174, 0.3);
+  --border-strong: rgba(255, 255, 255, 0.35);
+  --border-brand: rgba(0, 255, 174, 0.4);
   --border-glow: rgba(0, 255, 174, 0.15);
   --divider: rgba(255, 255, 255, 0.06);
 
@@ -99,7 +107,6 @@
   --color-warning-bg: rgba(245, 158, 11, 0.1);
   --color-violet: #a78bfa;
   --color-violet-bg: rgba(167, 139, 250, 0.1);
-  /* Badge vocabulary shared with ethereumclassicdao-org */
   --color-sky: #38bdf8;
   --color-sky-bg: rgba(56, 189, 248, 0.1);
   --color-amber: #f59e0b;
@@ -107,6 +114,16 @@
 
   --card-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
   --card-hover-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+  --text-disabled: #374151;
+  --brand-amber-hover: #fbbf24;
+  --brand-amber-subtle: rgba(245, 158, 11, 0.08);
+  --focus-ring: #00ffae;
+  --accent-violet: #a78bfa;
+  --accent-sky: #38bdf8;
+  --accent-teal: #00d5be;
+  --accent-rose: #ffa1ad;
+  --accent-amber: #f59e0b;
+  --accent-orange: #f97316;
 }
 
 @theme inline {
@@ -136,7 +153,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--brand-green);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -234,7 +251,7 @@ body {
   font-size: 0.75rem;
   font-weight: 500;
   background: var(--brand-green-subtle);
-  color: var(--brand-green);
+  color: var(--brand-green-hover);
 }
 
 .badge-active {
@@ -270,7 +287,7 @@ body {
   font-size: 0.75rem;
   font-weight: 500;
   background: var(--border-subtle);
-  color: var(--text-subtle);
+  color: var(--text-muted);
 }
 
 /* ==========================================
