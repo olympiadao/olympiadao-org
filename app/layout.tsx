@@ -21,7 +21,7 @@ const organizationJsonLd = {
   name: "Olympia DAO",
   alternateName: "OlympiaDAO",
   url: "https://olympiadao.org",
-  logo: "https://olympiadao.org/logo-light.svg",
+  logo: "https://olympiadao.org/android-chrome-512x512.png",
   description:
     "On-chain governance and treasury infrastructure for Ethereum Classic's core development, critical infrastructure, and network security. The Olympia Treasury is Ethereum Classic's sovereignty vault, funded by the network's own base-fee revenue.",
   foundingDate: "2025",
