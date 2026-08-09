@@ -33,7 +33,7 @@ const stages = [
     title: "Prediction Markets",
     status: "research" as const,
     description:
-      "Open prediction markets let anyone take a financial position on protocol decisions. Public participants trade on what Ethereum Classic is worth if a proposal passes against what it is worth if it fails, and the higher-priced outcome wins. Because participants are paid for being right, prices become a public signal that core contributors can read alongside their own votes. Market activity also generates base fee revenue, which flows back into the treasury.",
+      "Open prediction markets let anyone take a financial position on protocol decisions. Public participants trade on what Ethereum Classic is worth under a proposal accepted against what it is worth under the same proposal rejected, priced in Classic USD. Because a position pays in proportion to being right, prices carry information a poll cannot. The market result is an input to a decision core contributors still make, never a substitute for making it, and binding authority stays with the Governor. Market activity also generates base fee revenue, which flows back into the treasury.",
     deliverables: [
       "Open to anyone with an ETC account",
       "Financially incentivizes the public to monitor and evaluate protocol proposals",
