@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ==========================================
-   Olympia Design Tokens — Aligned with ETC DAO
+   Olympia Design Tokens
    ========================================== */
 
 /* --- Light mode (default) --- */
@@ -175,7 +175,7 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================
-   Visual System — Backgrounds & Effects
+   Visual System: Backgrounds and Effects
    ========================================== */
 
 .hero-gradient {
@@ -247,7 +247,7 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================
-   Badges — Roadmap status labels
+   Badges: Roadmap status labels
    ========================================== */
 
 .badge-complete {

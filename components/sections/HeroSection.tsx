@@ -28,10 +28,10 @@ export function HeroSection() {
 
         <FadeIn delay={200}>
           <p className="mb-10 text-lg text-[var(--text-muted)] md:text-xl">
-            On-chain governance and treasury infrastructure for Ethereum Classic&rsquo;s
-            core development, critical infrastructure, and network security.
-            Basefee funds the protocol vault, a value that was set to be destroyed.
-            Miner block rewards and tips remain completely untouched.
+            On-chain governance and treasury infrastructure for Ethereum Classic&rsquo;s core
+            development, critical infrastructure and network security. Olympia redirects the
+            base fee, value the protocol would otherwise destroy, into a vault the network
+            owns. Block rewards and tips still go entirely to miners.
           </p>
         </FadeIn>
 

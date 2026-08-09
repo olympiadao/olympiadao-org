@@ -205,14 +205,13 @@ export function GovernanceSection() {
                       </span>
                     </div>
                     <p className="mt-4 text-sm text-[var(--text-muted)]">
-                      Binding governance scoped to core client software, critical
-                      infrastructure, network security, treasury allocation, and
-                      emergency protocol responses. The treasury is funded
-                      continuously by basefee revenue, on-chain donations, and
-                      miners directing hashpower to the treasury address.
-                      Stakeholders who prefer a traditional giving model can also
-                      contribute through the ETC Cooperative, a US 501(c)(3)
-                      non-profit that accepts tax-deductible donations.
+                      Binding governance over core client software, critical infrastructure,
+                      network security, treasury allocation and emergency protocol
+                      responses. Base fee revenue funds the treasury continuously,
+                      alongside voluntary on-chain donations. Anyone preferring a
+                      traditional giving model can contribute through the ETC
+                      Cooperative, a US 501(c)(3) non-profit that accepts
+                      tax-deductible donations.
                     </p>
                     <p className="mt-3 text-sm text-[var(--text-muted)]">
                       Any stakeholder, whether exchanges, custodians, miners,
@@ -272,14 +271,12 @@ export function GovernanceSection() {
                       </span>
                     </div>
                     <p className="mt-4 text-sm text-[var(--text-muted)]">
-                      Open prediction markets where anyone can take a position on
-                      protocol outcomes. Public participants are
-                      financially rewarded for accurate predictions, bringing
-                      new users onto ETC and generating transaction volume that
-                      flows as basefee revenue into the protocol treasury.
-                      Better signal produces more development funding and better
-                      protocol outcomes, creating a self-reinforcing loop between
-                      public participation and core development capacity.
+                      Open prediction markets where anyone can take a position on a protocol
+                      outcome. Public participants are paid for being right, so the
+                      prices they set become a public signal core contributors can
+                      read. Trading also brings new users onto Ethereum Classic and
+                      generates base fee revenue for the treasury, which funds the
+                      development those markets are pricing.
                     </p>
                   </div>
                 </div>

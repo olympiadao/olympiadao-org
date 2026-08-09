@@ -43,8 +43,8 @@ export function TreasurySection() {
                   <span className="text-[var(--brand-green)]">Treasury</span>
                 </h2>
                 <p className="mt-2 max-w-lg text-sm text-[var(--text-muted)]">
-                  Live monitoring of the core development vault. Base fee revenue funds the
-                  treasury.
+                  Live monitoring of Ethereum Classic&rsquo;s sovereignty vault. Base fee revenue
+                  funds core development.
                 </p>
               </div>
               <div className="flex items-center gap-3">
