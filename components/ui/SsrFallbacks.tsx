@@ -11,7 +11,7 @@ export function NavHeaderFallback() {
           <OlympiaMark size={36} alt="Olympia" />
           <span className="text-lg font-bold tracking-tight">OLYMPIA</span>
         </Link>
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -38,8 +38,7 @@ export function TreasurySectionFallback() {
           Olympia <span className="text-[var(--brand-green)]">Treasury</span>
         </h2>
         <p className="mt-2 max-w-lg text-sm text-[var(--text-muted)]">
-          Live monitoring of Ethereum Classic&rsquo;s sovereignty vault &mdash; funded by the
-          network&rsquo;s own base-fee revenue and owned by no company, foundation, or individual.
+          Live monitoring of the core development vault. Base fee revenue funds the treasury.
         </p>
       </div>
     </section>

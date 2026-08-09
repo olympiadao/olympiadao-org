@@ -22,7 +22,7 @@ const steps = [
     title: "Governance",
     description:
       "Community proposals allocate treasury funds through on-chain voting with timelock security. Every contract that releases value screens the recipient; for Treasury funds the binding check is the Executor, at execution time.",
-    detail: "Olympia DAO membership NFTs + futarchy prediction markets",
+    detail: "Olympia DAO core contributors + futarchy prediction markets",
   },
 ];
 

@@ -13,6 +13,7 @@ import { useTreasuryStats } from "@/lib/hooks/use-treasury";
 import { useChainConfig } from "@/lib/hooks/use-chain-config";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionDivider } from "@/components/ui/SectionDivider";
+import { AddressLink } from "@/components/ui/AddressLink";
 
 function formatAmount(value: string): string {
   const num = parseFloat(value);
@@ -42,9 +43,8 @@ export function TreasurySection() {
                   <span className="text-[var(--brand-green)]">Treasury</span>
                 </h2>
                 <p className="mt-2 max-w-lg text-sm text-[var(--text-muted)]">
-                  Live monitoring of Ethereum Classic&rsquo;s sovereignty vault &mdash; funded by
-                  the network&rsquo;s own base-fee revenue and owned by no company, foundation, or
-                  individual.
+                  Live monitoring of the core development vault. Base fee revenue funds the
+                  treasury.
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -67,9 +67,11 @@ export function TreasurySection() {
               <span className="mr-3 text-xs font-medium uppercase tracking-wider text-[var(--text-subtle)]">
                 Vault &middot; Demo
               </span>
-              <code className="font-mono text-sm text-[var(--brand-green)]">
-                {config.treasury}
-              </code>
+              <AddressLink
+                address={config.treasury}
+                explorer={config.explorer}
+                className="text-xs sm:text-sm"
+              />
             </div>
           </FadeIn>
 
@@ -122,6 +124,15 @@ export function TreasurySection() {
             <KpiCard
               label="Transactions"
               value={stats ? stats.txCount.toString() : "\u2014"}
+              subtitle={
+                stats ? (
+                  <>
+                    <span className="text-[var(--brand-green)]">In: {stats.inflowCount}</span>
+                    <span className="mx-1.5 text-[var(--text-subtle)]">&middot;</span>
+                    <span className="text-[var(--color-warning)]">Out: {stats.outflowCount}</span>
+                  </>
+                ) : undefined
+              }
               icon={Activity}
               loading={isLoading}
               error={!!error}
@@ -145,7 +156,7 @@ function KpiCard({
 }: {
   label: string;
   value: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   icon: React.ComponentType<{ size?: number; className?: string }>;
   loading: boolean;
   error: boolean;

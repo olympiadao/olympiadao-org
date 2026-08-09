@@ -20,7 +20,8 @@ export const metadata: Metadata = {
     "OpenZeppelin Governor",
     "futarchy",
     "prediction markets",
-    "membership NFT",
+    "contributor NFT",
+    "CoreNFT",
     "ETC governance",
     "ECIP-1113",
     "ECIP-1114",
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     "timelock",
     "Ethereum Classic DAO",
     "Wyoming DAO LLC",
-    "OlympiaMemberNFT",
+    "Olympia DAO core contributors",
     "on-chain voting",
     "ETC treasury",
     "governance proposal",
@@ -78,17 +79,17 @@ const faqItems = [
   {
     question: "Who can participate in governance?",
     answer:
-      "Any ETC account can submit a funding proposal on-chain. Voting is limited to Olympia membership NFT holders — non-transferable ERC-721 tokens with automatic delegation and snapshot-based voting power. Prediction market participation is open to anyone without membership. Network participants (miners, exchanges, wallets, infrastructure providers) govern through the client software they run, with no membership required.",
+      "Any ETC account can submit a funding proposal on-chain. Voting is limited to Olympia DAO core contributors, who hold a soulbound CoreNFT carrying one non-delegable vote each. Prediction markets are open to anyone, with no contributor NFT and no identity check. Network participants such as miners, exchanges, wallets and infrastructure providers govern through the client software they run.",
   },
   {
     question: "Does the DAO fund work before or after it is done?",
     answer:
-      "Both are available, and retrospective is the preferred form. In a retrospective Olympia Funding Proposal the work is already complete and independently verifiable when the proposal is submitted, so the DAO votes on delivered work carrying evidence — merged changes, a published audit, an operated service with a usage record — rather than on a plan. Prospective funding remains available where work cannot reasonably be delivered first, such as a third-party security audit, infrastructure that must be paid for before it can run, or sustained work no contributor can reasonably self-finance; a prospective proposal must state why. Two points are easy to get backwards in opposite directions. Completed work creates no claim on the Treasury: a retrospective proposal may be declined like any other, and performing work confers no entitlement to payment. And the preference is a governance norm, not a contract-level rule — nothing on-chain distinguishes the two forms, both reach the Treasury through the same Governor, Timelock and Executor pipeline, and voters enforce the preference by how they vote. The closest precedents are Optimism Retro Funding and Base Builder Grants.",
+      "Both are available, and retrospective is the preferred form. In a retrospective Olympia Funding Proposal the work is already complete and independently verifiable when the proposal is submitted, so the DAO votes on delivered work carrying evidence, merged changes, a published audit, an operated service with a usage record, rather than on a plan. Prospective funding remains available where work cannot reasonably be delivered first, such as a third-party security audit, infrastructure that must be paid for before it can run, or sustained work no contributor can reasonably self-finance; a prospective proposal must state why. Two points are easy to get backwards in opposite directions. Completed work creates no claim on the Treasury: a retrospective proposal may be declined like any other, and performing work confers no entitlement to payment. And the preference is a governance norm, not a contract-level rule, nothing on-chain distinguishes the two forms, both reach the Treasury through the same Governor, Timelock and Executor pipeline, and voters enforce the preference by how they vote. The closest precedents are Optimism Retro Funding and Base Builder Grants.",
   },
   {
     question: "How does voting work?",
     answer:
-      "Proposals pass through five on-chain stages: Submit, Vote, Queue, Execute, Disclose. The voting period uses snapshot-based voting power from OlympiaMemberNFT holdings at proposal creation. Approved proposals enter a configurable timelock before execution. All outcomes are publicly recorded and verifiable on-chain via the Olympia DAO governance app at app.olympiadao.org.",
+      "Proposals pass through five on-chain stages: Submit, Vote, Queue, Execute, Disclose. Voting power is fixed by a snapshot taken when the proposal is created, and each core contributor holds exactly one vote. Approved proposals enter a configurable timelock before execution. All outcomes are publicly recorded and verifiable on-chain via the Olympia DAO governance app at app.olympiadao.org.",
   },
   {
     question: "When does Olympia activate?",
@@ -98,7 +99,7 @@ const faqItems = [
   {
     question: "Is Ethereum Classic a security or commodity after Olympia?",
     answer:
-      "Olympia strengthens ETC's regulatory profile. As a Proof-of-Work blockchain with no pre-mine, no ICO, no foundation controlling the protocol, and now a community-governed on-chain treasury, ETC is positioned for classification as a digital commodity under the CLARITY Act. In the EU, ETC qualifies as a decentralized asset under MiCA, exempt from per-asset issuer requirements. Japan's FSA lists ETC among approved digital assets. The three-layer governance structure — protocol clients, Wyoming DAO LLC, and on-chain Olympia DAO — maintains clear decentralization while satisfying compliance requirements at the legal entity layer.",
+      "Olympia strengthens ETC's regulatory profile. As a Proof-of-Work blockchain with no pre-mine, no ICO, no foundation controlling the protocol, and now a community-governed on-chain treasury, ETC is positioned for classification as a digital commodity under the CLARITY Act. In the EU, ETC qualifies as a decentralized asset under MiCA, exempt from per-asset issuer requirements. Japan's FSA lists ETC among approved digital assets. The three-layer governance structure, protocol clients, Wyoming DAO LLC, and on-chain Olympia DAO, maintains clear decentralization while satisfying compliance requirements at the legal entity layer.",
   },
 ];
 
@@ -119,7 +120,7 @@ export default function GovernancePage() {
             </FadeIn>
             <FadeIn delay={100}>
               <p className="text-lg text-[var(--text-muted)]">
-                Three complementary systems designed to work together. Membership-based on-chain governance handles binding protocol decisions. Open prediction markets give the broader public a financially incentivized stake in network direction. Network participants — miners, exchanges, wallets, and infrastructure providers — govern through the client software they run.
+                Three systems that work together. Core contributors decide binding protocol questions on-chain. Open prediction markets give the public a financially incentivized stake in network direction, and pay participants for being right. Miners, exchanges, wallets and infrastructure providers govern through the client software they choose to run.
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {ecips.map((ecip) => (
@@ -147,10 +148,10 @@ export default function GovernancePage() {
           </div>
         </section>
 
-        {/* How It Works — treasury funding */}
+        {/* How It Works, treasury funding */}
         <HowItWorksSection />
 
-        {/* Full Governance Architecture — 3 tiers with StepLists */}
+        {/* Full Governance Architecture, 3 tiers with StepLists */}
         <GovernanceSection />
 
         <SectionDivider />

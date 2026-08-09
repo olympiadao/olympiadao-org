@@ -77,14 +77,14 @@ const ecips = [
     title: "EIP-1559 Fee Market",
     icon: Flame,
     description:
-      "Unlike Ethereum where the basefee is burned, ETC redirects it to the protocol treasury — the mechanism that funds open-source core development without any foundation or donor dependency. Dynamic gas pricing delivers predictable fees for users and applications. Fully additive: legacy transactions remain valid indefinitely. Miner block rewards and tips remain completely untouched.",
+      "Unlike Ethereum where the basefee is burned, ETC redirects it to the protocol treasury, the mechanism that funds open-source core development without any foundation or donor dependency. Dynamic gas pricing delivers predictable fees for users and applications. Fully additive: legacy transactions remain valid indefinitely. Miner block rewards and tips remain completely untouched.",
   },
   {
     ecip: "ECIP-1112",
     title: "Protocol Treasury",
     icon: Landmark,
     description:
-      "A protocol-controlled vault funded by basefee revenue and voluntary contributions — delivering on the treasury model first identified during the 2022 Mystique upgrade, when EIP-1559 was deferred pending a decision on where the basefee should flow. For the first time, institutions, developers, and network stakeholders can directly fund Ethereum Classic's core development and critical infrastructure without fielding their own team. Miners receive everything they do today: block rewards and tips remain completely untouched.",
+      "A protocol-controlled vault funded by basefee revenue and voluntary contributions, delivering on the treasury model first identified during the 2022 Mystique upgrade, when EIP-1559 was deferred pending a decision on where the basefee should flow. For the first time, institutions, developers, and network stakeholders can directly fund Ethereum Classic's core development and critical infrastructure without fielding their own team. Miners receive everything they do today: block rewards and tips remain completely untouched.",
   },
   {
     ecip: "ECIP-1121",
@@ -98,7 +98,7 @@ const ecips = [
     title: "Network Security Client Configuration",
     icon: ShieldCheck,
     description:
-      "Three parameters every Olympia client enforces identically: a 1 gwei minimum effective miner tip, so miners keep an economic incentive to process transactions once the basefee is redirected; a network-authoritative gas target that overrides operator flags (Spiral era 8,000,000; Olympia era 60,000,000), closing the gas-limit manipulation vector demonstrated in 2024; and MESS re-activation, restoring the chain-reorganization resistance that was switched off at Spiral. These are chain configuration rather than consensus rules — a client that omits them provides weaker guarantees without forking.",
+      "Three parameters every Olympia client enforces identically: a 1 gwei minimum effective miner tip, so miners keep an economic incentive to process transactions once the basefee is redirected; a network-authoritative gas target that overrides operator flags (Spiral era 8,000,000; Olympia era 60,000,000), closing the gas-limit manipulation vector demonstrated in 2024; and MESS re-activation, restoring the chain-reorganization resistance that was switched off at Spiral. These are chain configuration rather than consensus rules, a client that omits them provides weaker guarantees without forking.",
   },
 ];
 
@@ -167,7 +167,7 @@ const faqItems = [
   {
     question: "What does EVM alignment to Glamsterdam actually mean for builders?",
     answer:
-      "ECIP-1121 closes years of EVM divergence in a single upgrade, filling the remaining Shanghai gaps from Spiral's partial implementation and delivering the execution-layer improvements from Dencun, Pectra, and Fusaka that are independent of Proof-of-Stake and blob data availability, and carrying that work into Glamsterdam. Before Olympia, ETC lagged behind on these EIPs, creating real friction for developers deploying across EVM chains. After Olympia, Solidity 0.8.x, Foundry, Hardhat, wagmi, viem, and ethers.js all work on ETC without modification, patching, or ETC-specific overrides. One codebase deploys to every EVM chain. ETC could not credibly claim full tooling compatibility before Olympia. After Olympia, it can. The consequences extend beyond tooling. Wallets, exchanges, oracles, and bridges make integration decisions based on EVM compatibility — ETC re-enters the default support scope of every product in that ecosystem without requiring custom work from those teams. Security auditing tools, compiler improvements, and best practices that the EVM community produces continuously now apply to ETC automatically. And the millions of Solidity developers, auditors, and protocol engineers already working on the EVM can deploy to ETC immediately, with no custom onboarding, no ETC-specific documentation, and no learning curve.",
+      "ECIP-1121 closes years of EVM divergence in a single upgrade, filling the remaining Shanghai gaps from Spiral's partial implementation and delivering the execution-layer improvements from Dencun, Pectra, and Fusaka that are independent of Proof-of-Stake and blob data availability, and carrying that work into Glamsterdam. Before Olympia, ETC lagged behind on these EIPs, creating real friction for developers deploying across EVM chains. After Olympia, Solidity 0.8.x, Foundry, Hardhat, wagmi, viem, and ethers.js all work on ETC without modification, patching, or ETC-specific overrides. One codebase deploys to every EVM chain. ETC could not credibly claim full tooling compatibility before Olympia. After Olympia, it can. The consequences extend beyond tooling. Wallets, exchanges, oracles, and bridges make integration decisions based on EVM compatibility. ETC re-enters the default support scope of every product in that ecosystem without requiring custom work from those teams. Security auditing tools, compiler improvements, and best practices that the EVM community produces continuously now apply to ETC automatically. And the millions of Solidity developers, auditors, and protocol engineers already working on the EVM can deploy to ETC immediately, with no custom onboarding, no ETC-specific documentation, and no learning curve.",
   },
   {
     question: "How does the protocol treasury work?",
@@ -197,7 +197,7 @@ const faqItems = [
   {
     question: "Is Ethereum Classic a security or commodity after Olympia?",
     answer:
-      "Olympia strengthens ETC's regulatory profile. As a Proof-of-Work blockchain with no pre-mine, no ICO, no foundation controlling the protocol, and now a community-governed on-chain treasury, ETC is positioned for classification as a digital commodity under the CLARITY Act. In the EU, ETC qualifies as a decentralized asset under MiCA, exempt from per-asset issuer requirements. Japan's FSA lists ETC among approved digital assets. UK and UAE regulatory frameworks treat Proof-of-Work assets with distinct treatment from staking-based networks. The three-layer governance structure — protocol clients, Wyoming DAO LLC, and on-chain Olympia DAO — maintains clear decentralization while satisfying compliance requirements at the legal entity layer. The network remains decentralized, and governance is open to any qualified participant worldwide.",
+      "Olympia strengthens ETC's regulatory profile. As a Proof-of-Work blockchain with no pre-mine, no ICO, no foundation controlling the protocol, and now a community-governed on-chain treasury, ETC is positioned for classification as a digital commodity under the CLARITY Act. In the EU, ETC qualifies as a decentralized asset under MiCA, exempt from per-asset issuer requirements. Japan's FSA lists ETC among approved digital assets. UK and UAE regulatory frameworks treat Proof-of-Work assets with distinct treatment from staking-based networks. The three-layer governance structure, protocol clients, Wyoming DAO LLC, and on-chain Olympia DAO, maintains clear decentralization while satisfying compliance requirements at the legal entity layer. The network remains decentralized, and governance is open to any qualified participant worldwide.",
   },
   {
     question: "Can I roll back if something goes wrong?",
@@ -314,15 +314,15 @@ export default function UpgradePage() {
               <ul className="mt-6 space-y-3 text-sm text-[var(--text-muted)]">
                 <li className="flex gap-3">
                   <span className="mt-0.5 shrink-0 text-[var(--brand-green)]">·</span>
-                  <span><span className="font-semibold text-[var(--text-primary)]">Glamsterdam EVM alignment:</span> the headline change — closes years of execution-layer divergence from Ethereum in a single fork. Every Solidity compiler version, Foundry, Hardhat, wagmi, viem, and ethers.js works on ETC without modification, patching, or ETC-specific overrides. One codebase, every EVM chain.</span>
+                  <span><span className="font-semibold text-[var(--text-primary)]">Glamsterdam EVM alignment:</span> the headline change, closes years of execution-layer divergence from Ethereum in a single fork. Every Solidity compiler version, Foundry, Hardhat, wagmi, viem, and ethers.js works on ETC without modification, patching, or ETC-specific overrides. One codebase, every EVM chain.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-0.5 shrink-0 text-[var(--brand-green)]">·</span>
-                  <span><span className="font-semibold text-[var(--text-primary)]">EIP-1559 fee market:</span> unlike Ethereum where the basefee is burned, ETC redirects it to the protocol treasury — funding open-source core development without any foundation or donor dependency. Block rewards and tips remain completely untouched and go entirely to miners.</span>
+                  <span><span className="font-semibold text-[var(--text-primary)]">EIP-1559 fee market:</span> unlike Ethereum where the basefee is burned, ETC redirects it to the protocol treasury, funding open-source core development without any foundation or donor dependency. Block rewards and tips remain completely untouched and go entirely to miners.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-0.5 shrink-0 text-[var(--brand-green)]">·</span>
-                  <span><span className="font-semibold text-[var(--text-primary)]">Protocol treasury:</span> basefee revenue redirected to a protocol-managed treasury, funding open-source core development, infrastructure, and long-term network security. Anyone can submit proposals on-chain; members vote and execute decisions transparently.</span>
+                  <span><span className="font-semibold text-[var(--text-primary)]">Protocol treasury:</span> base fee revenue redirected to a protocol-managed treasury, funding open-source core development, infrastructure, and long-term network security. Anyone can submit proposals on-chain; core contributors vote and execute decisions transparently.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-0.5 shrink-0 text-[var(--brand-green)]">·</span>
@@ -345,7 +345,7 @@ export default function UpgradePage() {
           </div>
         </section>
 
-        {/* What Olympia Brings — ECIP Explainer */}
+        {/* What Olympia Brings. ECIP Explainer */}
         <section className="section-alt py-16 px-6">
           <div className="mx-auto max-w-5xl">
             <FadeIn>
@@ -512,8 +512,8 @@ export default function UpgradePage() {
               <h2 className="text-3xl font-bold tracking-tight">The Olympia Upgrade</h2>
               <div className="mt-4 rounded-xl border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] p-8 space-y-4 text-base leading-relaxed text-[var(--text-secondary)]">
                 <p>Olympia is Ethereum Classic&rsquo;s most significant protocol upgrade. Four changes arrive in a single activation: EVM alignment carried into Glamsterdam, the EIP-1559 fee market, a protocol-managed treasury, and ETC-specific network security client configuration.</p>
-                <p>The headline change is EVM execution-layer alignment &mdash; closing years of divergence from Ethereum in a single fork. Olympia advances ETC through Dencun, Pectra and Fusaka, and carries that work into Glamsterdam. Every Solidity compiler version, every deployment tool (Foundry, Hardhat), and every major library (wagmi, viem, ethers.js) works on ETC without modification, patching, or ETC-specific overrides. One codebase deploys to every EVM chain. ETC could not credibly claim this before Olympia. After Olympia, it can.</p>
-                <p>The EIP-1559 fee market redirects the basefee &mdash; value that would otherwise be destroyed &mdash; to a protocol-managed treasury. Block rewards and tips remain completely untouched and go entirely to miners. Anyone can submit proposals on-chain. Members vote on resource allocation and execute decisions. Every step is transparent and verifiable on-chain.</p>
+                <p>The headline change is EVM execution-layer alignment, closing years of divergence from Ethereum in a single fork. Olympia advances ETC through Dencun, Pectra and Fusaka, and carries that work into Glamsterdam. Every Solidity compiler version, every deployment tool (Foundry, Hardhat), and every major library (wagmi, viem, ethers.js) works on ETC without modification, patching, or ETC-specific overrides. One codebase deploys to every EVM chain. ETC could not credibly claim this before Olympia. After Olympia, it can.</p>
+                <p>The EIP-1559 fee market redirects the base fee, value that would otherwise be destroyed, to a protocol-managed treasury. Block rewards and tips remain completely untouched and go entirely to miners. Anyone can submit proposals on-chain. Core contributors vote on resource allocation and execute decisions. Every step is transparent and verifiable on-chain.</p>
               </div>
             </FadeIn>
           </div>
@@ -540,19 +540,19 @@ export default function UpgradePage() {
                 {
                   icon: Landmark,
                   name: "Olympia Treasury",
-                  description: "Real-time treasury monitoring — funding allocation, balance, and disbursement history",
+                  description: "Real-time treasury monitoring, funding allocation, balance, and disbursement history",
                   href: "https://olympiatreasury.org",
                 },
                 {
                   icon: LayoutDashboard,
                   name: "Ethereum Classic DAO",
-                  description: "Institutional site for the Wyoming DAO LLC — the legal entity behind Olympia governance",
+                  description: "Institutional site for the Wyoming DAO LLC, the legal entity behind Olympia governance",
                   href: "https://ethereumclassicdao.org",
                 },
                 {
                   icon: Github,
                   name: "GitHub",
-                  description: "Client implementations, governance contracts, and protocol infrastructure — all open-source",
+                  description: "Client implementations, governance contracts, and protocol infrastructure, all open-source",
                   href: "https://github.com/olympiadao",
                 },
               ].map((p, i) => (

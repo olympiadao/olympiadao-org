@@ -20,7 +20,7 @@ interface CountdownValues {
 function DigitBox({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
-      <div className="flex h-14 w-16 items-center justify-center rounded-lg border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] font-mono text-2xl font-bold text-[var(--brand-green)] shadow-[0_0_12px_var(--border-glow)]">
+      <div className="flex h-12 w-12 items-center justify-center rounded-lg border sm:h-14 sm:w-16 border-[var(--border-brand)] bg-[var(--brand-green-subtle)] font-mono text-xl font-bold text-[var(--brand-green)] shadow-[0_0_12px_var(--border-glow)] sm:text-2xl">
         {String(value).padStart(2, "0")}
       </div>
       <span className="mt-1.5 text-xs text-[var(--text-muted)]">{label}</span>
@@ -54,7 +54,7 @@ function OlympiaCountdownFallback() {
     <p className="text-sm text-[var(--text-muted)]">
       Olympia activation block:{" "}
       <span className="font-mono font-medium text-[var(--brand-green)]">TBD</span>
-      {" "}— announced after the Olympia Upgrade core developers call.
+      {". "}Announced after the Olympia Upgrade core developers call.
     </p>
   );
 }
@@ -147,7 +147,7 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
       return (
         <>
           <div className="mb-4 flex flex-col items-center gap-2">
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3">
               <DigitBox value={tbdDays} label="Days" />
               <DigitBox value={tbdHours} label="Hrs" />
               <DigitBox value={tbdMinutes} label="Min" />
@@ -161,7 +161,7 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
             <span className="mt-1 h-2 w-2 shrink-0 animate-pulse rounded-full bg-[var(--brand-green)]" />
             <div>
               <p className="text-sm text-[var(--text-muted)]">
-                Olympia is in final testing on the Mordor Testnet — Activation Block: TBD
+                Olympia is in final testing on the Mordor Testnet. Activation Block: TBD
               </p>
               <p className="mt-1 text-xs text-[var(--text-subtle)]">
                 The exact block number will be announced after the Olympia Upgrade core developers call. Upgrade your node as soon as a compatible release is available.
@@ -174,7 +174,7 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
 
     return (
       <div className="rounded-xl border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] p-6 text-center">
-        <div className="mb-4 flex justify-center gap-4">
+        <div className="mb-4 flex justify-center gap-2 sm:gap-4">
           <DigitBox value={tbdDays} label="Days" />
           <DigitBox value={tbdHours} label="Hours" />
           <DigitBox value={tbdMinutes} label="Minutes" />
@@ -190,7 +190,7 @@ function OlympiaCountdownInner({ variant = "hero" }: { variant?: "hero" | "banne
           </span>
         </div>
         <p className="text-sm text-[var(--text-muted)]">
-          Olympia is in final testing on the Mordor Testnet — Activation Block: TBD
+          Olympia is in final testing on the Mordor Testnet. Activation Block: TBD
         </p>
         <p className="mt-1 text-xs text-[var(--text-subtle)]">
           The exact block number will be announced after the Olympia Upgrade core developers call.

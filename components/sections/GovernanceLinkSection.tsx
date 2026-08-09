@@ -8,21 +8,21 @@ const tiers = [
     title: "Binding On-Chain Protocol Governance",
     ecips: ["ECIP-1113", "ECIP-1114", "ECIP-1119"],
     description:
-      "Membership NFT holders vote on treasury allocation, core client funding, and protocol upgrades. Every proposal — submit, vote, queue, execute — happens on-chain and is publicly verifiable.",
+      "Core contributors vote on treasury allocation, core client funding, and protocol upgrades. Every proposal is submitted, voted on, queued and executed on-chain, and every step is publicly verifiable.",
   },
   {
     icon: TrendingUp,
     title: "Open Prediction Markets",
     ecips: ["ECIP-1117", "ECIP-1118", "ECIP-1119"],
     description:
-      "Anyone can open a prediction market on a proposed protocol outcome without membership. Market prices feed back as financially-backed signal into governance decisions.",
+      "Anyone can open a prediction market on a proposed protocol outcome. Prices become a public signal core contributors read alongside their own votes.",
   },
   {
     icon: Server,
     title: "Network Participant Layer",
     ecips: [],
     description:
-      "Miners, exchanges, wallets, and node operators govern through the client software they run. An upgrade activates when the network adopts it — distributed participation made real.",
+      "Miners, exchanges, wallets and node operators govern through the client software they run. An upgrade activates only when the network adopts it.",
   },
 ];
 
@@ -40,7 +40,7 @@ export function GovernanceLinkSection() {
               Governance Architecture
             </h2>
             <p className="mt-3 text-base text-[var(--text-muted)]">
-              Three complementary systems designed to work together. No single group controls the protocol — binding on-chain governance, open prediction markets, and network participant adoption are mutually dependent.
+              Three systems that work together, and no single group controls the protocol. Binding on-chain governance, open prediction markets and network adoption each depend on the other two.
             </p>
             <a
               href="/governance"

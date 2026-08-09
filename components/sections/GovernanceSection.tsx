@@ -27,7 +27,7 @@ const formalSteps = [
     icon: Vote,
     number: "02",
     title: "Vote",
-    description: "Membership NFT holders cast weighted on-chain votes",
+    description: "Core contributors cast on-chain votes",
   },
   {
     icon: Clock,
@@ -60,7 +60,7 @@ const futarchySteps = [
     icon: BarChart2,
     number: "02",
     title: "Speculate",
-    description: "Public participants stake on outcomes with no membership required",
+    description: "Public participants take positions, rewarded for being right",
   },
   {
     icon: Scale,
@@ -99,7 +99,7 @@ const powSteps = [
     icon: CheckCircle,
     number: "04",
     title: "Distributed Consensus",
-    description: "The upgrade activates when the broader network has adopted the new software — distributed participation made real",
+    description: "The upgrade activates once the broader network has adopted the new software",
   },
 ];
 
@@ -173,11 +173,11 @@ export function GovernanceSection() {
               Governance Architecture
             </h2>
             <p className="mt-3 text-base text-[var(--text-muted)]">
-              Three complementary systems designed to work together. Membership-based
-              on-chain governance handles binding protocol decisions. Open prediction
-              markets give the broader public a financially incentivized stake in
-              network direction. Network participants — miners, exchanges, wallets,
-              and infrastructure providers — govern through the client software they run.
+              Three systems that work together. Core contributors decide binding protocol
+              questions on-chain. Open prediction markets give the public a financially
+              incentivized stake in network direction, and pay participants for being
+              right. Miners, exchanges, wallets and infrastructure providers govern
+              through the client software they choose to run.
             </p>
           </FadeIn>
 
@@ -272,8 +272,8 @@ export function GovernanceSection() {
                       </span>
                     </div>
                     <p className="mt-4 text-sm text-[var(--text-muted)]">
-                      Open prediction markets where anyone can speculate on
-                      protocol outcomes without membership. Participants are
+                      Open prediction markets where anyone can take a position on
+                      protocol outcomes. Public participants are
                       financially rewarded for accurate predictions, bringing
                       new users onto ETC and generating transaction volume that
                       flows as basefee revenue into the protocol treasury.
@@ -311,8 +311,8 @@ export function GovernanceSection() {
                       compatible releases, network adoption is the final step.
                       An upgrade becomes real when the infrastructure that
                       secures, settles, and routes ETC transactions upgrades to
-                      support it. No membership required, no market position to
-                      open — running the software is the governance act.
+                      support it. No contributor NFT required, no market position to
+                      open, running the software is the governance act.
                     </p>
                   </div>
                 </div>

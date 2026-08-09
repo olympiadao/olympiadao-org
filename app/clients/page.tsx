@@ -56,7 +56,7 @@ const clients = [
     role: "Primary",
     roleTheme: "brand" as const,
     description:
-      "EVM execution client in Scala 3 — one binary runs several networks at once in one JVM process, each isolated with its own state, metrics, and configuration. A further network is configuration rather than a new client. Consensus is selected per deployment: native Proof-of-Work for Ethereum Classic and Mordor, or Proof-of-Stake with a built-in consensus layer or an external client over the Engine API. Ethereum Classic's first native client — built ground-up for ETC rather than derived from an Ethereum client — and the primary ETC client for the Olympia era.",
+      "An EVM execution client written in Scala 3. One binary runs several networks at once inside a single JVM process, and each network keeps its own state, metrics and configuration. A further network is configuration rather than a new client. Consensus is selected per deployment: native Proof-of-Work for Ethereum Classic and Mordor, or Proof-of-Stake with a built-in consensus layer or an external client over the Engine API. Fukuii is Ethereum Classic's first native client. It was built ground-up for ETC rather than derived from an Ethereum client, and it is the primary ETC client for the Olympia era.",
     websiteUrl: "https://fukuii.org",
     docsUrl: "https://docs.fukuii.org",
     releasesUrl: "https://github.com/fukuii-project/fukuii-cli/releases",
@@ -68,7 +68,7 @@ const clients = [
     role: "Maintained",
     roleTheme: "muted" as const,
     description:
-      "A go-ethereum derivative maintained for Ethereum Classic, in maintenance only. It implements the full Olympia specification — ECIP-1111, 1112, 1121 and 1122 — and its Mordor sync is confirmed, so existing operators have a supported path through the upgrade. New deployments should use Fukuii.",
+      "A go-ethereum derivative maintained for Ethereum Classic, in maintenance only. It implements the full Olympia specification across ECIP-1111, 1112, 1121 and 1122, and its Mordor sync is confirmed. Existing operators have a supported path through the upgrade. New deployments should use Fukuii.",
     websiteUrl: "https://github.com/ethereumclassic/core-geth",
     docsUrl: "https://github.com/ethereumclassic/core-geth#readme",
     releasesUrl: "https://github.com/ethereumclassic/core-geth/releases",
@@ -150,7 +150,7 @@ export default function ClientsPage() {
             <FadeIn delay={100}>
               <p className="text-lg text-[var(--text-muted)]">
                 Multi-client architecture for the Olympia upgrade. Multiple independent implementations
-                ensure network resilience — no single team controls the canonical chain.
+                ensure network resilience. No single team controls the canonical chain.
               </p>
             </FadeIn>
           </div>
@@ -233,9 +233,8 @@ export default function ClientsPage() {
             <FadeIn>
               <h2 className="mb-2 text-2xl font-bold tracking-tight">ETC Plugins</h2>
               <p className="mb-8 text-sm text-[var(--text-muted)]">
-                Future work. These are upstream cross-client references —
-                established Ethereum clients that an ETC plugin would bring Ethereum Classic
-                support to, without maintaining full forks.
+                Future work. These are established Ethereum clients that an ETC plugin would bring
+                Ethereum Classic support to, without maintaining a full fork of each one.
               </p>
             </FadeIn>
 

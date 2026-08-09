@@ -49,7 +49,7 @@ const websiteJsonLd = {
 
 export const metadata: Metadata = {
   title: {
-    default: "OlympiaDAO — On-Chain Governance for Ethereum Classic",
+    default: "OlympiaDAO. On-Chain Governance for Ethereum Classic",
     template: "%s | OlympiaDAO",
   },
   description:
@@ -107,9 +107,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://olympiadao.org",
     siteName: "OlympiaDAO",
-    title: "OlympiaDAO — On-Chain Governance for Ethereum Classic",
+    title: "OlympiaDAO. On-Chain Governance for Ethereum Classic",
     description:
-      "On-chain governance and treasury for Ethereum Classic. Basefee funds the protocol vault — a value set to be destroyed. Miner block rewards and tips remain completely untouched.",
+      "On-chain governance and treasury for Ethereum Classic. Basefee funds the protocol vault, a value set to be destroyed. Miner block rewards and tips remain completely untouched.",
     images: [
       {
         url: "https://olympiadao.org/og-image.png",
@@ -121,9 +121,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "OlympiaDAO — On-Chain Governance for Ethereum Classic",
+    title: "OlympiaDAO. On-Chain Governance for Ethereum Classic",
     description:
-      "On-chain governance and treasury for Ethereum Classic. Basefee funds the protocol vault — a value set to be destroyed. Miner block rewards and tips remain completely untouched.",
+      "On-chain governance and treasury for Ethereum Classic. Basefee funds the protocol vault, a value set to be destroyed. Miner block rewards and tips remain completely untouched.",
     images: ["https://olympiadao.org/og-image.png"],
   },
   robots: {
