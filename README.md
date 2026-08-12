@@ -31,7 +31,7 @@ pnpm typecheck  # Type check
 - [olympiatreasury-org](https://github.com/olympiadao/olympiatreasury-org) — Treasury dashboard
 - [ethereumclassicdao-org](https://github.com/EthereumClassicDAO/ethereumclassicdao-org) — Institutional site
 - [olympia-app](https://github.com/olympiadao/olympia-app) — Governance UI
-- [olympia-governance-contracts](https://github.com/olympiadao/olympia-governance-contracts) — Governor, Executor, Registry
+- [olympia-governance-contracts](https://github.com/olympiadao/olympia-governance-contracts) — Governance contract suite
 - [olympia-treasury-contract](https://github.com/olympiadao/olympia-treasury-contract) — Treasury vault
 
 ## Ethereum Classic Core Developers
