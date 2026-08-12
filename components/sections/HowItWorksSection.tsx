@@ -14,14 +14,14 @@ const steps = [
     icon: Landmark,
     title: "Treasury",
     description:
-      "Ethereum Classic's sovereignty vault accumulates base-fee revenue and voluntary on-chain donations, owned by no company, foundation, or individual. It holds funds and has one withdrawal path \u2014 it does not invest, allocate, or choose recipients. Real-time monitoring via public dashboard.",
-    detail: "Immutable vault with on-chain transparency",
+      "Base-fee revenue lands in the Olympia Sovereignty Vault, a permanent contract that keeps nothing and forwards everything to the Olympia Treasury. The Treasury is where the money sits, owned by no company, foundation or individual, with one withdrawal path and no admin key. It does not invest, allocate, or choose recipients. Every credit and every payment is on-chain and public.",
+    detail: "One withdrawal path, with on-chain transparency",
   },
   {
     icon: Vote,
     title: "Governance",
     description:
-      "Community proposals allocate treasury funds through on-chain voting with timelock security. Every contract that releases value screens the recipient; for Treasury funds the binding check is the Executor, at execution time.",
+      "Community proposals allocate treasury funds through on-chain voting with timelock security. Sanctions screening binds on the path that matters most: the Governor checks every externally-directed target before the Treasury pays, and no other account can release those funds.",
     detail: "Olympia DAO core contributors + futarchy prediction markets",
   },
 ];

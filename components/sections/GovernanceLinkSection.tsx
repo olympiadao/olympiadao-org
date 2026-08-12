@@ -2,7 +2,15 @@ import { Vote, TrendingUp, Server } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 
-const tiers = [
+type Tier = {
+  icon: typeof Vote;
+  title: string;
+  ecips: string[];
+  description: string;
+  links?: { label: string; href: string }[];
+};
+
+const tiers: Tier[] = [
   {
     icon: Vote,
     title: "Binding On-Chain Protocol Governance",
@@ -21,6 +29,7 @@ const tiers = [
     icon: Server,
     title: "Network Participant Layer",
     ecips: [],
+    links: [{ label: "Fukuii", href: "https://fukuii.org" }],
     description:
       "Miners, exchanges, wallets and node operators govern through the client software they run. An upgrade activates only when the network adopts it.",
   },
@@ -59,15 +68,26 @@ export function GovernanceLinkSection() {
                     <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--brand-green-subtle)]">
                       <Icon size={20} className="text-[var(--brand-green)]" aria-hidden="true" />
                     </div>
-                    {tier.ecips.length > 0 && (
+                    {(tier.ecips.length > 0 || tier.links) && (
                       <div className="mb-3 flex flex-wrap gap-1.5">
+                        {tier.links?.map((link) => (
+                            <a
+                              key={link.label}
+                              href={link.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="rounded-full border border-[var(--border-brand)] bg-[var(--bg-surface)] px-2.5 py-0.5 font-mono text-[10px] text-[var(--brand-green)] transition hover:opacity-70"
+                            >
+                            {link.label}
+                          </a>
+                        ))}
                         {tier.ecips.map((ecip) => (
                           <a
                             key={ecip}
                             href={`https://ecips.ethereumclassic.org/ECIPs/ecip-${ecip.toLowerCase().replace("ecip-", "")}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 font-mono text-[10px] text-[var(--brand-green)] transition hover:opacity-70"
+                            className="rounded-full border border-[var(--border-brand)] bg-[var(--bg-surface)] px-2.5 py-0.5 font-mono text-[10px] text-[var(--brand-green)] transition hover:opacity-70"
                           >
                             {ecip}
                           </a>

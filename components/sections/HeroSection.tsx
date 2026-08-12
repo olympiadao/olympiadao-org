@@ -1,7 +1,16 @@
 import { ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { OlympiaCountdown } from "@/components/ui/OlympiaCountdown";
 
+/**
+ * The hero states what Olympia is, in the present tense.
+ *
+ * It carried a countdown and a "Next Step" badge, which are the two clearest
+ * forms of a timestamp in disguise: a completed product does not count down to
+ * itself, and a next step is a position inside a plan rather than a property of
+ * the network. What replaced them is the mechanism — the one sentence that
+ * separates this fee market from Ethereum's, which is the thing a reader
+ * arriving cold actually needs and which does not need updating.
+ */
 export function HeroSection() {
   return (
     <section aria-labelledby="hero-heading" className="hero-gradient noise-overlay relative pt-32 pb-20 md:pt-40 md:pb-28">
@@ -9,7 +18,7 @@ export function HeroSection() {
         <FadeIn>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] px-4 py-1.5 text-sm font-medium text-[var(--brand-green)]">
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-green)]" />
-            Next Step: Mordor Testnet Deployment
+            On-chain governance for Ethereum Classic
           </div>
         </FadeIn>
 
@@ -20,19 +29,14 @@ export function HeroSection() {
           </h1>
         </FadeIn>
 
-        <FadeIn delay={150}>
-          <div className="mx-auto mb-8 max-w-lg">
-            <OlympiaCountdown variant="hero" />
-          </div>
-        </FadeIn>
-
         <FadeIn delay={200}>
           <p className="mb-10 text-lg text-[var(--text-muted)] md:text-xl">
-            Ethereum Classic is adopting the fee market the rest of the EVM world already
-            runs on. Ethereum destroys the base portion of every transaction fee. Ethereum
-            Classic will put it into a fund the network itself owns, paying for the
-            developers, infrastructure and security the chain depends on. Miners keep their
-            block rewards and tips in full.
+            Ethereum Classic runs the fee market the rest of the EVM world runs on,
+            with one change. Ethereum destroys the base fee on every transaction.
+            Ethereum Classic keeps it, in a permanent contract the network owns,
+            paying for the developers, infrastructure and security the chain depends
+            on. Miners keep their block
+            rewards and priority tips, undiminished.
           </p>
         </FadeIn>
 

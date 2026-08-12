@@ -21,7 +21,8 @@ const formalSteps = [
     icon: FileText,
     number: "01",
     title: "Propose",
-    description: "Any ETC account can submit a funding proposal on-chain",
+    description:
+      "Submitting is permissionless, bounded only by the proposal threshold the DAO sets for itself",
   },
   {
     icon: Vote,
@@ -66,7 +67,8 @@ const futarchySteps = [
     icon: Scale,
     number: "03",
     title: "Resolve",
-    description: "Markets settle when the underlying governance event executes on-chain",
+    description:
+      "Markets settle on a time-weighted average price comparison between the two branches, with no reporter and no vote",
   },
   {
     icon: Lightbulb,
@@ -194,13 +196,13 @@ export function GovernanceSection() {
                       Binding On-Chain Protocol Governance
                     </h3>
                     <div className="mt-3 flex gap-2">
-                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                      <span className="rounded-full border border-[var(--border-brand)] bg-[var(--bg-surface)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         ECIP-1113
                       </span>
-                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                      <span className="rounded-full border border-[var(--border-brand)] bg-[var(--bg-surface)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         ECIP-1114
                       </span>
-                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                      <span className="rounded-full border border-[var(--border-brand)] bg-[var(--bg-surface)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         ECIP-1119
                       </span>
                     </div>
@@ -227,9 +229,12 @@ export function GovernanceSection() {
                       worldwide bid for development funds, infrastructure
                       contracts, and critical service agreements covering block
                       explorers, RPC endpoints, oracles, bridges, and ecosystem
-                      integrations. Open proposals, open bids, open funding,
-                      all executed by the Wyoming DAO LLC on behalf of what the
-                      Olympia DAO approves on-chain.
+                      integrations. Open proposals, open bids, open funding, all
+                      executed on-chain by the DAO itself. A Wyoming DAO LLC
+                      stands behind it as the legal interface for whatever a
+                      passed proposal needs off-chain, and holds no authority
+                      over the Treasury and no ability to initiate, route or
+                      reinterpret a payment.
                     </p>
                   </div>
                 </div>
@@ -260,13 +265,13 @@ export function GovernanceSection() {
                       Open Prediction Markets and Public Signal
                     </h3>
                     <div className="mt-3 flex gap-2">
-                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                      <span className="rounded-full border border-[var(--border-brand)] bg-[var(--bg-surface)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         ECIP-1117
                       </span>
-                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                      <span className="rounded-full border border-[var(--border-brand)] bg-[var(--bg-surface)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         ECIP-1118
                       </span>
-                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                      <span className="rounded-full border border-[var(--border-brand)] bg-[var(--bg-surface)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         ECIP-1119
                       </span>
                     </div>
@@ -296,7 +301,7 @@ export function GovernanceSection() {
                       Software Adoption as Governance Signal
                     </h3>
                     <div className="mt-3 flex gap-2">
-                      <span className="rounded-full bg-[var(--brand-green-subtle)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
+                      <span className="rounded-full border border-[var(--border-brand)] bg-[var(--bg-surface)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
                         Software Releases
                       </span>
                     </div>
