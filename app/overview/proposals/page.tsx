@@ -323,8 +323,9 @@ export default function ProposalsPage() {
 
           <FadeIn delay={260}>
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-[var(--text-muted)]">
-              Deciding is restricted. Informing the decision is not: the prediction markets
-              that price a proposal are open to anyone holding ETC, with no seat and no
+              Voting on Treasury spending is restricted to core contributors. Deciding who
+              receives an ecosystem grant is not: a seeded season is allocated by markets
+              open to anyone holding ETC or Classic USD, with no seat and no
               application.{" "}
               <Link
                 href="/overview/prediction-markets"

@@ -23,7 +23,7 @@ const tiers: Tier[] = [
     title: "Open Prediction Markets",
     ecips: ["ECIP-1117", "ECIP-1118", "ECIP-1119"],
     description:
-      "Anyone can open a prediction market on a proposed protocol outcome. Prices become a public signal core contributors read alongside their own votes.",
+      "Anyone holding ETC or Classic USD can take a position, with no membership and no CoreNFT. Olympia DAO decides whether and how much to seed a grants season; the market decides who is funded out of it.",
   },
   {
     icon: Server,

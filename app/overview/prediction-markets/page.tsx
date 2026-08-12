@@ -22,13 +22,25 @@ export const metadata = overviewTopicMetadata("prediction-markets");
  * Six claims here are the ones a paraphrase loses, and the first has already
  * shipped wrong on this site once:
  *
- *  - Futarchy INFORMS; it does not decide. Binding authority stays with the
- *    Governor, and a market result is "an input to a decision the membership
- *    still makes rather than a substitute for making it" (ECIP-1117 §"Why
- *    Coexistence Rather Than Replacement", and §"Relationship to ECIP-1113").
- *    "The higher-priced outcome wins" was live on this site and said the
- *    opposite. The market's own outcome is a price comparison; the funding
- *    decision is a vote.
+ *  - **The market DECIDES to whom, and Olympia DAO decides whether, how much
+ *    and within what scope.** ECIP-1117 §"Simple Summary" is explicit in both
+ *    halves: "the community decides which projects receive grants", and "Once
+ *    seeded, Olympia DAO has no say in how the season allocates." ECIP-1113 §6
+ *    says the same from the other side. So the higher-priced branch IS the
+ *    allocation, not a recommendation about one.
+ *
+ *    **Do not "correct" this back to advisory.** "Futarchy informs; it does not
+ *    decide" was live here and is wrong. ECIP-1117 §"Precedent" names where that
+ *    error comes from: the October 2024 funding announcement for the first
+ *    iteration of the precedent program scoped it to "serve an advisory role",
+ *    the launch that followed made the mechanism binding, and the spec records
+ *    that the advisory framing is "superseded rather than merely older". A
+ *    reader consulting the earlier document alone draws the wrong conclusion.
+ *    Nothing about that precedent may appear in copy; it is recorded here only
+ *    so the correction is not undone.
+ *
+ *    What stays true is the boundary: a market allocates the sum a season was
+ *    already seeded with, and reaches nothing the Treasury still holds.
  *  - No base fee reaches these contracts and none may be made to. The flow is
  *    the other way and it is indirect: activity generates base fee, which
  *    accumulates to the Treasury (ECIP-1117 §"This ECIP Receives No Base Fee",
@@ -51,9 +63,8 @@ export const metadata = overviewTopicMetadata("prediction-markets");
  * here is ambiguous in a way it is nowhere else. Every occurrence on this page
  * is qualified as the liquidity vault.
  *
- * The sanctions boundary is `/overview/eligibility`'s and the "deciding is
- * restricted, informing is not" line is `/overview/proposals`'s. Both are linked
- * rather than paraphrased a second time.
+ * The sanctions boundary is `/overview/eligibility`'s and the CoreNFT seat is
+ * `/overview/proposals`'s. Both are linked rather than paraphrased a second time.
  */
 
 const topic = overviewTopic("prediction-markets");
@@ -217,8 +228,8 @@ export default function PredictionMarketsPage() {
 
           <FadeIn delay={200}>
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-[var(--text-muted)]">
-              Deciding is restricted. Informing the decision is not, and the seat that
-              carries a vote is described in full on{" "}
+              Voting on Treasury spending is restricted to core contributors, and the seat
+              that carries that vote is described in full on{" "}
               <Link
                 href="/overview/proposals#who-votes"
                 className="font-medium text-[var(--brand-green)] transition hover:opacity-80"
@@ -370,21 +381,32 @@ export default function PredictionMarketsPage() {
             <div className="mt-4 max-w-3xl space-y-4 text-base leading-relaxed text-[var(--text-muted)]">
               <p>
                 <span className="font-semibold text-[var(--text-primary)]">
-                  It informs the vote. It never replaces it.
+                  It decides who is funded. It does not decide whether there is
+                  anything to fund.
                 </span>{" "}
-                A resolved market is published as an input to a decision the
-                contributors still make, and authority over Treasury money stays exactly
-                where it was. Nothing in a market can move a single unit out of the
-                Treasury, and a profitable position is not an approval of anything.
+                Those are two different questions and they belong to two different
+                bodies. Olympia DAO votes on an ordinary funding proposal that seeds a
+                specific sum for one season, and it may confine that season to a stated
+                theme. Once that sum has transferred, Olympia DAO has no say in how the
+                season allocates it. The market settles that, and the higher-priced
+                branch is the allocation rather than a recommendation about one.
               </p>
               <p>
-                That is structural rather than a promise. The markets run as a child
-                organization with its own rules: it holds no permission on the contract
-                that holds the money, holds no key, and has no way to start a payment.
-                When it needs funding it submits an ordinary proposal and faces the same
-                waiting period, voting period, quorum, approval rule, public queue and
+                So the split is whether, how much and within what scope on one side, and
+                to whom on the other. A scope binds which proposals a season&rsquo;s
+                markets may be opened for, and never the outcome the market reaches
+                within it, which it settles independently.
+              </p>
+              <p>
+                That division is structural rather than a promise. The markets run as an
+                Affiliated DAO with its own rules, working alongside Olympia DAO rather
+                than beneath it: it holds no permission on the contract that holds the
+                money, holds no key, and has no way to start a payment. When it needs
+                funding it submits an ordinary proposal and faces the same waiting
+                period, voting period, quorum, approval rule, public queue and
                 compliance screen as anything else. There is no fast lane and no
-                standing budget.
+                standing budget, and those are the constraints every recipient of
+                Treasury funds operates under rather than marks of subordination.
               </p>
             </div>
           </FadeIn>
@@ -394,8 +416,9 @@ export default function PredictionMarketsPage() {
               <div className="rounded-xl border border-[var(--border-brand)] bg-[var(--brand-green-subtle)] p-5">
                 <p className="text-sm font-semibold">What a result is</p>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
-                  A published comparison of two prices, produced by people with money at
-                  stake, that contributors can read before they vote. On a decision large
+                  The allocation itself, for the sum that season was seeded with. A
+                  comparison of two prices, produced by people with money at stake,
+                  settles which proposals are funded out of it. On a decision large
                   enough to move the network&rsquo;s prospects, that is a better estimate
                   than a show of hands.
                 </p>
@@ -403,10 +426,11 @@ export default function PredictionMarketsPage() {
               <div className="rounded-xl border border-[var(--divider)] bg-[var(--bg-elevated)] p-5">
                 <p className="text-sm font-semibold">What it is not</p>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
-                  An instruction, an authorization, or a claim on any money. No contract
-                  reads a market result and releases funds because of it, and there is no
-                  route by which one could be added without replacing the Governor
-                  through the ordinary process.
+                  A claim on the Treasury. What a season allocates is a sum an ordinary
+                  proposal already transferred to it, and nothing in a market reaches
+                  back past that: no contract reads a market result and releases
+                  Treasury funds because of it, and there is no route by which one could
+                  be added without replacing the Governor through the ordinary process.
                 </p>
               </div>
             </div>

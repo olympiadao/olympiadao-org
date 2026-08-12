@@ -64,7 +64,7 @@ const stations: Station[] = [
       },
       {
         title: "Decide",
-        body: "Core contributors vote. A vote comes from a CoreNFT, which is earned by contributing and by nothing else: it cannot be bought, sold, lent or delegated, and one address carries one vote however many tokens exist. Open prediction markets run alongside the vote, pricing what Ethereum Classic is worth with a proposal accepted against what it is worth with the same proposal rejected. What they produce is information the voters read, never a decision that stands in for theirs.",
+        body: "Core contributors vote. A vote comes from a CoreNFT, which is earned by contributing and by nothing else: it cannot be bought, sold, lent or delegated, and one address carries one vote however many tokens exist. Open prediction markets run alongside the vote, pricing what Ethereum Classic is worth with a proposal accepted against what it is worth with the same proposal rejected. They decide grant allocation for a season Olympia DAO has seeded: the contributors settle whether and how much, and the market settles to whom.",
         links: [
           { label: "What stops it being captured", href: "/overview/prediction-markets" },
         ],

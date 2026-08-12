@@ -262,7 +262,7 @@ export function GovernanceSection() {
                       Futarchy Markets
                     </p>
                     <h3 className="mt-1.5 text-lg font-semibold">
-                      Open Prediction Markets and Public Signal
+                      The Olympia Futarchy Grants DAO
                     </h3>
                     <div className="mt-3 flex gap-2">
                       <span className="rounded-full border border-[var(--border-brand)] bg-[var(--bg-surface)] px-2.5 py-0.5 text-[10px] font-mono text-[var(--brand-green)]">
@@ -276,12 +276,13 @@ export function GovernanceSection() {
                       </span>
                     </div>
                     <p className="mt-4 text-sm text-[var(--text-muted)]">
-                      Open prediction markets where anyone can take a position on a protocol
-                      outcome. Public participants are paid for being right, so the
-                      prices they set become a public signal core contributors can
-                      read. Trading also brings new users onto Ethereum Classic and
-                      generates base fee revenue for the treasury, which funds the
-                      development those markets are pricing.
+                      An Affiliated DAO working alongside Olympia DAO, funding public ecosystem
+                      growth. Anyone holding ETC or Classic USD can take a position, with
+                      no membership and no CoreNFT, and participants are paid for being
+                      right. Olympia DAO votes on whether, how much and within what scope
+                      to seed a season; once seeded, the market settles who is funded out
+                      of it. Trading also brings new users onto Ethereum Classic and
+                      generates base fee revenue for the treasury.
                     </p>
                   </div>
                 </div>

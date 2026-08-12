@@ -33,7 +33,7 @@ const stages = [
     title: "Prediction Markets",
     status: "research" as const,
     description:
-      "Open prediction markets let anyone take a financial position on protocol decisions. Public participants trade on what Ethereum Classic is worth under a proposal accepted against what it is worth under the same proposal rejected, priced in Classic USD. Because a position pays in proportion to being right, prices carry information a poll cannot. The market result is an input to a decision core contributors still make, never a substitute for making it, and binding authority stays with the Governor. Market activity also generates base fee revenue, which flows back into the treasury.",
+      "Open prediction markets let anyone take a financial position on protocol decisions. Public participants trade on what Ethereum Classic is worth under a proposal accepted against what it is worth under the same proposal rejected, priced in Classic USD. Because a position pays in proportion to being right, prices carry information a poll cannot. Olympia DAO votes on whether, how much and within what scope to seed a grants season; once seeded, the market settles who is funded out of it, and the higher-priced branch is the allocation rather than a recommendation about one. Market activity also generates base fee revenue, which flows back into the treasury.",
     deliverables: [
       "Open to anyone with an ETC account",
       "Financially incentivizes the public to monitor and evaluate protocol proposals",

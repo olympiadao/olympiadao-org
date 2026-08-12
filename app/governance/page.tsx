@@ -52,14 +52,14 @@ export const metadata: Metadata = {
     siteName: "OlympiaDAO",
     title: "Olympia Governance Architecture: On-Chain Protocol Governance for Ethereum Classic",
     description:
-      "What the Olympia Treasury pays for and who decides: client development, developer tooling, network operations and the fee market, allocated by binding on-chain voting, with futarchy prediction markets for public signal and software adoption as the network participant layer.",
+      "What the Olympia Treasury pays for and who decides: client development, developer tooling, network operations and the fee market, allocated by binding on-chain voting, with a futarchy grants DAO allocating public ecosystem funding and software adoption as the network participant layer.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "OlympiaDAO" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Olympia Governance Architecture: On-Chain Protocol Governance for Ethereum Classic",
     description:
-      "What the Olympia Treasury pays for and who decides: client development, developer tooling, network operations and the fee market, allocated by binding on-chain voting, with futarchy prediction markets for public signal and software adoption as the network participant layer.",
+      "What the Olympia Treasury pays for and who decides: client development, developer tooling, network operations and the fee market, allocated by binding on-chain voting, with a futarchy grants DAO allocating public ecosystem funding and software adoption as the network participant layer.",
     images: ["/og-image.png"],
   },
 };

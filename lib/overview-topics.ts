@@ -135,11 +135,11 @@ export const overviewTopics: OverviewTopic[] = [
     slug: "prediction-markets",
     question: "What stops it being captured",
     summary:
-      "Open markets price Ethereum Classic under a proposal accepted against the same proposal rejected. A position pays in proportion to being right, so the price carries information a poll cannot. It informs the vote and never replaces it.",
+      "Open markets price Ethereum Classic under a proposal accepted against the same proposal rejected. A position pays in proportion to being right, so the price carries information a poll cannot. Olympia DAO decides whether and how much to seed a season, and the market then settles the allocation independently.",
     metaTitle: "What Stops Olympia Being Captured",
     socialTitle: "What Stops Olympia Being Captured: Prediction Markets and Streamed Payments",
     description:
-      "Open prediction markets price Ethereum Classic under a proposal accepted against rejected. A market result informs the decision the membership still makes; binding authority stays with the Governor.",
+      "Open prediction markets price Ethereum Classic under a proposal accepted against rejected. Olympia DAO votes on whether, how much and within what scope to seed a season, and once seeded the market settles who is funded out of it.",
     keywords: [
       "futarchy",
       "prediction markets",
