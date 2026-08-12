@@ -1,13 +1,19 @@
 import { defineChain } from "viem";
-import deployment from "./contracts.json";
 
 export type SupportedChainId = 61 | 63;
 export const DEFAULT_CHAIN_ID: SupportedChainId = 63;
 
+/**
+ * Per-chain endpoints and constants.
+ *
+ * No contract address appears here. `lib/contracts.json` is the Olympia
+ * contract architecture — what each contract is and which ECIP specifies it —
+ * and it carries no addresses, because an address is a property of a
+ * deployment rather than of the design. Anything on this site that shows a
+ * number reads it live from chain state through these endpoints.
+ */
 export const CHAIN_CONFIG = {
   63: {
-    treasury: deployment.contracts.treasury.address as `0x${string}`,
-    executor: deployment.contracts.executor.address as `0x${string}`,
     explorer: "https://etc-mordor.blockscout.com",
     api: "https://etc-mordor.blockscout.com/api/v2",
     eraLength: 2_000_000,
@@ -16,8 +22,6 @@ export const CHAIN_CONFIG = {
     testnet: true,
   },
   61: {
-    treasury: deployment.contracts.treasury.address as `0x${string}`,
-    executor: deployment.contracts.executor.address as `0x${string}`,
     explorer: "https://etc.blockscout.com",
     api: "https://etc.blockscout.com/api/v2",
     eraLength: 5_000_000,
@@ -35,7 +39,6 @@ export function getChainConfig(chainId: number): ChainConfig {
   return config;
 }
 
-export const TREASURY_ADDRESS = CHAIN_CONFIG[63].treasury;
 export const MORDOR_EXPLORER = CHAIN_CONFIG[63].explorer;
 export const MORDOR_API = CHAIN_CONFIG[63].api;
 export const ERA_LENGTH = CHAIN_CONFIG[63].eraLength;
