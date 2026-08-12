@@ -5,15 +5,17 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 import { Accordion } from "@/components/ui/Accordion";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
+import { SovereigntyVaultSection } from "@/components/sections/SovereigntyVaultSection";
+import { FundingMandateSection } from "@/components/sections/FundingMandateSection";
 import { GovernanceSection } from "@/components/sections/GovernanceSection";
 import { NavHeader } from "@/components/sections/NavHeader";
 import { NavHeaderFallback } from "@/components/ui/SsrFallbacks";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export const metadata: Metadata = {
-  title: "Olympia Governance Architecture",
+  title: "Olympia Governance and Treasury Funding",
   description:
-    "Three-layer governance for Ethereum Classic core development: binding on-chain voting, futarchy prediction markets, and adoption by network participants.",
+    "What the Olympia Treasury pays for and who decides: client development, developer tooling, network operations, the fee market that has to replace a falling block reward, and funding contributors instead of employing them.",
   keywords: [
     "Olympia governance",
     "on-chain governance",
@@ -28,6 +30,11 @@ export const metadata: Metadata = {
     "ECIP-1117",
     "ECIP-1118",
     "ECIP-1119",
+    "Olympia Sovereignty Vault",
+    "ECIP-1017",
+    "block reward schedule",
+    "fee market",
+    "retrospective funding",
     "protocol treasury",
     "basefee",
     "timelock",
@@ -43,16 +50,16 @@ export const metadata: Metadata = {
     type: "website",
     url: "/governance",
     siteName: "OlympiaDAO",
-    title: "Olympia Governance Architecture \u2014 On-Chain Protocol Governance for Ethereum Classic",
+    title: "Olympia Governance Architecture: On-Chain Protocol Governance for Ethereum Classic",
     description:
-      "Three-layer governance for ETC core development: binding on-chain voting via OpenZeppelin Governor 5.x, futarchy prediction markets for public signal, and software adoption as the network participant layer.",
+      "What the Olympia Treasury pays for and who decides: client development, developer tooling, network operations and the fee market, allocated by binding on-chain voting, with futarchy prediction markets for public signal and software adoption as the network participant layer.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "OlympiaDAO" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Olympia Governance Architecture \u2014 On-Chain Protocol Governance for Ethereum Classic",
+    title: "Olympia Governance Architecture: On-Chain Protocol Governance for Ethereum Classic",
     description:
-      "Three-layer governance for ETC core development: binding on-chain voting via OpenZeppelin Governor 5.x, futarchy prediction markets for public signal, and software adoption as the network participant layer.",
+      "What the Olympia Treasury pays for and who decides: client development, developer tooling, network operations and the fee market, allocated by binding on-chain voting, with futarchy prediction markets for public signal and software adoption as the network participant layer.",
     images: ["/og-image.png"],
   },
 };
@@ -79,17 +86,17 @@ const faqItems = [
   {
     question: "Who can participate in governance?",
     answer:
-      "Any ETC account can submit a funding proposal on-chain. Voting is limited to Olympia DAO core contributors, who hold a soulbound CoreNFT carrying one non-delegable vote each. Prediction markets are open to anyone, with no contributor NFT and no identity check. Network participants such as miners, exchanges, wallets and infrastructure providers govern through the client software they run.",
+      "Submitting a funding proposal is permissionless: no application, no affiliation, and no gatekeeper who can decline to put it in front of the vote. The one bar is the Governor's proposal threshold, a minimum amount of voting power an author must hold, which the DAO sets for itself; at zero any ETC account can author a proposal, and above zero authorship narrows to core contributors. Voting is limited to Olympia DAO core contributors, who hold a soulbound CoreNFT carrying one non-delegable vote each. Prediction markets are open to anyone, with no contributor NFT and no identity check. Network participants such as miners, exchanges, wallets and infrastructure providers govern through the client software they run.",
   },
   {
     question: "Does the DAO fund work before or after it is done?",
     answer:
-      "Both are available, and retrospective is the preferred form. In a retrospective Olympia Funding Proposal the work is already complete and independently verifiable when the proposal is submitted, so the DAO votes on delivered work carrying evidence, merged changes, a published audit, an operated service with a usage record, rather than on a plan. Prospective funding remains available where work cannot reasonably be delivered first, such as a third-party security audit, infrastructure that must be paid for before it can run, or sustained work no contributor can reasonably self-finance; a prospective proposal must state why. Two points are easy to get backwards in opposite directions. Completed work creates no claim on the Treasury: a retrospective proposal may be declined like any other, and performing work confers no entitlement to payment. And the preference is a governance norm, not a contract-level rule, nothing on-chain distinguishes the two forms, both reach the Treasury through the same Governor, Timelock and Executor pipeline, and voters enforce the preference by how they vote. The closest precedents are Optimism Retro Funding and Base Builder Grants.",
+      "Both are available, and retrospective is the preferred form. In a retrospective Olympia Funding Proposal the work is already complete and independently verifiable when the proposal is submitted, so the DAO votes on delivered work carrying evidence, merged changes, a published audit, an operated service with a usage record, rather than on a plan. Prospective funding remains available where work cannot reasonably be delivered first, such as a third-party security audit, infrastructure that must be paid for before it can run, or sustained work no contributor can reasonably self-finance; a prospective proposal must state why. Two points are easy to get backwards in opposite directions. Completed work creates no claim on the Treasury: a retrospective proposal may be declined like any other, and performing work confers no entitlement to payment. And the preference is a governance norm, not a contract-level rule, nothing on-chain distinguishes the two forms, both reach the Treasury through the same Governor and Timelock path, and voters enforce the preference by how they vote. The closest precedents are Optimism Retro Funding and Base Builder Grants.",
   },
   {
     question: "How does voting work?",
     answer:
-      "Proposals pass through five on-chain stages: Submit, Vote, Queue, Execute, Disclose. Voting power is fixed by a snapshot taken when the proposal is created, and each core contributor holds exactly one vote. Approved proposals enter a configurable timelock before execution. All outcomes are publicly recorded and verifiable on-chain via the Olympia DAO governance app at app.olympiadao.org.",
+      "Proposals pass through five on-chain stages: Submit, Vote, Queue, Execute, Disclose. Voting power is fixed by a snapshot rather than read live, so admitting or revoking a contributor mid-vote cannot rewrite a tally already in flight, and each core contributor holds exactly one vote. A proposal that reaches quorum only near its deadline extends it, so a late surge cannot close the window before anyone can answer it. Approved proposals enter a configurable timelock before execution. All outcomes are publicly recorded and verifiable on-chain via the Olympia DAO governance app at app.olympiadao.org.",
   },
   {
     question: "When does Olympia activate?",
@@ -122,6 +129,10 @@ export default function GovernancePage() {
               <p className="text-lg text-[var(--text-muted)]">
                 Three systems that work together. Core contributors decide binding protocol questions on-chain. Open prediction markets give the public a financially incentivized stake in network direction, and pay participants for being right. Miners, exchanges, wallets and infrastructure providers govern through the client software they choose to run.
               </p>
+              <p className="mt-4 text-lg text-[var(--text-muted)]">
+                Below: where the money comes from, what the Treasury holds, the five things it
+                pays for, and how a proposal turns into a payment that lands.
+              </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {ecips.map((ecip) => (
                   <a
@@ -150,6 +161,12 @@ export default function GovernancePage() {
 
         {/* How It Works, treasury funding */}
         <HowItWorksSection />
+
+        {/* What the DAO has to work with, and the permanence boundary */}
+        <SovereigntyVaultSection />
+
+        {/* The five things the Treasury pays for */}
+        <FundingMandateSection />
 
         {/* Full Governance Architecture, 3 tiers with StepLists */}
         <GovernanceSection />

@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { execSync } from "child_process";
+import { etcClients } from "@/lib/clients";
+import { overviewTopics } from "@/lib/overview-topics";
 
 function gitDate(filePath: string): Date {
   try {
@@ -22,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://olympiadao.org/overview",
+      lastModified: gitDate("app/overview/page.tsx"),
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
       url: "https://olympiadao.org/upgrade",
       lastModified: gitDate("app/upgrade/page.tsx"),
       changeFrequency: "weekly",
@@ -39,5 +47,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    ...overviewTopics.map((topic) => ({
+      url: `https://olympiadao.org/overview/${topic.slug}`,
+      lastModified: gitDate(`app/overview/${topic.slug}/page.tsx`),
+      changeFrequency: "weekly" as const,
+      priority: 0.75,
+    })),
+    ...etcClients.map((client) => ({
+      url: `https://olympiadao.org/clients/${client.slug}`,
+      lastModified: gitDate(`app/clients/${client.slug}/page.tsx`),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
   ];
 }

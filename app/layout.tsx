@@ -23,7 +23,7 @@ const organizationJsonLd = {
   url: "https://olympiadao.org",
   logo: "https://olympiadao.org/android-chrome-512x512.png",
   description:
-    "On-chain governance and treasury infrastructure for Ethereum Classic's core development, critical infrastructure, and network security. The Olympia Treasury is Ethereum Classic's sovereignty vault, funded by the network's own base-fee revenue.",
+    "On-chain governance and treasury infrastructure for Ethereum Classic's core development, critical infrastructure, and network security. Base-fee revenue lands in the Olympia Sovereignty Vault, the one permanent contract, and is held by the Olympia Treasury, which pays out only what governance approves.",
   foundingDate: "2025",
   sameAs: [
     "https://x.com/OlympiaDAO_ETC",
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
     siteName: "OlympiaDAO",
     title: "OlympiaDAO. On-Chain Governance for Ethereum Classic",
     description:
-      "Ethereum Classic is adopting the fee market the rest of the EVM world runs on. Ethereum destroys the base fee; Ethereum Classic will fund core development with it. Miners keep block rewards and tips in full.",
+      "Ethereum Classic is adopting the fee market the rest of the EVM world runs on. Ethereum destroys the base fee; Ethereum Classic funds core development with it instead. Block rewards and priority tips are untouched, unconditionally.",
     images: [
       {
         url: "https://olympiadao.org/og-image.png",
@@ -123,7 +123,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "OlympiaDAO. On-Chain Governance for Ethereum Classic",
     description:
-      "Ethereum Classic is adopting the fee market the rest of the EVM world runs on. Ethereum destroys the base fee; Ethereum Classic will fund core development with it. Miners keep block rewards and tips in full.",
+      "Ethereum Classic is adopting the fee market the rest of the EVM world runs on. Ethereum destroys the base fee; Ethereum Classic funds core development with it instead. Block rewards and priority tips are untouched, unconditionally.",
     images: ["https://olympiadao.org/og-image.png"],
   },
   robots: {
